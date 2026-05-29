@@ -1,0 +1,248 @@
+{
+  "_metaDatiJson": {
+    "nomeJson": "eventi_1434",
+    "repoJson": "gioco",
+    "note": "Eventi storici e casuali - Monferrato 1434"
+  },
+  "updatedAt": "2026-05-29T12:00:00Z",
+  "minAppVersion": 1,
+
+  "eventi": [
+
+    {
+      "id": "proclama_capitale",
+      "tipo": "storico",
+      "priorita": "alta",
+      "dataTrigger": "1434-05-03",
+      "dataTriggerFine": null,
+      "titolo": "Casale diventa Capitale",
+      "messaggio": "Gian Giacomo Paleologo proclama Casale Monferrato nuova capitale del Marchesato. La città si anima di cortigiani, funzionari e nuove opportunità.",
+      "luoghiInteressati": ["casale"],
+      "luoghiInteressatiTutti": false,
+      "effetti": {
+        "bonusSoldi": {
+          "luogo": "casale",
+          "importo": 20,
+          "note": "Bonus una tantum per residenti a Casale"
+        },
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "sbloccoAzione": null
+      },
+      "mostraBando": true,
+      "bandoId": "proclama_capitale_bando",
+      "ripetibile": false
+    },
+
+    {
+      "id": "fiera_san_giovanni",
+      "tipo": "ricorrente",
+      "priorita": "media",
+      "dataTrigger": "1434-06-24",
+      "dataTriggerFine": "1434-06-27",
+      "titolo": "Fiera di San Giovanni a Casale",
+      "messaggio": "Si apre la grande fiera di San Giovanni. Mercanti da ogni borgo del Monferrato convergono a Casale. I prezzi salgono, le opportunità abbondano.",
+      "luoghiInteressati": ["casale"],
+      "luoghiInteressatiTutti": false,
+      "effetti": {
+        "bonusSoldi": null,
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["mercante", "artigiano", "tessitrice", "ostessa"],
+          "percentuale": 50,
+          "note": "Guadagno aumentato del 50% per i giorni della fiera"
+        },
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "sbloccoAzione": "compra_merce_fiera"
+      },
+      "mostraBando": true,
+      "bandoId": "fiera_san_giovanni_bando",
+      "ripetibile": true
+    },
+
+    {
+      "id": "inizio_estate",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1434-06-21",
+      "dataTriggerFine": null,
+      "titolo": "L'estate è arrivata",
+      "messaggio": "Il sole scalda le campagne del Monferrato. I contadini lavorano dall'alba al tramonto. Il raccolto si annuncia abbondante.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": {
+          "textureId": "TL_Grass",
+          "note": "Terreno estivo"
+        },
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["contadino", "contadina"],
+          "percentuale": 30
+        }
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": false
+    },
+
+    {
+      "id": "inizio_autunno",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1434-09-21",
+      "dataTriggerFine": null,
+      "titolo": "L'autunno scende sul Monferrato",
+      "messaggio": "Le foglie ingialliscono sulle colline del Monferrato. È tempo di raccolto, di vendemmia e di fare provviste per l'inverno che verrà. I mercati si animano di prodotti della terra.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": {
+          "textureId": "TL_Grass",
+          "note": "Terreno autunnale"
+        },
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["contadino", "contadina"],
+          "percentuale": 40
+        }
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": false
+    },
+
+    {
+      "id": "inizio_inverno",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1434-12-21",
+      "dataTriggerFine": null,
+      "titolo": "L'inverno stringe il Monferrato",
+      "messaggio": "Le prime nevi imbiancano le colline. I mercati si riducono, le strade sono difficili. Chi ha fatto provviste starà al caldo.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": {
+          "textureId": "TL_Snow",
+          "note": "Terreno innevato"
+        },
+        "malusGuadagnoPercentuale": {
+          "archetipi": ["contadino", "contadina", "mercante"],
+          "percentuale": 20
+        },
+        "speseStraordinarie": {
+          "importo": 2,
+          "nota": "Costo riscaldamento giornaliero per tutti"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "inverno_bando",
+      "ripetibile": false
+    },
+
+    {
+      "id": "inizio_primavera",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1435-03-21",
+      "dataTriggerFine": null,
+      "titolo": "La primavera torna sul Monferrato",
+      "messaggio": "Le nevi si sciolgono, i fiori tornano sulle colline. Nuovi mercati si aprono, i viaggiatori riprendono le loro rotte.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": {
+          "textureId": "TL_Grass",
+          "note": "Terreno primaverile"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": false
+    },
+
+    {
+      "id": "pestilenza_minore",
+      "tipo": "casuale",
+      "priorita": "alta",
+      "dataTrigger": null,
+      "dataTriggerFine": null,
+      "probabilitaGiorno": 0.001,
+      "titolo": "Una malattia si diffonde",
+      "messaggio": "Una febbre misteriosa colpisce alcuni abitanti del borgo. Le levatrici sono al lavoro, la paura si diffonde tra la gente.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": false,
+      "luoghiCasuali": 1,
+      "effetti": {
+        "malusGuadagnoPercentuale": {
+          "archetipi": ["mercante", "artigiano", "tessitrice", "ostessa"],
+          "percentuale": 30,
+          "durataGiorni": 7
+        },
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["levatrice"],
+          "percentuale": 80,
+          "durataGiorni": 7
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "pestilenza_bando",
+      "ripetibile": true
+    },
+
+    {
+      "id": "passaggio_mercanti",
+      "tipo": "casuale",
+      "priorita": "bassa",
+      "dataTrigger": null,
+      "dataTriggerFine": null,
+      "probabilitaGiorno": 0.05,
+      "titolo": "Una carovana di mercanti",
+      "messaggio": "Una carovana di mercanti si ferma nel borgo per la notte. Le osterie si riempiono, il mercato si anima di merci rare.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": false,
+      "luoghiCasuali": 1,
+      "effetti": {
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["ostessa", "mercante"],
+          "percentuale": 40,
+          "durataGiorni": 1
+        }
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": true
+    },
+
+    {
+      "id": "raccolto_abbondante",
+      "tipo": "casuale",
+      "priorita": "media",
+      "dataTrigger": null,
+      "dataTriggerFine": null,
+      "probabilitaGiorno": 0.02,
+      "stagioneLimitata": "autunno",
+      "titolo": "Raccolto abbondante",
+      "messaggio": "Quest'anno la terra ha dato frutti oltre ogni aspettativa. I granai si riempiono, i contadini sorridono.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["contadino", "contadina"],
+          "percentuale": 60,
+          "durataGiorni": 3
+        },
+        "bonusSoldiTutti": {
+          "importo": 5,
+          "note": "Tutti i residenti beneficiano dell'abbondanza"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "raccolto_bando",
+      "ripetibile": true
+    }
+  ]
+}

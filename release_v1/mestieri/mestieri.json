@@ -1,0 +1,350 @@
+{
+  "_metaDatiJson": {
+    "nomeJson": "mestieri",
+    "repoJson": "gioco",
+    "note": "Mestieri, guadagni e spese per luogo - Monferrato 1434"
+  },
+  "updatedAt": "2026-05-29T12:00:00Z",
+  "minAppVersion": 1,
+  "percentualeRimborsoDebito": 20,
+
+  "modificatoriLuogo": {
+    "casale": {
+      "note": "Capitale del Marchesato, mercato vivace, spese più alte",
+      "bonusGuadagnoPercentuale": 20,
+      "malusSpesaPercentuale": 15
+    },
+    "chivasso": {
+      "note": "Ex capitale, ancora importante ma in declino",
+      "bonusGuadagnoPercentuale": 10,
+      "malusSpesaPercentuale": 5
+    },
+    "acqui": {
+      "note": "Centro importante con terme e commerci",
+      "bonusGuadagnoPercentuale": 10,
+      "malusSpesaPercentuale": 5
+    },
+    "valenza": {
+      "note": "Porto sul Po, commerci attivi",
+      "bonusGuadagnoPercentuale": 15,
+      "malusSpesaPercentuale": 8
+    },
+    "default": {
+      "note": "Borghi minori, vita tranquilla",
+      "bonusGuadagnoPercentuale": 0,
+      "malusSpesaPercentuale": 0
+    }
+  },
+
+  "abitazioni": [
+    {
+      "id": "casolare",
+      "nome": "Casolare",
+      "descrizione": "Piccola abitazione rurale, essenziale e sobria",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["contadino", "contadina"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": "casa_cantiere_01",
+        "meta": null,
+        "completa": "casolare_completo"
+      }
+    },
+    {
+      "id": "stanza_affitto",
+      "nome": "Stanza in affitto",
+      "descrizione": "Una singola stanza presso una locanda o famiglia del borgo",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 1,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["tutti"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "stanza_affitto_completa"
+      }
+    },
+    {
+      "id": "bottega_affitto",
+      "nome": "Bottega con alloggio",
+      "descrizione": "Bottega in affitto con piano superiore ad uso abitativo",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 2,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["artigiano", "tessitrice", "levatrice"],
+      "livelloComfort": 2,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "bottega_completa"
+      }
+    },
+    {
+      "id": "fondaco",
+      "nome": "Fondaco",
+      "descrizione": "Magazzino con alloggio, ideale per il mercante",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 3,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["mercante"],
+      "livelloComfort": 2,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "fondaco_completo"
+      }
+    },
+    {
+      "id": "locanda",
+      "nome": "Locanda",
+      "descrizione": "Locanda con osteria al piano terra, alloggio al piano superiore",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 3,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["ostessa"],
+      "livelloComfort": 2,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "locanda_completa"
+      }
+    },
+    {
+      "id": "canonica",
+      "nome": "Canonica",
+      "descrizione": "Alloggio presso la chiesa, sobrio e sicuro",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["chierico"],
+      "livelloComfort": 2,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "canonica_completa"
+      }
+    },
+    {
+      "id": "caserma",
+      "nome": "Caserma",
+      "descrizione": "Alloggio militare nel castello o presidio del signore",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["soldato"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "caserma_completa"
+      }
+    },
+    {
+      "id": "casa_acquistata",
+      "nome": "Casa propria",
+      "descrizione": "Una casa di proprietà nel borgo, frutto di risparmio e lavoro",
+      "tipoAccesso": "proprieta",
+      "costoAcquisto": 800,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["tutti"],
+      "livelloComfort": 3,
+      "immagineStadi": {
+        "cantiere": "casa_cantiere_01",
+        "meta": "casa_cantiere_02",
+        "completa": "casa_completa"
+      },
+      "giorniCostruzione": 30
+    },
+	{
+      "id": "carrozza",
+      "nome": "Carrozza",
+      "descrizione": "Una vecchia carrozza adibita ad abitazione, parcheggiata ai margini del borgo. Tende colorate, erbe essiccate e simboli misteriosi decorano l'interno. Casa e bottega in uno.",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["chiromante"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "carrozza_completa"
+      }
+    },
+    {
+      "id": "torre_nobiliare",
+      "nome": "Torre di famiglia",
+      "descrizione": "Torre, di proprietà ma che necessita continua manutenzione",
+      "tipoAccesso": "proprieta",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 4,
+      "archetipiConsentiti": ["nobile_decaduto"],
+      "livelloComfort": 4,
+      "immagineStadi": {
+        "cantiere": "torre_cantiere",
+        "meta": "torre_meta",
+        "completa": "torre_completa"
+      }
+    },
+    {
+      "id": "casa_nobiliare",
+      "nome": "Casa di famiglia",
+      "descrizione": "Casa nobiliare, di proprietà ma che necessita continua manutenzione",
+      "tipoAccesso": "proprieta",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 4,
+      "archetipiConsentiti": ["nobile_decaduta"],
+      "livelloComfort": 4,
+      "immagineStadi": {
+        "cantiere": "casa_nobil_cantiere",
+        "meta": "casa_nobil_fine",
+        "completa": "casa_nobil_completa"
+      }
+    }
+  ],
+
+  "azioniGiornaliere": [
+    {
+      "id": "lavora",
+      "nome": "Lavora",
+      "descrizione": "Trascorri la giornata al tuo mestiere",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": ["tutti"],
+      "effetto": "guadagno_giornaliero"
+    },
+    {
+      "id": "vai_al_mercato",
+      "nome": "Vai al mercato",
+      "descrizione": "Compra o vendi merci al mercato del luogo",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": ["mercante", "artigiano", "tessitrice", "ostessa"],
+      "effetto": "mercato"
+    },
+    {
+      "id": "riposa",
+      "nome": "Riposa",
+      "descrizione": "Prendi un giorno di riposo. Nessun guadagno, nessuna spesa straordinaria",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": ["tutti"],
+      "effetto": "riposo"
+    },
+    {
+      "id": "costruisci",
+      "nome": "Costruisci",
+      "descrizione": "Avanza nella costruzione della tua casa",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": ["tutti"],
+      "effetto": "avanza_costruzione",
+      "requisitoAbitazione": "casa_acquistata"
+    },
+    {
+      "id": "chiedi_prestito",
+      "nome": "Chiedi un prestito",
+      "descrizione": "Chiedi un prestito al banchiere del luogo",
+      "avanzaGiorni": 0,
+      "archetipiConsentiti": ["tutti"],
+      "effetto": "prestito",
+      "condizione": "soldi_sotto_soglia",
+      "soglia": 20
+    },
+	{
+      "id": "riscatta_casa",
+      "nome": "Riscatta la tua casa",
+      "descrizione": "Il banchiere ti offre la possibilità di riscattare la tua casa prima che vada all'asta.",
+      "avanzaGiorni": 0,
+      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
+      "effetto": "riscatto_casa",
+      "condizione": "casa_confiscata"
+    },
+    {
+      "id": "acquista_lettera_credito",
+      "nome": "Acquista Lettera di Credito",
+      "descrizione": "Acquista una Lettera di Credito presso il banco del luogo con moneta reale",
+      "avanzaGiorni": 0,
+      "archetipiConsentiti": ["tutti"],
+      "effetto": "acquisto_reale",
+      "note": "Meccanica di acquisto in-app"
+    },
+	{
+      "id": "matrimonio_vantaggioso",
+      "nome": "Cerca un matrimonio vantaggioso",
+      "descrizione": "Cerca un partito ricco tra le famiglie del borgo. Richiede tempo e reputazione.",
+      "avanzaGiorni": 30,
+      "messaggioConferma": "Sposarsi richiede 30 giorni di corteggiamento e trattative. Durante questo tempo sarai impegnato nelle relazioni sociali e non potrai svolgere altre attività.",
+      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
+      "effetto": "matrimonio",
+      "condizione": "non_sposato",
+      "guadagnoMin": 500,
+      "guadagnoMax": 1500,
+      "requisitoReputazione": 30
+    },
+    {
+      "id": "incarico_diplomatico",
+      "nome": "Richiedi incarico diplomatico",
+      "descrizione": "Offri i tuoi servigi alla corte del Marchese per una missione diplomatica.",
+      "avanzaGiorni": 15,
+      "messaggioConferma": "L'incarico diplomatico richiede 15 giorni di viaggio e trattative per conto del Marchese. Sarai lontano dal tuo borgo e impegnato nella missione.",
+      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
+      "effetto": "incarico",
+      "condizione": "giorni_attesa",
+      "giorniAttesa": 60,
+      "guadagnoMin": 300,
+      "guadagnoMax": 800,
+      "requisitoReputazione": 20
+    },
+    {
+      "id": "protezione_mercante",
+      "nome": "Offri protezione a un mercante",
+      "descrizione": "Un mercante cerca protezione per i suoi traffici. Il tuo nome nobile vale ancora qualcosa.",
+      "avanzaGiorni": 7,
+      "messaggioConferma": "Offrire protezione al mercante richiede 7 giorni di accompagnamento lungo le strade del Monferrato. Sarai lontano da casa per tutto il periodo.",
+      "archetipiConsentiti": ["nobile_decaduto"],
+      "effetto": "protezione",
+      "condizione": "giorni_attesa",
+      "giorniAttesa": 30,
+      "guadagnoMin": 150,
+      "guadagnoMax": 400,
+      "requisitoReputazione": 10
+    },
+	{
+      "id": "educazione_fanciulle",
+      "nome": "Educazione delle fanciulle",
+      "descrizione": "Insegna lettura, musica e buone maniere alle figlie delle famiglie benestanti del borgo.",
+      "avanzaGiorni": 7,
+      "messaggioConferma": "Dedicarsi all'educazione delle fanciulle richiede 7 giorni di lezioni e cure. Sarai impegnata presso le famiglie del borgo per tutto il periodo.",
+      "archetipiConsentiti": ["nobile_decaduta"],
+      "effetto": "educazione",
+      "condizione": "giorni_attesa",
+      "giorniAttesa": 30,
+      "guadagnoMin": 120,
+      "guadagnoMax": 300,
+      "requisitoReputazione": 15
+    },
+    {
+      "id": "vendita_beni",
+      "nome": "Vendi beni di famiglia",
+      "descrizione": "Vendi gioielli, arredi o cimeli di famiglia. Una perdita per l'orgoglio, un guadagno per il portafoglio.",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
+      "effetto": "vendita_beni",
+      "condizione": "giorni_attesa",
+      "giorniAttesa": 90,
+      "guadagnoMin": 200,
+      "guadagnoMax": 600,
+      "requisitoReputazione": 0
+    }
+  ]
+}

@@ -1,0 +1,541 @@
+{
+  "_metaDatiJson": {
+    "nomeJson": "archetipi",
+    "repoJson": "gioco",
+    "note": "Archetipi personaggio - Monferrato 1434"
+  },
+  "updatedAt": "2026-05-29T12:00:00Z",
+  "minAppVersion": 1,
+
+  "differenzaSesso": {
+    "uomo": {
+      "bonusSoldiIniziali": 0,
+      "archetipiDisponibili": ["mercante", "artigiano", "contadino", "soldato", "chierico", "nobile_decaduto", "cronista"],
+      "nota": "Accesso completo a tutti gli archetipi"
+    },
+    "donna": {
+      "bonusSoldiIniziali": -50,
+      "archetipiDisponibili": ["tessitrice", "ostessa", "levatrice", "contadina", "chiromante", "nobile_decaduta"],
+      "nota": "Mestieri specifici con bonus particolari, meno soldi iniziali"
+    }
+  },
+
+  "archetipi": [
+
+    {
+      "id": "mercante",
+      "sesso": "uomo",
+      "nome": "Mercante",
+      "descrizione": "Uomo d'affari che compra e vende merci tra i borghi del Monferrato. Alto rischio, alto guadagno. La fortuna sorride ai coraggiosi.",
+      "caratteristiche": {
+        "astuzia": 8,
+        "forza": 3,
+        "carisma": 7,
+        "devozione": 4,
+        "conoscenza": 6
+      },
+      "economia": {
+        "soldiIniziali": 400,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 15,
+        "guadagnoGiornoMax": 40,
+        "speseGiorno": 8,
+        "variabileRischio": true,
+        "noteGuadagno": "Il guadagno varia in base al luogo e agli eventi di mercato"
+      },
+      "abitazioneIniziale": {
+        "tipo": "affitto",
+        "descrizione": "Fondaco in affitto con magazzino al piano terra e alloggio al piano superiore",
+        "costoAffittoGiorno": 3
+      },
+      "vantaggi": [
+        "Accesso al mercato di ogni luogo",
+        "Possibilità di commerciare con NPC mercanti",
+        "Bonus in luoghi con fiera attiva"
+      ],
+      "svantaggi": [
+        "Rischio perdita merci per eventi (guerre, alluvioni)",
+        "Spese di viaggio tra luoghi"
+      ],
+      "immagineId": "archetipo_mercante"
+    },
+
+    {
+      "id": "artigiano",
+      "sesso": "uomo",
+      "nome": "Artigiano",
+      "descrizione": "Mastro d'arte che lavora con le proprie mani. Fabbro, falegname, calzolaio o conciatore: ogni borgo ha bisogno di chi sappia fare.",
+      "caratteristiche": {
+        "astuzia": 5,
+        "forza": 7,
+        "carisma": 4,
+        "devozione": 5,
+        "conoscenza": 6
+      },
+      "economia": {
+        "soldiIniziali": 250,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 8,
+        "guadagnoGiornoMax": 12,
+        "speseGiorno": 5,
+        "variabileRischio": false,
+        "noteGuadagno": "Guadagno stabile, cresce con l'esperienza accumulata"
+      },
+      "abitazioneIniziale": {
+        "tipo": "affitto",
+        "descrizione": "Bottega in affitto nel borgo con alloggio al piano superiore",
+        "costoAffittoGiorno": 2
+      },
+      "vantaggi": [
+        "Guadagno stabile indipendente dagli eventi",
+        "Possibilità di costruire strumenti e oggetti",
+        "Richiesto in ogni luogo"
+      ],
+      "svantaggi": [
+        "Crescita lenta",
+        "Legato al luogo di residenza"
+      ],
+      "immagineId": "archetipo_artigiano"
+    },
+
+    {
+      "id": "contadino",
+      "sesso": "uomo",
+      "nome": "Contadino",
+      "descrizione": "Lavoratore della terra altrui in regime di mezzadria. Paga metà del raccolto al signore, tiene l'altra metà. Vita dura ma onesta.",
+      "caratteristiche": {
+        "astuzia": 3,
+        "forza": 9,
+        "carisma": 3,
+        "devozione": 7,
+        "conoscenza": 2
+      },
+      "economia": {
+        "soldiIniziali": 150,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 4,
+        "guadagnoGiornoMax": 6,
+        "speseGiorno": 3,
+        "variabileRischio": false,
+        "noteGuadagno": "Guadagno basso ma sicuro. Influenzato da eventi climatici e stagionali"
+      },
+      "abitazioneIniziale": {
+        "tipo": "uso",
+        "descrizione": "Casolare fornito dal signore della terra, incluso nel contratto di mezzadria",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Alloggio gratuito fornito dal signore",
+        "Spese minime",
+        "Bonus in periodi di raccolto"
+      ],
+      "svantaggi": [
+        "Guadagno molto basso",
+        "Dipendente dal signore del luogo",
+        "Vulnerabile a eventi climatici"
+      ],
+      "immagineId": "archetipo_contadino"
+    },
+
+    {
+      "id": "soldato",
+      "sesso": "uomo",
+      "nome": "Soldato",
+      "descrizione": "Al servizio del Marchese o di un signore locale. Stipendio fisso, alloggio garantito, ma la vita è in gioco quando scoppia la guerra.",
+      "caratteristiche": {
+        "astuzia": 5,
+        "forza": 9,
+        "carisma": 5,
+        "devozione": 5,
+        "conoscenza": 3
+      },
+      "economia": {
+        "soldiIniziali": 200,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 10,
+        "guadagnoGiornoMax": 10,
+        "speseGiorno": 4,
+        "variabileRischio": false,
+        "noteGuadagno": "Stipendio fisso dal signore. Bonus in periodi di guerra, rischio morte"
+      },
+      "abitazioneIniziale": {
+        "tipo": "caserma",
+        "descrizione": "Alloggio nel castello o nella caserma del signore, incluso nel servizio",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Stipendio fisso garantito",
+        "Alloggio gratuito",
+        "Accesso a eventi militari e storici",
+        "Bonus durante conflitti armati"
+      ],
+      "svantaggi": [
+        "Rischio in eventi di guerra",
+        "Limitata libertà di movimento",
+        "Dipendente dal signore"
+      ],
+      "immagineId": "archetipo_soldato"
+    },
+
+    {
+      "id": "chierico",
+      "sesso": "uomo",
+      "nome": "Chierico",
+      "descrizione": "Uomo di chiesa al servizio di una parrocchia, convento o collegiata. Vita austera, ma al riparo dalle tempeste del mondo.",
+      "caratteristiche": {
+        "astuzia": 6,
+        "forza": 2,
+        "carisma": 6,
+        "devozione": 10,
+        "conoscenza": 8
+      },
+      "economia": {
+        "soldiIniziali": 180,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 6,
+        "guadagnoGiornoMax": 6,
+        "speseGiorno": 2,
+        "variabileRischio": false,
+        "noteGuadagno": "Entrate fisse dalla chiesa. Accesso a eventi religiosi con bonus speciali"
+      },
+      "abitazioneIniziale": {
+        "tipo": "canonica",
+        "descrizione": "Alloggio nella canonica o nel convento, fornito dalla chiesa",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Spese bassissime",
+        "Accesso a eventi religiosi unici",
+        "Immunità a certi eventi negativi",
+        "Bonus conoscenza per lettura documenti storici"
+      ],
+      "svantaggi": [
+        "Guadagno fisso e non aumentabile",
+        "Limitato nel commercio",
+        "Non può sposarsi"
+      ],
+      "immagineId": "archetipo_chierico"
+    },
+	
+	{
+      "id": "cronista",
+      "sesso": "uomo",
+      "nome": "Cronista",
+      "descrizione": "Uomo di lettere al servizio della corte del Marchese. Redige cronache, corrispondenze diplomatiche e documenti ufficiali. Benestante e istruito, sta costruendo la sua casa nel borgo scelto come residenza. L'Umanesimo soffia sul Monferrato e chi sa scrivere vale oro.",
+      "caratteristiche": {
+        "astuzia": 8,
+        "forza": 2,
+        "carisma": 7,
+        "devozione": 5,
+        "conoscenza": 10
+      },
+      "economia": {
+        "soldiIniziali": 350,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 10,
+        "guadagnoGiornoMax": 16,
+        "speseGiorno": 6,
+        "variabileRischio": false,
+        "noteGuadagno": "Guadagno stabile dalla corte o dal comune. Bonus in luoghi con eventi diplomatici o storici"
+      },
+      "abitazioneIniziale": {
+        "tipo": "proprieta",
+        "descrizione": "Una casa di proprietà in costruzione nel borgo. Le fondamenta sono gettate, i muri cominciano a salire.",
+        "costoAffittoGiorno": 0,
+        "costoManutenzioneGiorno": 1,
+        "giorniCostruzione": 30
+      },
+      "vantaggi": [
+        "Accesso esclusivo a eventi storici e diplomatici",
+        "Bonus conoscenza per lettura e interpretazione di documenti",
+        "Accesso alla corte marchionale di Casale",
+        "Casa di proprietà già avviata alla costruzione",
+        "Bonus guadagno in luoghi con eventi storici attivi"
+      ],
+      "svantaggi": [
+        "Forza fisica minima, vulnerabile in eventi di conflitto",
+        "Manutenzione casa obbligatoria una volta completata",
+        "Dipendente dalla stabilità politica del Marchesato"
+      ],
+      "immagineId": "archetipo_cronista"
+    },
+
+    {
+      "id": "nobile_decaduto",
+      "sesso": "uomo",
+      "nome": "Nobile Decaduto",
+      "descrizione": "Di nobile sangue ma fortune perdute. Il nome conta ancora, il portafoglio molto meno. Deve ricostruire la propria casata.",
+      "caratteristiche": {
+        "astuzia": 7,
+        "forza": 4,
+        "carisma": 9,
+        "devozione": 4,
+        "conoscenza": 7
+      },
+      "economia": {
+        "soldiIniziali": 500,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 5,
+        "guadagnoGiornoMax": 5,
+        "speseGiorno": 12,
+        "variabileRischio": false,
+        "noteGuadagno": "Parte ricco ma le spese di mantenimento del rango sono elevate"
+      },
+      "abitazioneIniziale": {
+        "tipo": "proprieta",
+        "descrizione": "Torre o casa di famiglia, di proprietà ma fatiscente, necessita riparazioni",
+        "costoAffittoGiorno": 0,
+        "costoManutenzioneGiorno": 5
+      },
+      "vantaggi": [
+        "Accesso a eventi nobiliari",
+        "Casa di partenza già di proprietà",
+        "Alto carisma per trattative",
+        "Accesso alla corte marchionale"
+      ],
+      "svantaggi": [
+        "Spese altissime di mantenimento del rango",
+        "Se le spese superano le entrate perde il titolo",
+        "Manutenzione torre obbligatoria"
+      ],
+      "immagineId": "archetipo_nobile"
+    },
+
+    {
+      "id": "tessitrice",
+      "sesso": "donna",
+      "nome": "Tessitrice",
+      "descrizione": "Maestra del telaio, produce panni e stoffe pregiati. Arte tramandata di madre in figlia, rispettata nei borghi del Monferrato.",
+      "caratteristiche": {
+        "astuzia": 6,
+        "forza": 3,
+        "carisma": 5,
+        "devozione": 7,
+        "conoscenza": 6
+      },
+      "economia": {
+        "soldiIniziali": 200,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 7,
+        "guadagnoGiornoMax": 11,
+        "speseGiorno": 4,
+        "variabileRischio": false,
+        "noteGuadagno": "Guadagno stabile. Bonus in luoghi con mercato tessile attivo"
+      },
+      "abitazioneIniziale": {
+        "tipo": "affitto",
+        "descrizione": "Bottega con telaio in affitto, alloggio incluso",
+        "costoAffittoGiorno": 2
+      },
+      "vantaggi": [
+        "Produzione di oggetti scambiabili",
+        "Bonus mercato panni",
+        "Rispettata dalla comunità"
+      ],
+      "svantaggi": [
+        "Limitata mobilità tra luoghi",
+        "Vulnerabile a eventi che bloccano il commercio"
+      ],
+      "immagineId": "archetipo_tessitrice"
+    },
+
+    {
+      "id": "ostessa",
+      "sesso": "donna",
+      "nome": "Ostessa",
+      "descrizione": "Gestisce una locanda o un'osteria. Vede passare mercanti, soldati e viandanti. Sa tutto di tutti, e questo ha il suo valore.",
+      "caratteristiche": {
+        "astuzia": 8,
+        "forza": 4,
+        "carisma": 9,
+        "devozione": 4,
+        "conoscenza": 5
+      },
+      "economia": {
+        "soldiIniziali": 250,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 10,
+        "guadagnoGiornoMax": 18,
+        "speseGiorno": 7,
+        "variabileRischio": true,
+        "noteGuadagno": "Guadagno variabile in base al passaggio di NPC e agli eventi"
+      },
+      "abitazioneIniziale": {
+        "tipo": "affitto",
+        "descrizione": "Locanda in affitto con piano terra adibito a osteria e piano superiore ad alloggio",
+        "costoAffittoGiorno": 3
+      },
+      "vantaggi": [
+        "Accesso esclusivo a informazioni e voci di borgo",
+        "Bonus quando passano NPC importanti",
+        "Guadagno aumenta con eventi e fiere"
+      ],
+      "svantaggi": [
+        "Spese di gestione elevate",
+        "Dipendente dal passaggio di viaggiatori"
+      ],
+      "immagineId": "archetipo_ostessa"
+    },
+
+    {
+      "id": "levatrice",
+      "sesso": "donna",
+      "nome": "Levatrice",
+      "descrizione": "Donna di sapere antico, assiste le partorienti e cura i malati con erbe e rimedi tramandati. Rispettata e temuta.",
+      "caratteristiche": {
+        "astuzia": 7,
+        "forza": 3,
+        "carisma": 6,
+        "devozione": 8,
+        "conoscenza": 9
+      },
+      "economia": {
+        "soldiIniziali": 160,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 5,
+        "guadagnoGiornoMax": 9,
+        "speseGiorno": 3,
+        "variabileRischio": true,
+        "noteGuadagno": "Guadagno variabile. Picchi in eventi di nascita o epidemia, rischi in eventi di pestilenza"
+      },
+      "abitazioneIniziale": {
+        "tipo": "affitto",
+        "descrizione": "Piccola casa con giardino per le erbe medicinali",
+        "costoAffittoGiorno": 1
+      },
+      "vantaggi": [
+        "Accesso a eventi sanitari unici",
+        "Rispettata dalla comunità",
+        "Bonus in eventi di epidemia",
+        "Spese basse"
+      ],
+      "svantaggi": [
+        "Rischio in eventi di pestilenza grave",
+        "Guadagno irregolare"
+      ],
+      "immagineId": "archetipo_levatrice"
+    },
+
+    {
+      "id": "contadina",
+      "sesso": "donna",
+      "nome": "Contadina",
+      "descrizione": "Lavora la terra insieme alla famiglia. Raccoglie, semina, trasforma i prodotti della campagna. Vita semplice e radicata.",
+      "caratteristiche": {
+        "astuzia": 3,
+        "forza": 7,
+        "carisma": 4,
+        "devozione": 8,
+        "conoscenza": 2
+      },
+      "economia": {
+        "soldiIniziali": 100,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 3,
+        "guadagnoGiornoMax": 5,
+        "speseGiorno": 2,
+        "variabileRischio": false,
+        "noteGuadagno": "Guadagno minimo ma spese bassissime. Alloggio gratuito"
+      },
+      "abitazioneIniziale": {
+        "tipo": "uso",
+        "descrizione": "Casolare fornito dal signore della terra",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Spese minime",
+        "Alloggio gratuito",
+        "Stabile e resiliente"
+      ],
+      "svantaggi": [
+        "Guadagno bassissimo",
+        "Poche possibilità di crescita",
+        "Vulnerabile a eventi climatici"
+      ],
+      "immagineId": "archetipo_contadina"
+    },
+
+    {
+      "id": "chiromante",
+      "sesso": "donna",
+      "nome": "Chiromante",
+      "descrizione": "Legge il futuro nelle linee della mano e nei tarocchi. Temuta e cercata allo stesso tempo, vive ai margini della società ma nessuno osa sfidarne il sapere. Nel Monferrato del 1434 il confine tra sapienza antica e stregoneria è sottile come un filo.",
+      "caratteristiche": {
+        "astuzia": 10,
+        "forza": 2,
+        "carisma": 8,
+        "devozione": 2,
+        "conoscenza": 9
+      },
+      "economia": {
+        "soldiIniziali": 170,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 6,
+        "guadagnoGiornoMax": 20,
+        "speseGiorno": 3,
+        "variabileRischio": true,
+        "noteGuadagno": "Guadagno molto variabile. Picchi in periodi di incertezza politica o eventi storici. Rischio in periodi di persecuzione religiosa"
+      },
+      "abitazioneIniziale": {
+        "tipo": "uso",
+        "descrizione": "Una vecchia carrozza adibita ad abitazione, parcheggiata ai margini del borgo. Tende colorate, erbe essiccate e simboli misteriosi decorano l'interno. Casa e bottega in uno.",
+        "costoAffittoGiorno": 0,
+        "costoManutenzioneGiorno": 1
+      },
+      "vantaggi": [
+        "Guadagno potenzialmente molto alto in certi eventi",
+        "Accesso esclusivo a eventi misteriosi e occulti",
+        "Informazioni privilegiate su personaggi e luoghi",
+        "Spese bassissime",
+        "Bonus guadagno durante eventi di incertezza politica o guerre"
+      ],
+      "svantaggi": [
+        "Guadagno molto instabile e imprevedibile",
+        "Rischio in eventi di persecuzione religiosa",
+        "Bassa devozione — penalità in eventi religiosi",
+        "Reputazione ambigua, difficile ottenere fiducia della comunità"
+      ],
+      "immagineId": "archetipo_chiromante"
+    },
+
+    {
+      "id": "nobile_decaduta",
+      "sesso": "donna",
+      "nome": "Nobildonna Decaduta",
+      "descrizione": "Di sangue nobile ma senza più fortuna. Il suo nome apre porte, ma la borsa è quasi vuota. Deve trovare un nuovo equilibrio.",
+      "caratteristiche": {
+        "astuzia": 8,
+        "forza": 2,
+        "carisma": 10,
+        "devozione": 5,
+        "conoscenza": 7
+      },
+      "economia": {
+        "soldiIniziali": 450,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 4,
+        "guadagnoGiornoMax": 4,
+        "speseGiorno": 10,
+        "variabileRischio": false,
+        "noteGuadagno": "Parte con buoni soldi ma le spese di mantenimento del rango sono elevate"
+      },
+      "abitazioneIniziale": {
+        "tipo": "proprieta",
+        "descrizione": "Casa di famiglia, di proprietà ma che necessita di manutenzione",
+        "costoAffittoGiorno": 0,
+        "costoManutenzioneGiorno": 4
+      },
+      "vantaggi": [
+        "Accesso a eventi nobiliari e di corte",
+        "Alto carisma per trattative matrimoniali e diplomatiche",
+        "Casa di partenza già di proprietà"
+      ],
+      "svantaggi": [
+        "Spese elevate",
+        "Manutenzione casa obbligatoria",
+        "Limitata nei mestieri manuali"
+      ],
+      "immagineId": "archetipo_nobile_donna"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "_metaDatiJson": {
+    "nomeJson": "scenario_1434",
+    "repoJson": "gioco",
+    "note": "Scenario principale - Monferrato 3 maggio 1434"
+  },
+  "updatedAt": "2026-05-29T12:00:00Z",
+  "minAppVersion": 1,
+
+  "scenario": {
+    "id": "scenario_1434",
+    "titolo": "Il Marchesato del Monferrato",
+    "sottotitolo": "Casale diventa Capitale",
+    "descrizione": "Il 3 maggio 1434 Gian Giacomo Paleologo proclama Casale Monferrato nuova capitale del Marchesato. Un'epoca di cambiamenti ha inizio. Scegli il tuo destino.",
+    "dataInizio": "1434-05-03",
+    "stagione": "primavera",
+    "annoInizio": 1434,
+    "meseInizio": 5,
+    "giornoInizio": 3,
+    "attivo": true,
+    "immagineCopertina": "scenario_1434_cover"
+  },
+
+  "dominazioni": [
+    {
+      "famigliaId": "paleologi",
+      "nomeFamiglia": "Paleologo",
+      "coloreStendardo": "#FFD700",
+      "textureStendardo": "Stendardo_Paleologi",
+      "descrizione": "Marchesi del Monferrato per discendenza dai Paleologi di Bisanzio",
+      "luoghiControllatI": [
+        "casale", "moncalvo", "pontestura",
+        "alfiano", "altavilla", "balzola",  
+		"borgo_san_martino", "bozzole", 
+		"calliano", "camagna", "camino", "casorzo", 
+		"castagnole", "castelletto", 
+		"castelletto_scazzoso", "cella", 
+		"cereseto", "cerrina", "cerro", 
+		"coniolo", "conzano", "cuccaro", "frassinello", 
+		"frassineto", "fubine", "gabiano", "giarole", 
+		"lignano", "lu", "mirabello", "mombello", 
+		"montemagno", "morano", "murisengo", "occimiano",
+        "odalengo_grande", "odalengo_piccolo", "olivola",
+        "ozzano", "penango", "pessine", "pobietto",
+        "refrancore", "roncaglia", "rosignano", "sala",
+        "sangiorgio", "sansalvatore", "terruggia",
+        "ticineto", "treville", "trino", "valenza",
+        "valmacca", "vignale", "villanova"
+      ]
+    },
+    {
+      "famigliaId": "visconti",
+      "nomeFamiglia": "Visconti",
+      "coloreStendardo": "#228B22",
+      "textureStendardo": "Stendardo_Visconti",
+      "descrizione": "Duchi di Milano, presenza e influenza nei territori confinanti",
+      "luoghiControllatI": [
+	    "acqui", "bassignana", "castello_di_annone"
+	  ]
+    },
+    {
+      "famigliaId": "savoia",
+      "nomeFamiglia": "Savoia",
+      "coloreStendardo": "#CC0000",
+      "textureStendardo": "Stendardo_Savoia",
+      "descrizione": "Casa Savoia, pressione sui confini occidentali del Monferrato",
+      "luoghiControllatI": ["chivasso"]
+    }
+  ],
+
+  "stagioni": {
+    "primavera": {
+      "mesi": [4, 5, 6],
+      "textureTerrenoId": "TL_Grass",
+      "bonusContadino": 5,
+      "bonusContadina": 5,
+      "note": "Stagione del risveglio, semina e prime fiere"
+    },
+    "estate": {
+      "mesi": [7, 8, 9],
+      "textureTerrenoId": "TL_Grass",
+      "bonusContadino": 8,
+      "bonusContadina": 8,
+      "note": "Stagione del raccolto, mercati attivi, caldo intenso"
+    },
+    "autunno": {
+      "mesi": [10, 11, 12],
+      "textureTerrenoId": "TL_Grass",
+      "bonusContadino": 10,
+      "bonusContadina": 10,
+      "note": "Stagione del raccolto principale, fiere e vendemmia"
+    },
+    "inverno": {
+      "mesi": [1, 2, 3],
+      "textureTerrenoId": "TL_Snow",
+      "bonusContadino": -3,
+      "bonusContadina": -3,
+      "note": "Stagione dura, mercati ridotti, rischio malattia"
+    }
+  },
+
+  "personaggiStorici": [
+    {
+      "id": "gian_giacomo_paleologo",
+      "nome": "Gian Giacomo Paleologo",
+      "ruolo": "Marchese del Monferrato",
+      "famigliaId": "paleologi",
+      "attivo": true,
+      "npcAddress": "Marchese_01",
+      "luogoPrincipale": "casale",
+      "descrizione": "Marchese del Monferrato, ha proclamato Casale capitale del suo dominio il 3 maggio 1434"
+    }
+  ]
+}
