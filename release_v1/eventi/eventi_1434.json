@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Eventi storici e casuali - Monferrato 1434"
   },
-  "updatedAt": "2026-05-29T12:00:00Z",
+  "updatedAt": "2026-06-05T12:00:00Z",
   "minAppVersion": 1,
 
   "eventi": [
@@ -14,23 +14,21 @@
       "tipo": "storico",
       "priorita": "alta",
       "dataTrigger": "1434-05-03",
-      "dataTriggerFine": null,
       "titolo": "Casale diventa Capitale",
-      "messaggio": "Gian Giacomo Paleologo proclama Casale Monferrato nuova capitale del Marchesato. La città si anima di cortigiani, funzionari e nuove opportunità.",
+      "messaggio": "Johan Jacomo Paleologo proclama Casale Monferrato nuova capitale del Marchesato. La città si anima di cortigiani, funzionari e nuove opportunità.",
       "luoghiInteressati": ["casale"],
-      "luoghiInteressatiTutti": false,
       "effetti": {
         "bonusSoldi": {
           "luogo": "casale",
           "importo": 20,
           "note": "Bonus una tantum per residenti a Casale"
         },
-        "cambioStendardo": null,
-        "cambioTerreno": null,
-        "sbloccoAzione": null
+		"sbloccoQuest": [
+		"quest_corte_casale_01"
+		]
       },
       "mostraBando": true,
-      "bandoId": "proclama_capitale_bando",
+      "bandoId": "bandoCasale_0",
       "ripetibile": false
     },
 
@@ -49,6 +47,7 @@
         "bonusGuadagnoPercentuale": {
           "archetipi": ["mercante", "artigiano", "tessitrice", "ostessa"],
           "percentuale": 50,
+		  "durataGiorni": 4,
           "note": "Guadagno aumentato del 50% per i giorni della fiera"
         },
         "cambioStendardo": null,
@@ -243,6 +242,133 @@
       "mostraBando": true,
       "bandoId": "raccolto_bando",
       "ripetibile": true
+    },
+	
+	{
+      "id": "tregua_rotta_visconti",
+      "tipo": "storico",
+      "priorita": "alta",
+      "dataTrigger": "1435-01-12",
+      "titolo": "Filippo Maria rompe la tregua",
+      "messaggio": "Il Duca di Milano Filippo Maria Visconti dichiara decaduti i patti con Johan Jacomo. Le truppe ducali si radunano ad Acqui.",
+      "luoghiInteressati": ["acqui"],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "visconti",
+          "versoFazione": "paleologi",
+          "nuovoStato": "guerra"
+        },
+        "attivaBando": "bandoAcqui_guerra",
+        "spawnEsercito": {
+          "id": "armata_viscontea_acqui",
+          "luogo": "acqui",
+          "forza": 1200,
+          "comandante": "locotenente_petrolo_della_croce"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoAcqui_guerra",
+      "ripetibile": false
+    },
+
+    {
+      "id": "caduta_chivasso",
+      "tipo": "storico",
+      "priorita": "alta",
+      "dataTrigger": "1435-01-25",
+      "titolo": "Chivasso si arrende ai Savoia",
+      "messaggio": "Dopo mesi di assedio, Chivasso apre le porte ad Amedeo VIII di Savoia. Il Monferrato perde la sua antica capitale.",
+      "luoghiInteressati": ["chivasso"],
+      "effetti": {
+        "cambioProprietario": {
+          "luogo": "chivasso",
+          "daFazione": "paleologi",
+          "aFazione": "savoia"
+        },
+        "disattivaBando": "bandoChivasso_paleologo",
+        "attivaBando": "bandoChivasso_sabaudo",
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -15,
+          "luoghi": ["casale", "moncalvo", "pontestura"]
+        },
+        "sbloccoQuest": ["quest_difesa_moncalvo"]
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_sabaudo",
+      "ripetibile": false
+    },
+
+    {
+      "id": "moncalvo_sotto_assedio",
+      "tipo": "storico",
+      "priorita": "alta",
+      "dataTrigger": "1435-01-18",
+      "titolo": "Moncalvo minacciata",
+      "messaggio": "Corridori sabaudi sono stati visti presso i boschi di Moncalvo. Il castellano Theodoro Paleologo ordina di serrare le porte.",
+      "luoghiInteressati": ["moncalvo"],
+      "effetti": {
+        "cambioStatoLuogo": {
+          "luogo": "moncalvo",
+          "nuovoStato": "assediato"
+        },
+        "disattivaBando": "bandoMoncalvo_pace",
+        "attivaBando": "bandoMoncalvo_guerra",
+        "malusGuadagnoPercentuale": {
+          "archetipi": ["mercante", "artigiano"],
+          "percentuale": 50,
+          "durataGiorni": 60
+        },
+        "sbloccoAzione": "arruolamento_milizia"
+      },
+      "mostraBando": true,
+      "bandoId": "bandoMoncalvo_guerra",
+      "ripetibile": false
+    },
+
+    {
+      "id": "blocco_po_visconteo",
+      "tipo": "storico",
+      "priorita": "media",
+      "dataTrigger": "1435-02-10",
+      "titolo": "I Visconti bloccano il Po",
+      "messaggio": "Galere ducali da Valenza impediscono il transito sul Po. I traffici fluviali di Casale e Pontestura sono interrotti.",
+      "luoghiInteressati": ["casale", "pontestura", "valenza"],
+      "effetti": {
+        "malusGuadagnoPercentuale": {
+          "archetipi": ["mercante", "barcarolo"],
+          "percentuale": 70,
+          "durataGiorni": 90
+        },
+        "aumentoPrezzo": {
+          "merci": ["sale", "spezie", "panni"],
+          "percentuale": 40
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "blocco_po_bando",
+      "ripetibile": false
+    },
+
+    {
+      "id": "risposta_moncalvo",
+      "tipo": "storico",
+      "priorita": "media",
+      "dataTrigger": "1435-02-03",
+      "titolo": "Moncalvo rifiuta la resa",
+      "messaggio": "Il castellano di Moncalvo respinge l’intimazione sabauda: 'Le chiavi non si danno se non al Marchese'. Il morale paleologo risale.",
+      "luoghiInteressati": ["moncalvo"],
+      "effetti": {
+        "bonusReputazione": {
+          "fazione": "paleologi",
+          "valore": 10,
+          "luoghi": ["casale", "pontestura", "vignale"]
+        },
+        "attivaBando": "bandoMoncalvo_risposta"
+      },
+      "mostraBando": true,
+      "bandoId": "bandoMoncalvo_risposta",
+      "ripetibile": false
     }
   ]
 }

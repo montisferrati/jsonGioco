@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Lista scenari disponibili"
   },
-  "updatedAt": "2026-05-29T12:00:00Z",
+  "updatedAt": "2026-06-05T12:00:00Z",
   "minAppVersion": 1,
 
   "scenari": [
@@ -12,15 +12,22 @@
       "id": "scenario_1434",
       "titolo": "Il Marchesato del Monferrato",
       "sottotitolo": "Casale diventa Capitale — 3 maggio 1434",
-      "descrizione": "Gian Giacomo Paleologo proclama Casale nuova capitale. Un'epoca di cambiamenti. Scegli il tuo destino nel cuore del Monferrato.",
+      "descrizione": "Johan Jacomo Paleologo proclama Casale nuova capitale. Savoia e Visconti premono ai confini. Scegli il tuo destino nel cuore del Monferrato.",
       "dataInizio": "1434-05-03",
+	  "dataFine": "1435-05-02",
       "stagione": "primavera",
       "attivo": true,
+	  "sbloccato": true,
       "ordinamento": 1,
       "fileScenario": "scenari/scenario_1434.json",
       "fileEventi": "eventi/eventi_1434.json",
       "immagineCopertina": "scenario_1434_cover",
-      "difficolta": "normale"
+      "difficolta": "normale",
+	  "tags": [
+	     "paleologi",
+		 "guerra_1434_1435",
+		 "tutorial"
+	  ]
     }
   ]
 }

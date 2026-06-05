@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Scenario principale - Monferrato 3 maggio 1434"
   },
-  "updatedAt": "2026-05-29T12:00:00Z",
+  "updatedAt": "2026-06-05T12:00:00Z",
   "minAppVersion": 1,
 
   "scenario": {
@@ -14,9 +14,6 @@
     "descrizione": "Il 3 maggio 1434 Gian Giacomo Paleologo proclama Casale Monferrato nuova capitale del Marchesato. Un'epoca di cambiamenti ha inizio. Scegli il tuo destino.",
     "dataInizio": "1434-05-03",
     "stagione": "primavera",
-    "annoInizio": 1434,
-    "meseInizio": 5,
-    "giornoInizio": 3,
     "attivo": true,
     "immagineCopertina": "scenario_1434_cover"
   },
@@ -24,28 +21,24 @@
   "dominazioni": [
     {
       "famigliaId": "paleologi",
-      "nomeFamiglia": "Paleologo",
+      "nomeFamiglia": "Paleologi",
       "coloreStendardo": "#FFD700",
       "textureStendardo": "Stendardo_Paleologi",
       "descrizione": "Marchesi del Monferrato per discendenza dai Paleologi di Bisanzio",
-      "luoghiControllatI": [
-        "casale", "moncalvo", "pontestura",
-        "alfiano", "altavilla", "balzola",  
-		"borgo_san_martino", "bozzole", 
-		"calliano", "camagna", "camino", "casorzo", 
-		"castagnole", "castelletto", 
-		"castelletto_scazzoso", "cella", 
-		"cereseto", "cerrina", "cerro", 
-		"coniolo", "conzano", "cuccaro", "frassinello", 
-		"frassineto", "fubine", "gabiano", "giarole", 
-		"lignano", "lu", "mirabello", "mombello", 
-		"montemagno", "morano", "murisengo", "occimiano",
-        "odalengo_grande", "odalengo_piccolo", "olivola",
-        "ozzano", "penango", "pessine", "pobietto",
-        "refrancore", "roncaglia", "rosignano", "sala",
-        "sangiorgio", "sansalvatore", "terruggia",
-        "ticineto", "treville", "trino", "valenza",
-        "valmacca", "vignale", "villanova"
+      "luoghiControllati": [
+        "casale", "moncalvo", "pontestura","chivasso",
+        "alfiano", "altavilla", "balzola", "borgo_san_martino", "bozzole", 
+		"calliano", "camagna", "camino", "casorzo", "castagnole", 
+		"castelletto", "castelletto_scazzoso", "cella", "cereseto", 
+		"cerrina", "cerro", "coniolo", "conzano", "cuccaro", 
+		"frassinello", "frassineto", "fubine", "gabiano", "giarole", 
+		"lignano", "lu", "mirabello", "mombello", "montemagno", 
+		"morano", "murisengo", "occimiano", "odalengo_grande", 
+		"odalengo_piccolo", "olivola", "ozzano", "penango", 
+		"pessine", "pobietto", "refrancore", "roncaglia", 
+		"rosignano", "sala", "sangiorgio", "sansalvatore", 
+		"terruggia", "ticineto", "treville", "valmacca", 
+		"vignale", "villanova"
       ]
     },
     {
@@ -53,9 +46,9 @@
       "nomeFamiglia": "Visconti",
       "coloreStendardo": "#228B22",
       "textureStendardo": "Stendardo_Visconti",
-      "descrizione": "Duchi di Milano, presenza e influenza nei territori confinanti",
+      "descrizione": "Duchi di Milano. Controllano il Po a Sud e le vie verso Genova",
       "luoghiControllatI": [
-	    "acqui", "bassignana", "castello_di_annone"
+	    "acqui", "bassignana", "castello_di_annone", "valenza"
 	  ]
     },
     {
@@ -63,29 +56,29 @@
       "nomeFamiglia": "Savoia",
       "coloreStendardo": "#CC0000",
       "textureStendardo": "Stendardo_Savoia",
-      "descrizione": "Casa Savoia, pressione sui confini occidentali del Monferrato",
-      "luoghiControllatI": ["chivasso"]
+      "descrizione": "Duchi di Savoia. Pressione sui confini occidentali del Monferrato",
+      "luoghiControllatI": ["trino"]
     }
   ],
 
   "stagioni": {
     "primavera": {
       "mesi": [4, 5, 6],
-      "textureTerrenoId": "TL_Grass",
+      "textureTerrenoId": "TL_Spring",
       "bonusContadino": 5,
       "bonusContadina": 5,
       "note": "Stagione del risveglio, semina e prime fiere"
     },
     "estate": {
       "mesi": [7, 8, 9],
-      "textureTerrenoId": "TL_Grass",
+      "textureTerrenoId": "TL_Summer",
       "bonusContadino": 8,
       "bonusContadina": 8,
       "note": "Stagione del raccolto, mercati attivi, caldo intenso"
     },
     "autunno": {
       "mesi": [10, 11, 12],
-      "textureTerrenoId": "TL_Grass",
+      "textureTerrenoId": "TL_Autumn",
       "bonusContadino": 10,
       "bonusContadina": 10,
       "note": "Stagione del raccolto principale, fiere e vendemmia"
@@ -101,14 +94,37 @@
 
   "personaggiStorici": [
     {
-      "id": "gian_giacomo_paleologo",
-      "nome": "Gian Giacomo Paleologo",
+      "id": "johan_jacomo_paleologo",
+      "nomeDisplay": "Johan Jacomo Paleologo",
+      "nomeStorico": "Gian Giacomo Paleologo", 
       "ruolo": "Marchese del Monferrato",
       "famigliaId": "paleologi",
       "attivo": true,
       "npcAddress": "Marchese_01",
       "luogoPrincipale": "casale",
-      "descrizione": "Marchese del Monferrato, ha proclamato Casale capitale del suo dominio il 3 maggio 1434"
+      "dataNascita": "1395-03-23",
+      "dataMorte": "1445-03-12",
+      "descrizione": "Marchese dal 1418. Il 3 maggio 1434 sposta la capitale a Casale per sfuggire alla pressione sabauda su Chivasso"
+    },
+    {
+      "id": "amedeo_viii_savoia",
+      "nomeDisplay": "Amedeo VIII di Savoia",
+      "ruolo": "Duca di Savoia",
+      "famigliaId": "savoia",
+      "attivo": true,
+      "npcAddress": "Duca_01",
+      "luogoPrincipale": "torino",
+      "descrizione": "Duca dal 1416, Antipapa Felice V dal 1439. Rivendica il Monferrato"
+    },
+	{
+      "id": "filippo_maria_visconti",
+      "nomeDisplay": "Filippo Maria Visconti",
+      "ruolo": "Duca di Milano",
+      "famigliaId": "visconti",
+      "attivo": true,
+      "npcAddress": "Duca_02",
+      "luogoPrincipale": "milano",
+      "descrizione": "Ultimo Visconti. Tiene Acqui e Valenza. Alleato instabile dei Paleologi"
     }
   ]
 }
