@@ -4,60 +4,350 @@
     "repoJson": "gioco",
     "note": "Archetipi personaggio - Monferrato 1434"
   },
-  "updatedAt": "2026-05-29T12:00:00Z",
+  "updatedAt": "2026-06-06T12:00:00Z",
   "minAppVersion": 1,
 
   "differenzaSesso": {
     "uomo": {
       "bonusSoldiIniziali": 0,
-      "archetipiDisponibili": ["mercante", "artigiano", "contadino", "soldato", "chierico", "nobile_decaduto", "cronista"],
+      "archetipiDisponibili": ["mastro_muratore", "mercante", "barcarolo", "soldato", "notaro", "nobile_decaduto"],
       "nota": "Accesso completo a tutti gli archetipi"
     },
     "donna": {
       "bonusSoldiIniziali": -50,
-      "archetipiDisponibili": ["tessitrice", "ostessa", "levatrice", "contadina", "chiromante", "nobile_decaduta"],
+      "archetipiDisponibili": ["tessitrice", "ostessa", "levatrice", "filatrice", "guaritrice", "villica"],
       "nota": "Mestieri specifici con bonus particolari, meno soldi iniziali"
     }
   },
 
   "archetipi": [
+    {
+      "id": "mastro_muratore",
+      "sesso": "uomo",
+      "nome": "Mastro Muratore",
+      "descrizione": "Capomastro esperto nel lavorare il cotto e la pietra. I cantieri di mura e castelli cercano braccia abili. Chi sa alzare una torre guadagna pane e rispetto.",
+      "caratteristiche": {
+        "astuzia": 5,
+        "forza": 8,
+        "carisma": 4,
+        "devozione": 5,
+        "conoscenza": 6
+      },
+      "economia": {
+        "soldiIniziali": 80,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 6,
+        "guadagnoGiornoMax": 15,
+        "speseGiorno": 4,
+        "variabileRischio": false,
+        "noteGuadagno": "Paga fissa a giornata. Bonus +50% nei luoghi con tag 'cantiere' attivo. Malus -30% se fazione nemica del luogo"
+      },
+      "abitazioneIniziale": {
+        "tipo": "affitto",
+        "descrizione": "Stanza in affitto presso la casa di un manuale, vicino al cantiere",
+        "costoAffittoGiorno": 1
+      },
+      "vantaggi": [
+        "Accesso all'azione 'Lavora al cantiere' nei luoghi con cantieri",
+        "Bonus reputazione presso Podestà e Capitani dopo 10 giorni di lavoro",
+        "Può costruire/riparare abitazioni con sconto materiali 20%"
+      ],
+      "svantaggi": [
+        "Rischio infortunio: 2% al giorno di perdere 1-3 giorni di lavoro",
+        "Malvisto in luoghi con fazione nemica: rischio arresto se riconosciuto",
+        "Spese extra per attrezzi: 10 soldi ogni 30 giorni"
+      ],
+      "fazione_affinita": ["savoia", "neutro"],
+      "fazione_ostile": ["paleologo"],
+      "luoghi_spawn_ok": ["chivasso", "borgo_san_martino", "casale"],
+      "luoghi_bonus": ["chivasso"],
+      "luoghi_vietati": [],
+      "azioni_sbloccate": [
+        "lavora_cantiere",
+        "recluta_manuali",
+        "ispeziona_mura",
+        "contratta_con_podesta"
+      ],
+      "immagineId": "archetipo_mastro"
+    },
 
     {
       "id": "mercante",
       "sesso": "uomo",
-      "nome": "Mercante",
-      "descrizione": "Uomo d'affari che compra e vende merci tra i borghi del Monferrato. Alto rischio, alto guadagno. La fortuna sorride ai coraggiosi.",
+      "nome": "Mercante di Panni",
+      "descrizione": "Traffica in panni di lana, fustagni e sete tra le fiere del Po. Casale diventa capitale: la corte cerca stoffe pregiate. Chivasso ha il porto ma dazi nuovi. Chi sa dove comprare guadagna, chi sbaglia strada perde tutto.",
       "caratteristiche": {
-        "astuzia": 8,
-        "forza": 3,
-        "carisma": 7,
-        "devozione": 4,
-        "conoscenza": 6
+        "astuzia": 9,
+        "forza": 2,
+        "carisma": 8,
+        "devozione": 5,
+        "conoscenza": 7
       },
       "economia": {
-        "soldiIniziali": 400,
+        "soldiIniziali": 600,
         "fioriniIniziali": 0,
-        "guadagnoGiornoMin": 15,
-        "guadagnoGiornoMax": 40,
-        "speseGiorno": 8,
+        "guadagnoGiornoMin": 8,
+        "guadagnoGiornoMax": 60,
+        "speseGiorno": 12,
         "variabileRischio": true,
-        "noteGuadagno": "Il guadagno varia in base al luogo e agli eventi di mercato"
+        "noteGuadagno": "Giorni normali: 8-15 soldi netti dopo spese. In fiera: 30-60 soldi. In territorio nemico: 5-10 soldi per dazi. Viaggio: -2 soldi/giorno + rischio 5% perdita carico. Fallimento possibile"
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Fondaco in affitto con magazzino al piano terra e alloggio al piano superiore",
+        "descrizione": "Fondaco in affitto con magazzino al piano terra e alloggio al piano superiore, vicino al mercato",
         "costoAffittoGiorno": 3
       },
       "vantaggi": [
-        "Accesso al mercato di ogni luogo",
-        "Possibilità di commerciare con NPC mercanti",
-        "Bonus in luoghi con fiera attiva"
+        "Accesso all'azione 'Mercato' in ogni luogo",
+        "Azione 'Contratta con Podestà' per ridurre dazi",
+        "Bonus +50% guadagno in luoghi con tag 'fiera' attiva",
+        "Può comprare 'Lettera di Credito' per evitare di viaggiare con contanti"
       ],
       "svantaggi": [
-        "Rischio perdita merci per eventi (guerre, alluvioni)",
-        "Spese di viaggio tra luoghi"
+        "Rischio perdita merci per eventi: guerre 10%, alluvioni 5%, briganti 3% al giorno in viaggio",
+        "Spese di viaggio: 2 soldi per ogni cambio luogo",
+        "Dazio doppio in luoghi di fazione ostile",
+        "Rischio confisca merci se scoperto come spia"
+      ],
+      "fazione_affinita": ["paleologo", "neutro"],
+      "fazione_ostile": ["savoia"],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "acqui", "valenza", "trino"],
+      "luoghi_bonus": ["casale", "acqui"],
+      "luoghi_malus": ["chivasso", "borgo_san_martino"],
+      "azioni_sbloccate": [
+        "vai_al_mercato",
+        "compra_merci",
+        "vendi_merci",
+        "contratta_dazio",
+        "assumi_protezione",
+        "organizza_carovana"
       ],
       "immagineId": "archetipo_mercante"
+    },
+	
+	{
+      "id": "barcarolo",
+      "sesso": "uomo",
+      "nome": "Barcarolo del Po e del Tanaro",
+      "descrizione": "Padrone di chiatta o barca, traghetta uomini, merci e bestie sul Po e Tanaro. Conosce secche, guadi e dazi di ogni porto. Il Po è l'autostrada del Monferrato: chi non ha un barcarolo amico non passa.",
+      "caratteristiche": {
+        "astuzia": 6,
+        "forza": 7,
+        "carisma": 5,
+        "devozione": 6,
+        "conoscenza": 8
+      },
+      "economia": {
+        "soldiIniziali": 50,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 4,
+        "guadagnoGiornoMax": 25,
+        "speseGiorno": 3,
+        "variabileRischio": true,
+        "noteGuadagno": "Giorni normali: 4-8 soldi da traghetti locali. Piena del fiume: 0-3 soldi, rischio affondamento 10%. Carovana/Pellegrini: 15-25 soldi. Dazio del porto: -1 soldo per tratta se non corrompi"
+      },
+      "abitazioneIniziale": {
+        "tipo": "uso",
+        "descrizione": "Capanna di legno sulla riva, vicino all'attracco della barca",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Azione 'Traghetta' sblocca viaggio rapido via fiume tra luoghi con tag 'porto'",
+        "Bonus +100% guadagno quando trasporta archetipi 'mercante', 'nobile', 'uomo_darme'",
+        "Ignora dazio terrestre: non paga 2 soldi per cambio luogo se viaggia via fiume",
+        "Può contrabbandare: +200% guadagno ma rischio 15% arresto per tratta"
+      ],
+      "svantaggi": [
+        "Rischio affondamento: 5% nei giorni di 'alluvione' o 'piena', perdita barca = game over",
+        "Inverno: guadagno -60% per ghiaccio sul fiume",
+        "Spese manutenzione barca: 15 soldi ogni 30 giorni",
+        "Senza barca non lavora: se confiscata deve riscattarla a 200 soldi"
+      ],
+      "fazione_affinita": ["neutro", "paleologo"],
+      "fazione_ostile": [],
+      "luoghi_spawn_ok": ["casale", "valenza", "trino", "pontestura", "borgo_san_martino", "chivasso"],
+      "luoghi_bonus": ["valenza", "casale", "chivasso"],
+      "luoghi_malus": [],
+      "azioni_sbloccate": [
+        "traghetta_passeggeri",
+        "traghetta_merci",
+        "contrabbanda",
+        "ripara_barca",
+        "corrompi_doganiere",
+        "esplora_secca"
+      ],
+      "immagineId": "archetipo_barcarolo"
+    },
+
+    {
+      "id": "soldato",
+      "sesso": "uomo",
+      "nome": "Uomo d'Arme",
+      "descrizione": "Lancia, spada e corazza. Al soldo del Marchese Paleologo o di un capitano di ventura. La pace è fragile: Chivasso è sabauda, il confine brucia. Si paga bene chi sa menare le mani, ma il prezzo è il sangue.",
+      "caratteristiche": {
+        "astuzia": 6,
+        "forza": 9,
+        "carisma": 4,
+        "devozione": 4,
+        "conoscenza": 3
+      },
+      "economia": {
+        "soldiIniziali": 150,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 8,
+        "guadagnoGiornoMax": 30,
+        "speseGiorno": 6,
+        "variabileRischio": true,
+        "noteGuadagno": "Pace: 8-10 soldi/giorno di paga. Guerra/Scorta: 15-30 soldi. Sacco: 50-200 soldi una tantum, rischio impiccagione 20%. Ferita grave: -5 giorni lavoro + 20 soldi cerusico"
+      },
+      "abitazioneIniziale": {
+        "tipo": "uso",
+        "descrizione": "Pagliericcio nella caserma del castello. Vitto incluso quando il signore paga",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Paga fissa in tempo di pace dal signore",
+        "Azione 'Scorta carovana': +20 soldi per viaggio, rischio agguato 10%",
+        "Bonus +100% guadagno durante eventi 'guerra' o 'assedio'",
+        "Alloggio e rancio garantiti se al servizio di un luogo con tag 'guarnigione'",
+        "Può esigere 'alloggio' dai villici: -2 reputazione, +3 soldi/giorno"
+      ],
+      "svantaggi": [
+        "Rischio morte in battaglia: 8% per evento 'guerra', game over se fallisce",
+        "Rischio ferita: 15% per azione militare, salta 3-7 giorni + costo cerusico",
+        "Limitata libertà: non può lasciare luogo con tag 'guarnigione' senza permesso",
+        "Se il signore non paga, guadagno 0 e devi vivere di saccheggio",
+        "Spese equipaggiamento: 30 soldi ogni 60 giorni per riparare corazza/armi"
+      ],
+      "fazione_affinita": ["paleologo"],
+      "fazione_ostile": ["savoia"],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "trino", "acqui", "valenza"],
+      "luoghi_bonus": ["casale"],
+      "luoghi_vietati": ["chivasso", "borgo_san_martino"],
+      "azioni_sbloccate": [
+        "monta_di_guardia",
+        "scorta_carovana",
+        "pattuglia_confine",
+        "partecipa_a_sacco",
+        "chiedi_paga_al_signore",
+        "diserta"
+      ],
+      "immagineId": "archetipo_soldato"
+    },
+	
+	{
+      "id": "notaro",
+      "sesso": "uomo",
+      "nome": "Notaro",
+      "descrizione": "Scriba pubblico, roga contratti, testamenti e atti di vendita. Conosce il latino e le leggi consuetudinarie. Senza un notaro non si compra una casa, non si fa una dote, non si eredita. Penna e calamaio valgono più della spada in tribunale.",
+      "caratteristiche": {
+        "astuzia": 7,
+        "forza": 2,
+        "carisma": 6,
+        "devozione": 7,
+        "conoscenza": 9
+      },
+      "economia": {
+        "soldiIniziali": 120,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 5,
+        "guadagnoGiornoMax": 40,
+        "speseGiorno": 5,
+        "variabileRischio": false,
+        "noteGuadagno": "Base: 5-8 soldi/giorno da atti minuti. Testamento/Dote: 15-25 soldi. Vendita casa/terre: 30-40 soldi. In tempo di guerra: -50% clienti. Se scoperto a falsificare: bando + confisca"
+      },
+      "abitazioneIniziale": {
+        "tipo": "affitto",
+        "descrizione": "Stanza-bottega in affitto con banco per ricevere clienti, vicino al palazzo del Podestà",
+        "costoAffittoGiorno": 2
+      },
+      "vantaggi": [
+        "Azione 'Roga Atto': guadagno immediato 5-40 soldi in base al tipo di contratto",
+        "Accesso al Palazzo del Podestà e agli archivi",
+        "Bonus +100% reputazione presso 'nobile', 'mercante', 'chierico'",
+        "Può leggere 'bando' e 'legge' prima degli altri archetipi",
+        "Azione 'Autentica Documento': smaschera atti falsi, guadagno 10 soldi + reputazione"
+      ],
+      "svantaggi": [
+        "Fisicamente debole: malus -50% se coinvolto in risse o eventi militari",
+        "Dipende dai clienti: in giorni senza contratti guadagno 0",
+        "Spese fisse: carta, inchiostro, cera 8 soldi ogni 15 giorni",
+        "Se accusato di falso: processo immediato, rischio bando 60% + perdita archetipo",
+        "Malvisto in luoghi di fazione ostile: tariffa -50% e rischio accusa"
+      ],
+      "fazione_affinita": ["paleologo", "neutro"],
+      "fazione_ostile": ["savoia"],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "acqui", "trino", "valenza"],
+      "luoghi_bonus": ["casale", "moncalvo"],
+      "luoghi_vietati": ["chivasso"],
+      "azioni_sbloccate": [
+        "roga_atto_vendita",
+        "roga_testamento",
+        "roga_dote",
+        "autentica_documento",
+        "consulta_archivio",
+        "presenta_istanza_al_podesta"
+      ],
+      "immagineId": "archetipo_notaro"
+    },
+    
+	{
+      "id": "nobile_decaduto",
+      "sesso": "uomo",
+      "nome": "Nobile Paleologo",
+      "descrizione": "Sangue dei Paleologi nelle vene, ma le casse sono vuote. La torre di famiglia cade a pezzi, i creditori bussano. Il nome conta ancora a corte, ma senza fiorini sei solo un pezzente con uno stemma. O risollevi la casata, o finisci in miseria.",
+      "caratteristiche": {
+        "astuzia": 6,
+        "forza": 5,
+        "carisma": 9,
+        "devozione": 6,
+        "conoscenza": 8
+      },
+      "economia": {
+        "soldiIniziali": 300,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 0,
+        "guadagnoGiornoMax": 50,
+        "speseGiorno": 15,
+        "variabileRischio": true,
+        "noteGuadagno": "Base: 0 soldi/giorno. Affitti terre: 8-12 soldi/giorno se riscossi. Incarico dal Marchese: 20-50 soldi. Matrimonio vantaggioso: 500-1500 una tantum. Se spese > entrate per 30 giorni: pignoramento torre"
+      },
+      "abitazioneIniziale": {
+        "tipo": "proprieta",
+        "descrizione": "Torre di famiglia fatiscente in Casale. Tetto che perde, muri crepati. Ma è tua, e il popolo ti rispetta per questo",
+        "costoAffittoGiorno": 0,
+        "costoManutenzioneGiorno": 6
+      },
+      "vantaggi": [
+        "Azione 'Riscuoti Affitti': 8-12 soldi/giorno dalle terre, se i villici pagano",
+        "Accesso alla corte: bonus +200% reputazione presso 'Marchese' e 'Podestà'",
+        "Azione 'Incarico Diplomatico': 300-800 soldi per 15 giorni di missione",
+        "Azione 'Matrimonio Vantaggioso': 500-1500 soldi una tantum, ma perdi 30 giorni",
+        "Può indebitarsi fino a 1000 soldi presso banchieri senza garanzie"
+      ],
+      "svantaggi": [
+        "Spese di rango obbligatorie: 9 soldi/giorno per servi, vestiti, cavallo. Se non paghi: -5 reputazione/giorno",
+        "Manutenzione torre: 6 soldi/giorno. Se salti 15 giorni, crolla 1 piano",
+        "Debiti: se superi 1000 soldi di debito, i creditori confiscano la torre",
+        "Rischio congiura: 3% al mese di accusa di tradimento se sei povero, processo = esilio",
+        "Non può fare lavori manuali: -90% guadagno da azioni 'lavora', 'mercato', 'cantiere'",
+        "In luoghi sabaudi: rischio arresto 50% se riconosciuto"
+      ],
+      "fazione_affinita": ["paleologo"],
+      "fazione_ostile": ["savoia"],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "pontestura"],
+      "luoghi_bonus": ["casale"],
+      "luoghi_vietati": ["chivasso", "borgo_san_martino"],
+      "azioni_sbloccate": [
+        "riscuoti_affitti",
+        "incarico_diplomatico",
+        "matrimonio_vantaggioso",
+        "vendita_beni_famiglia",
+        "chiedi_prestito_onore",
+        "comanda_uomini_darme",
+        "partecipa_a_corte"
+      ],
+      "immagineId": "archetipo_nobile"
     },
 
     {
@@ -135,46 +425,6 @@
         "Vulnerabile a eventi climatici"
       ],
       "immagineId": "archetipo_contadino"
-    },
-
-    {
-      "id": "soldato",
-      "sesso": "uomo",
-      "nome": "Soldato",
-      "descrizione": "Al servizio del Marchese o di un signore locale. Stipendio fisso, alloggio garantito, ma la vita è in gioco quando scoppia la guerra.",
-      "caratteristiche": {
-        "astuzia": 5,
-        "forza": 9,
-        "carisma": 5,
-        "devozione": 5,
-        "conoscenza": 3
-      },
-      "economia": {
-        "soldiIniziali": 200,
-        "fioriniIniziali": 0,
-        "guadagnoGiornoMin": 10,
-        "guadagnoGiornoMax": 10,
-        "speseGiorno": 4,
-        "variabileRischio": false,
-        "noteGuadagno": "Stipendio fisso dal signore. Bonus in periodi di guerra, rischio morte"
-      },
-      "abitazioneIniziale": {
-        "tipo": "caserma",
-        "descrizione": "Alloggio nel castello o nella caserma del signore, incluso nel servizio",
-        "costoAffittoGiorno": 0
-      },
-      "vantaggi": [
-        "Stipendio fisso garantito",
-        "Alloggio gratuito",
-        "Accesso a eventi militari e storici",
-        "Bonus durante conflitti armati"
-      ],
-      "svantaggi": [
-        "Rischio in eventi di guerra",
-        "Limitata libertà di movimento",
-        "Dipendente dal signore"
-      ],
-      "immagineId": "archetipo_soldato"
     },
 
     {
@@ -261,80 +511,58 @@
     },
 
     {
-      "id": "nobile_decaduto",
-      "sesso": "uomo",
-      "nome": "Nobile Decaduto",
-      "descrizione": "Di nobile sangue ma fortune perdute. Il nome conta ancora, il portafoglio molto meno. Deve ricostruire la propria casata.",
+      "id": "tessitrice",
+      "sesso": "donna",
+      "nome": "Tessitrice di Fustagni",
+      "descrizione": "Al telaio dall’alba al vespro. Produce fustagni, tele di lino e panni grossi per il popolo. Arte povera ma onesta, tramandata di madre in figlia. Casale vuole sete per la corte, ma il borgo veste fustagno. Chi sa tessere non muore di fame, ma ricca non diventa mai.",
       "caratteristiche": {
         "astuzia": 7,
         "forza": 4,
-        "carisma": 9,
-        "devozione": 4,
-        "conoscenza": 7
+        "carisma": 4,
+        "devozione": 8,
+        "conoscenza": 5
       },
       "economia": {
-        "soldiIniziali": 500,
+        "soldiIniziali": 80,
         "fioriniIniziali": 0,
-        "guadagnoGiornoMin": 5,
-        "guadagnoGiornoMax": 5,
-        "speseGiorno": 12,
+        "guadagnoGiornoMin": 3,
+        "guadagnoGiornoMax": 18,
+        "speseGiorno": 3,
         "variabileRischio": false,
-        "noteGuadagno": "Parte ricco ma le spese di mantenimento del rango sono elevate"
-      },
-      "abitazioneIniziale": {
-        "tipo": "proprieta",
-        "descrizione": "Torre o casa di famiglia, di proprietà ma fatiscente, necessita riparazioni",
-        "costoAffittoGiorno": 0,
-        "costoManutenzioneGiorno": 5
-      },
-      "vantaggi": [
-        "Accesso a eventi nobiliari",
-        "Casa di partenza già di proprietà",
-        "Alto carisma per trattative",
-        "Accesso alla corte marchionale"
-      ],
-      "svantaggi": [
-        "Spese altissime di mantenimento del rango",
-        "Se le spese superano le entrate perde il titolo",
-        "Manutenzione torre obbligatoria"
-      ],
-      "immagineId": "archetipo_nobile"
-    },
-
-    {
-      "id": "tessitrice",
-      "sesso": "donna",
-      "nome": "Tessitrice",
-      "descrizione": "Maestra del telaio, produce panni e stoffe pregiati. Arte tramandata di madre in figlia, rispettata nei borghi del Monferrato.",
-      "caratteristiche": {
-        "astuzia": 6,
-        "forza": 3,
-        "carisma": 5,
-        "devozione": 7,
-        "conoscenza": 6
-      },
-      "economia": {
-        "soldiIniziali": 200,
-        "fioriniIniziali": 0,
-        "guadagnoGiornoMin": 7,
-        "guadagnoGiornoMax": 11,
-        "speseGiorno": 4,
-        "variabileRischio": false,
-        "noteGuadagno": "Guadagno stabile. Bonus in luoghi con mercato tessile attivo"
+        "noteGuadagno": "Base: 3-5 soldi/giorno da panni grezzi. Commessa per dote/nobile: 12-18 soldi. Fiera: +50% se vendi direttamente. Guerra: -70% nessuno compra stoffe. Senza lana/giorno fermo: 0 soldi"
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Bottega con telaio in affitto, alloggio incluso",
-        "costoAffittoGiorno": 2
+        "descrizione": "Stanza-bottega con telaio verticale in affitto. Puzza di lana bagnata e olio di lino. Alloggio nello stesso locale",
+        "costoAffittoGiorno": 1
       },
       "vantaggi": [
-        "Produzione di oggetti scambiabili",
-        "Bonus mercato panni",
-        "Rispettata dalla comunità"
+        "Azione 'Tessi Panno': 1 giorno lavoro = 1 pezza da vendere a 4-6 soldi",
+        "Azione 'Commessa su Misura': 3 giorni lavoro = 15-20 soldi da nobile/mercante",
+        "Bonus +30% reputazione presso donne del borgo e 'levatrice', 'guaritrice'",
+        "Può riparare vestiti: +2 soldi/giorno extra con azione 'Rammenda'",
+        "In casa propria: -1 soldo/giorno spese perché non paga affitto telaio"
       ],
       "svantaggi": [
-        "Limitata mobilità tra luoghi",
-        "Vulnerabile a eventi che bloccano il commercio"
+        "Immobile: malus -80% guadagno se lascia il luogo con il telaio",
+        "Dipende da materie prime: senza lana/lino comprati, non lavora = 0 soldi",
+        "Malattia polmoni: 2% al mese di 'mal della lana', salta 7 giorni + cerusico 5 soldi",
+        "Fisco: tassa sul telaio 10 soldi ogni 60 giorni dal Podestà",
+        "Non può sposare 'nobile': blocco sociale, solo 'villico', 'artigiano', 'barcarolo'",
+        "In luoghi di fazione ostile: rischio telaio confiscato 10% se accusata di spionaggio"
+      ],
+      "fazione_affinita": ["paleologo", "neutro"],
+      "fazione_ostile": [],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "acqui", "trino", "valenza", "pontestura"],
+      "luoghi_bonus": ["casale", "moncalvo"],
+      "luoghi_malus": ["chivasso"],
+      "azioni_sbloccate": [
+        "tessi_panno",
+        "commessa_su_misura",
+        "vendi_al_mercato",
+        "compra_lana",
+        "rammenda_vestiti",
+        "insegna_a_figlia"
       ],
       "immagineId": "archetipo_tessitrice"
     },
@@ -342,78 +570,294 @@
     {
       "id": "ostessa",
       "sesso": "donna",
-      "nome": "Ostessa",
-      "descrizione": "Gestisce una locanda o un'osteria. Vede passare mercanti, soldati e viandanti. Sa tutto di tutti, e questo ha il suo valore.",
+      "nome": "Ostessa della Croce",
+      "descrizione": "Padrona dell’osteria sulla via dei pellegrini. Mesce vino, affitta pagliericci e ascolta tutti. Sa prima del Podestà chi è arrivato, chi è morto, chi tradisce. Il vino è annacquato, le voci no. Se i viaggiatori passano, le casse cantano.",
       "caratteristiche": {
-        "astuzia": 8,
-        "forza": 4,
-        "carisma": 9,
-        "devozione": 4,
-        "conoscenza": 5
+        "astuzia": 9,
+        "forza": 3,
+        "carisma": 8,
+        "devozione": 5,
+        "conoscenza": 6
       },
       "economia": {
-        "soldiIniziali": 250,
+        "soldiIniziali": 180,
         "fioriniIniziali": 0,
-        "guadagnoGiornoMin": 10,
-        "guadagnoGiornoMax": 18,
-        "speseGiorno": 7,
+        "guadagnoGiornoMin": 4,
+        "guadagnoGiornoMax": 35,
+        "speseGiorno": 9,
         "variabileRischio": true,
-        "noteGuadagno": "Guadagno variabile in base al passaggio di NPC e agli eventi"
+        "noteGuadagno": "Base senza clienti: 4-6 soldi. 1 viandante: +2 soldi. Mercante/Nobile: +8 soldi. Fiera: +15-25 soldi/giorno. Guerra: -80% clienti. Rissa: rischio 10% danni 15 soldi"
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Locanda in affitto con piano terra adibito a osteria e piano superiore ad alloggio",
-        "costoAffittoGiorno": 3
+        "descrizione": "Locanda 'Alla Croce' in affitto: piano terra con bancone e tavolacci, piano superiore con 3 pagliericci per viandanti",
+        "costoAffittoGiorno": 4
       },
       "vantaggi": [
-        "Accesso esclusivo a informazioni e voci di borgo",
-        "Bonus quando passano NPC importanti",
-        "Guadagno aumenta con eventi e fiere"
+        "Azione 'Origlia Voci': sblocca 1 informazione segreta al giorno su eventi/fazioni/NPC",
+        "Azione 'Ospita Viandante': 2-8 soldi per notte in base al rango del cliente",
+        "Bonus +100% guadagno durante eventi 'fiera', 'pellegrinaggio', 'mercato'",
+        "Azione 'Vendi Informazione': 10-30 soldi se hai voce utile per 'notaro', 'uomo_darme', 'nobile'",
+        "Può avvelenare/derubare cliente: +50 soldi ma rischio 25% arresto/esecuzione"
       ],
       "svantaggi": [
-        "Spese di gestione elevate",
-        "Dipendente dal passaggio di viaggiatori"
+        "Spese fisse alte: affitto 4 + vino/cibo 3 + garzona 2 = 9/giorno anche senza clienti",
+        "Dipende dal traffico: giorni senza passaggio = perdita secca -9 soldi",
+        "Rischio rissa: 5% al giorno con soldati/mercanti, danni locanda 10-20 soldi",
+        "Tassa sull'osteria: 15 soldi ogni 30 giorni al Podestà, se non paghi chiusura",
+        "Reputazione bassa con 'chierico' e 'nobile' devota: -20% guadagno se ti accusano",
+        "In tempo di peste/guerra: guadagno 0, rischio chiusura definitiva"
+      ],
+      "fazione_affinita": ["neutro"],
+      "fazione_ostile": [],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "acqui", "trino", "valenza", "chivasso"],
+      "luoghi_bonus": ["casale", "acqui", "valenza"],
+      "luoghi_malus": [],
+      "azioni_sbloccate": [
+        "mesci_vino",
+        "affitta_pagliericcio",
+        "origlia_voci",
+        "vendi_informazione",
+        "scommetti_ai_dadi",
+        "corrompi_gabelliere"
       ],
       "immagineId": "archetipo_ostessa"
     },
-
+    
     {
       "id": "levatrice",
       "sesso": "donna",
-      "nome": "Levatrice",
-      "descrizione": "Donna di sapere antico, assiste le partorienti e cura i malati con erbe e rimedi tramandati. Rispettata e temuta.",
+      "nome": "Levatrice del Borgo",
+      "descrizione": "Mani esperte che hanno visto nascere metà del borgo. Conosce erbe, preghiere e il corpo delle donne. Partorire è roulette: senza levatrice muoiono madre e figlio. Ti chiamano di notte, ti pagano in uova o soldi, ti maledicono se va male.",
       "caratteristiche": {
         "astuzia": 7,
         "forza": 3,
         "carisma": 6,
-        "devozione": 8,
-        "conoscenza": 9
+        "devozione": 9,
+        "conoscenza": 7
       },
       "economia": {
-        "soldiIniziali": 160,
+        "soldiIniziali": 60,
         "fioriniIniziali": 0,
-        "guadagnoGiornoMin": 5,
-        "guadagnoGiornoMax": 9,
-        "speseGiorno": 3,
+        "guadagnoGiornoMin": 0,
+        "guadagnoGiornoMax": 25,
+        "speseGiorno": 2,
         "variabileRischio": true,
-        "noteGuadagno": "Guadagno variabile. Picchi in eventi di nascita o epidemia, rischi in eventi di pestilenza"
+        "noteGuadagno": "Base: 0 soldi/giorno se nessuno partorisce. Parto villica: 3-5 soldi o 12 uova. Parto mercante: 8-12 soldi. Parto nobile: 15-25 soldi. Parto morto: 0 soldi + rischio accusa stregoneria 15%"
       },
       "abitazioneIniziale": {
-        "tipo": "affitto",
-        "descrizione": "Piccola casa con giardino per le erbe medicinali",
-        "costoAffittoGiorno": 1
+        "tipo": "uso",
+        "descrizione": "Stanza in casa propria con tavolo per le erbe, pentole e panni puliti. La gente bussa a ogni ora",
+        "costoAffittoGiorno": 0
       },
       "vantaggi": [
-        "Accesso a eventi sanitari unici",
-        "Rispettata dalla comunità",
-        "Bonus in eventi di epidemia",
-        "Spese basse"
+        "Azione 'Assisti Parto': 3-25 soldi in base al rango della partoriente, 1-2 giorni di lavoro",
+        "Bonus +200% reputazione presso tutte le donne del borgo e 'nobile' donna",
+        "Azione 'Cura Malanni Femminili': 2-4 soldi per curare mestruo, febbri, sterilità",
+        "Accesso esclusivo a informazioni: sa chi è incinta, chi è sterile, chi tradisce",
+        "Azione 'Vendi Erbe': 1-3 soldi/giorno da infusi per dolori e fertilità"
       ],
       "svantaggi": [
-        "Rischio in eventi di pestilenza grave",
-        "Guadagno irregolare"
+        "Guadagno incostante: se non nascono bambini, incassi 0",
+        "Rischio morte parto: 10% per parto, se muore madre o figlio -20 reputazione",
+        "Accusa di stregoneria: 5% per anno, processo = esilio/rogo se fallisce",
+        "Chiamata notturna: 20% di evento 'parto urgente', devi mollare tutto e andare",
+        "Non può rifiutare un parto: se rifiuti, -30 reputazione + rischio scomunica",
+        "In luoghi di fazione ostile: rischio 20% accusa se il bambino nasce deforme",
+        "Spese erbe: 5 soldi ogni 20 giorni per rifornire scorte"
+      ],
+      "fazione_affinita": ["neutro"],
+      "fazione_ostile": [],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "acqui", "trino", "valenza", "pontestura", "borgo_san_martino"],
+      "luoghi_bonus": ["casale", "moncalvo", "acqui"],
+      "luoghi_malus": [],
+      "azioni_sbloccate": [
+        "assisti_parto",
+        "cura_malanni_femminili",
+        "prepara_infuso",
+        "vendi_erbe",
+        "consiglia_contro_gravidanza",
+        "testimonia_al_tribunale"
       ],
       "immagineId": "archetipo_levatrice"
+    },
+
+    {
+      "id": "filatrice",
+      "sesso": "donna",
+      "nome": "Filatrice di Lana",
+      "descrizione": "Giovane al fuso, fila lana e lino dall’alba al tramonto per i mercanti e le tessitrici. Dita callose, schiena curva, paga da fame. Nel MCDXXXIV senza filatrici non ci sono panni, ma nessuno ringrazia. Se rompi il filo, il padrone ti frusta. Se fili bene, forse mangi.",
+      "caratteristiche": {
+        "astuzia": 5,
+        "forza": 3,
+        "carisma": 3,
+        "devozione": 7,
+        "conoscenza": 3
+      },
+      "economia": {
+        "soldiIniziali": 20,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 1,
+        "guadagnoGiornoMax": 6,
+        "speseGiorno": 2,
+        "variabileRischio": false,
+        "noteGuadagno": "Base: 1-2 soldi/giorno da padrone. Cottimo: 3-6 soldi se fili 1 libbra/giorno. Fiera: +100% domanda lana filata. Guerra: -50% nessuno compra. Se malata: 0 soldi"
+      },
+      "abitazioneIniziale": {
+        "tipo": "uso",
+        "descrizione": "Angolo di paglia nella casa del padrone o del padre. Dorme accanto al fuso e alla rocca",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Azione 'Fila Lana': 1 giorno lavoro = 1 matassa da vendere a 1-2 soldi",
+        "Azione 'Cottimo': 1 giorno lavoro intenso = 2 matasse = 4-6 soldi, rischio -1 forza temporanea",
+        "Bonus +50% guadagno se lavora per 'mercante' o 'tessitrice' NPC",
+        "Spese minime: non paga affitto, mangia alla tavola del padrone",
+        "Può imparare 'tessitrice': dopo 60 giorni di lavoro sblocca avanzamento archetipo"
+      ],
+      "svantaggi": [
+        "Povertà estrema: guadagno più basso del gioco, sempre al limite sopravvivenza",
+        "Dipendente totale: se il padrone muore/fallisce, guadagno 0 finché non trovi altro",
+        "Malattia lavoro: 3% al mese 'mal del fuso' = artrite, salta 10 giorni + cerusico 3 soldi",
+        "Non può possedere telaio: blocco sociale, solo 'fila' non 'tesse'",
+        "Rischio abuso: 5% al mese evento 'padrone violento', -1 forza permanente o fuga",
+        "Non può sposare sopra il suo rango: solo 'villico', 'barcarolo' povero",
+        "In tempo di peste: prima a morire, 30% mortalità vs 10% altri archetipi"
+      ],
+      "fazione_affinita": ["neutro"],
+      "fazione_ostile": [],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "acqui", "trino", "valenza", "pontestura", "borgo_san_martino", "chivasso"],
+      "luoghi_bonus": [],
+      "luoghi_malus": [],
+      "azioni_sbloccate": [
+        "fila_lana",
+        "cottimo",
+        "vendi_matassa",
+        "chiedi_elemosina",
+        "cerca_padrone",
+        "fuggi"
+      ],
+      "immagineId": "archetipo_filatrice"
+    },
+
+    {
+      "id": "guaritrice",
+      "sesso": "donna",
+      "nome": "Guaritrice di Erbe",
+      "descrizione": "Conosce le erbe del bosco, le febbri e le ossa rotte. Il cerusico costa fiorini, lei chiede uova o preghiere. Nel MCDXXXIV la peste è ricordo, ma la morte gira ogni giorno. Cura villici, soldati e lebbrosi. Se guarisce è santa, se fallisce è strega.",
+      "caratteristiche": {
+        "astuzia": 8,
+        "forza": 3,
+        "carisma": 7,
+        "devozione": 8,
+        "conoscenza": 8
+      },
+      "economia": {
+        "soldiIniziali": 50,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 1,
+        "guadagnoGiornoMax": 20,
+        "speseGiorno": 2,
+        "variabileRischio": true,
+        "noteGuadagno": "Base: 1-3 soldi da infusi e impiastri. Ferita leggera: 4-6 soldi. Febbre/morbo: 6-10 soldi. Parto difficile: 10-15 soldi. Nobile: 15-20 soldi. Paziente morto: 0 soldi + rischio accusa 20%"
+      },
+      "abitazioneIniziale": {
+        "tipo": "uso",
+        "descrizione": "Capanna ai margini del borgo con orto di erbe medicinali. Puzza di aglio, salvia e sangue secco. La gente bussa ma ha paura",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Azione 'Cura Malato': 1-20 soldi in base a gravità e rango paziente, 1-3 giorni lavoro",
+        "Azione 'Raccogli Erbe': costo 0, rifornisce scorte per 10 giorni",
+        "Azione 'Prepara Unguento': crea 3 dosi vendibili a 2 soldi l’una",
+        "Bonus +150% reputazione presso 'villico', 'uomo_darme', 'levatrice'",
+        "Azione 'Allontana Malocchio': 5-8 soldi da chi crede di essere stregato",
+        "Immune a 'peste' evento: 80% non si ammala se cura appestati"
+      ],
+      "svantaggi": [
+        "Rischio accusa stregoneria: 3% al mese base, +10% se paziente muore, +20% in luoghi con 'chierico' ostile",
+        "Guadagno incostante: se nessuno è malato, incassi 1-2 soldi da unguenti",
+        "Spese erbe rare: 8 soldi ogni 30 giorni per comprare ingredienti che non crescono",
+        "Rischio contagio: 15% per cura di 'febbre', salta 5 giorni + 0 guadagno",
+        "Malvista da 'cerusico' e 'chierico': -30% guadagno se operi in città con ospedale",
+        "Se accusata: processo immediato, rogo 40% se reputazione < 50",
+        "Non può curare 'nobile' se non chiamata: blocco sociale"
+      ],
+      "fazione_affinita": ["neutro"],
+      "fazione_ostile": [],
+      "luoghi_spawn_ok": ["casale", "moncalvo", "acqui", "trino", "valenza", "pontestura", "borgo_san_martino"],
+      "luoghi_bonus": ["moncalvo", "pontestura", "borgo_san_martino"],
+      "luoghi_malus": ["casale"],
+      "azioni_sbloccate": [
+        "cura_malato",
+        "raccogli_erbe",
+        "prepara_unguento",
+        "diagnostica_morbo",
+        "allontana_malocchio",
+        "assisti_appestato"
+      ],
+      "immagineId": "archetipo_guaritrice"
+    },
+
+    {
+      "id": "villica",
+      "sesso": "donna",
+      "nome": "Villica del Monferrato",
+      "descrizione": "Moglie, madre, lavoratrice. Zappa la terra, alleva porci, fa figli e li seppellisce. La vita vale quanto il grano che raccogli. Se grandina, muori di fame. Se passa l’esercito, ti stuprano e bruciano il campo. Preghi Dio che l’inverno sia corto.",
+      "caratteristiche": {
+        "astuzia": 6,
+        "forza": 5,
+        "carisma": 4,
+        "devozione": 9,
+        "conoscenza": 2
+      },
+      "economia": {
+        "soldiIniziali": 10,
+        "fioriniIniziali": 0,
+        "guadagnoGiornoMin": 0,
+        "guadagnoGiornoMax": 8,
+        "speseGiorno": 1,
+        "variabileRischio": true,
+        "noteGuadagno": "Base: 0-2 soldi/giorno da uova, orto, baratto. Raccolto: 20-40 soldi 2 volte l’anno. Fiera: vendi 1 porco = 15-25 soldi. Carestia: 0 soldi per 30-90 giorni. Guerra/Sacco: perdita casa e raccolto"
+      },
+      "abitazioneIniziale": {
+        "tipo": "uso",
+        "descrizione": "Capanna di fango e paglia con orto e porcile. Unico bene: la terra che lavori per il signore",
+        "costoAffittoGiorno": 0
+      },
+      "vantaggi": [
+        "Azione 'Lavora Campo': 0 soldi ma produce cibo, -1 spesa/giorno se vivi dei tuoi prodotti",
+        "Azione 'Alleva Porco': 90 giorni lavoro = porco da vendere a 15-25 soldi",
+        "Azione 'Vendi al Mercato': +50% prezzo su uova, verdure, formaggio nei giorni di mercato",
+        "Resistenza fame: può sopravvivere con 0 soldi per 10 giorni mangiando radici",
+        "Bonus +100% reputazione presso 'chierico', 'levatrice', 'guaritrice' se devota",
+        "Può sposare 'uomo_darme', 'barcarolo', 'villico' e unire economie"
+      ],
+      "svantaggi": [
+        "Povertà assoluta: guadagno più basso del gioco, vive di sussistenza",
+        "Dipende dal raccolto: grandine/alluvione = 0 guadagno per 30-90 giorni",
+        "Rischio saccheggio: 15% per evento 'guerra', perdi casa + raccolto + rischio stupro",
+        "Tasse signorili: 10 soldi ogni 90 giorni al padrone, se non paghi confisca terra",
+        "Malattia figli: 5% al mese evento 'figlio malato', -5 soldi cerusico o muore",
+        "Non può lasciare terra: malus -90% guadagno se abbandona luogo spawn, sei serva della gleba",
+        "In tempo di carestia: 40% mortalità vs 10% altri archetipi",
+        "Non può imparare a leggere: blocco conoscenza max 3"
+      ],
+      "fazione_affinita": ["neutro"],
+      "fazione_ostile": [],
+      "luoghi_spawn_ok": ["moncalvo", "pontestura", "borgo_san_martino", "trino", "valenza", "acqui"],
+      "luoghi_bonus": ["moncalvo", "pontestura", "borgo_san_martino"],
+      "luoghi_malus": ["casale"],
+      "luoghi_vietati": [],
+      "azioni_sbloccate": [
+        "lavora_campo",
+        "alleva_porco",
+        "vendi_al_mercato",
+        "raccogli_legna",
+        "prega_per_raccolto",
+        "chiedi_carita"
+      ],
+      "immagineId": "archetipo_villica"
     },
 
     {

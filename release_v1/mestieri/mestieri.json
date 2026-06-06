@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Mestieri, guadagni e spese per luogo - Monferrato 1434"
   },
-  "updatedAt": "2026-05-29T12:00:00Z",
+  "updatedAt": "2026-06-06T12:00:00Z",
   "minAppVersion": 1,
   "percentualeRimborsoDebito": 20,
 
@@ -45,10 +45,26 @@
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["contadino", "contadina"],
+      "archetipiConsentiti": ["barcarolo", "guaritrice", "contadino", "filatrice", "villica", "contadina"],
       "livelloComfort": 1,
       "immagineStadi": {
-        "cantiere": "casa_cantiere_01",
+        "cantiere": null,
+        "meta": null,
+        "completa": "casolare_completo"
+      }
+    },
+	{
+      "id": "capanna",
+      "nome": "Capanna di Legno",
+      "descrizione": "Piccola abitazione rurale, essenziale e sobria",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["barcarolo", "guaritrice"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
         "meta": null,
         "completa": "casolare_completo"
       }
@@ -61,7 +77,7 @@
       "costoAcquisto": 0,
       "costoAffittoGiorno": 1,
       "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["tutti"],
+      "archetipiConsentiti": ["mastro_muratore", "tutti"],
       "livelloComfort": 1,
       "immagineStadi": {
         "cantiere": null,
@@ -157,7 +173,7 @@
       "costoAcquisto": 800,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["tutti"],
+      "archetipiConsentiti": ["notaro", "cronista"],
       "livelloComfort": 3,
       "immagineStadi": {
         "cantiere": "casa_cantiere_01",
@@ -206,7 +222,7 @@
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 4,
-      "archetipiConsentiti": ["nobile_decaduta"],
+      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
       "livelloComfort": 4,
       "immagineStadi": {
         "cantiere": "casa_nobil_cantiere",
@@ -230,7 +246,7 @@
       "nome": "Vai al mercato",
       "descrizione": "Compra o vendi merci al mercato del luogo",
       "avanzaGiorni": 1,
-      "archetipiConsentiti": ["mercante", "artigiano", "tessitrice", "ostessa"],
+      "archetipiConsentiti": ["mercante", "artigiano", "tessitrice", "ostessa", "filatrice"],
       "effetto": "mercato"
     },
     {
