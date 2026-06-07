@@ -45,7 +45,7 @@
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["barcarolo", "guaritrice", "contadino", "filatrice", "villica", "contadina"],
+      "archetipiConsentiti": ["tutti"],
       "livelloComfort": 1,
       "immagineStadi": {
         "cantiere": null,
@@ -54,9 +54,25 @@
       }
     },
 	{
+      "id": "capanna_villica",
+      "nome": "Capanna di fango e paglia",
+      "descrizione": "Capanna di fango e paglia con orto e porcile.",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["villica"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "capanna_villica_completa"
+      }
+    },
+	{
       "id": "capanna",
-      "nome": "Capanna di Legno",
-      "descrizione": "Piccola abitazione rurale, essenziale e sobria",
+      "nome": "Capanna di Legno e fieno",
+      "descrizione": "Capanna di legno con tetto di strame per chi non ha altro",
       "tipoAccesso": "uso",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
@@ -66,19 +82,35 @@
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
-        "completa": "casolare_completo"
+        "completa": "capanna_completa"
+      }
+    },
+	{
+      "id": "angolo_paglia",
+      "nome": "Angolo di Paglia",
+      "descrizione": "Angolo di paglia nella casa del padrone o del padre",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["filatrice"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "angolo_paglia_completo"
       }
     },
     {
       "id": "stanza_affitto",
       "nome": "Stanza in affitto",
-      "descrizione": "Una singola stanza presso una locanda o famiglia del borgo",
+      "descrizione": "Una singola stanza presso una casa vicino a un cantiere o presso una locanda",
       "tipoAccesso": "affitto",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 1,
       "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["mastro_muratore", "tutti"],
-      "livelloComfort": 1,
+      "archetipiConsentiti": ["tutti"],
+      "livelloComfort": 2,
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
@@ -87,18 +119,34 @@
     },
     {
       "id": "bottega_affitto",
-      "nome": "Bottega con alloggio",
-      "descrizione": "Bottega in affitto con piano superiore ad uso abitativo",
+      "nome": "Bottega con stanza",
+      "descrizione": "Bottega in affitto con stanza al piano superiore ad uso abitativo",
       "tipoAccesso": "affitto",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 2,
       "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["artigiano", "tessitrice", "levatrice"],
-      "livelloComfort": 2,
+      "archetipiConsentiti": ["tessitrice"],
+      "livelloComfort": 3,
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
         "completa": "bottega_completa"
+      }
+    },
+    {
+      "id": "bottega_notaro",
+      "nome": "Bottega con stanza",
+      "descrizione": "Bottega in affitto con una stanza in più ad uso abitativo",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 2,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["notaro"],
+      "livelloComfort": 3,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "bottega_notaro_completa"
       }
     },
     {
@@ -110,7 +158,7 @@
       "costoAffittoGiorno": 3,
       "costoManutenzioneGiorno": 0,
       "archetipiConsentiti": ["mercante"],
-      "livelloComfort": 2,
+      "livelloComfort": 3,
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
@@ -120,7 +168,7 @@
     {
       "id": "locanda",
       "nome": "Locanda",
-      "descrizione": "Locanda con osteria al piano terra, alloggio al piano superiore",
+      "descrizione": "Locanda con osteria al piano terra, stanza con un letto sopra la taverna",
       "tipoAccesso": "affitto",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 3,
@@ -152,7 +200,7 @@
     {
       "id": "caserma",
       "nome": "Caserma",
-      "descrizione": "Alloggio militare nel castello o presidio del signore",
+      "descrizione": "Pagliericcio nella caserma del castello o del presidio del signore",
       "tipoAccesso": "uso",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
@@ -172,9 +220,9 @@
       "tipoAccesso": "proprieta",
       "costoAcquisto": 800,
       "costoAffittoGiorno": 0,
-      "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["notaro", "cronista"],
-      "livelloComfort": 3,
+      "costoManutenzioneGiorno": 2,
+      "archetipiConsentiti": ["notaro", "cronista", "levatrice"],
+      "livelloComfort": 4,
       "immagineStadi": {
         "cantiere": "casa_cantiere_01",
         "meta": "casa_cantiere_02",
@@ -205,9 +253,9 @@
       "tipoAccesso": "proprieta",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
-      "costoManutenzioneGiorno": 4,
+      "costoManutenzioneGiorno": 5,
       "archetipiConsentiti": ["nobile_decaduto"],
-      "livelloComfort": 4,
+      "livelloComfort": 5,
       "immagineStadi": {
         "cantiere": "torre_cantiere",
         "meta": "torre_meta",
@@ -222,8 +270,8 @@
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 4,
-      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
-      "livelloComfort": 4,
+      "archetipiConsentiti": ["nobile_decaduto"],
+      "livelloComfort": 6,
       "immagineStadi": {
         "cantiere": "casa_nobil_cantiere",
         "meta": "casa_nobil_fine",
@@ -246,7 +294,7 @@
       "nome": "Vai al mercato",
       "descrizione": "Compra o vendi merci al mercato del luogo",
       "avanzaGiorni": 1,
-      "archetipiConsentiti": ["mercante", "artigiano", "tessitrice", "ostessa", "filatrice"],
+      "archetipiConsentiti": ["mercante", "nobile_decaduto", "tessitrice", "ostessa", "filatrice", "guaritrice", "villica" ],
       "effetto": "mercato"
     },
     {
@@ -281,7 +329,7 @@
       "nome": "Riscatta la tua casa",
       "descrizione": "Il banchiere ti offre la possibilità di riscattare la tua casa prima che vada all'asta.",
       "avanzaGiorni": 0,
-      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
+      "archetipiConsentiti": ["nobile_decaduto"],
       "effetto": "riscatto_casa",
       "condizione": "casa_confiscata"
     },
@@ -300,7 +348,7 @@
       "descrizione": "Cerca un partito ricco tra le famiglie del borgo. Richiede tempo e reputazione.",
       "avanzaGiorni": 30,
       "messaggioConferma": "Sposarsi richiede 30 giorni di corteggiamento e trattative. Durante questo tempo sarai impegnato nelle relazioni sociali e non potrai svolgere altre attività.",
-      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
+      "archetipiConsentiti": ["nobile_decaduto"],
       "effetto": "matrimonio",
       "condizione": "non_sposato",
       "guadagnoMin": 500,
@@ -313,7 +361,7 @@
       "descrizione": "Offri i tuoi servigi alla corte del Marchese per una missione diplomatica.",
       "avanzaGiorni": 15,
       "messaggioConferma": "L'incarico diplomatico richiede 15 giorni di viaggio e trattative per conto del Marchese. Sarai lontano dal tuo borgo e impegnato nella missione.",
-      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
+      "archetipiConsentiti": ["nobile_decaduto"],
       "effetto": "incarico",
       "condizione": "giorni_attesa",
       "giorniAttesa": 60,
@@ -335,26 +383,12 @@
       "guadagnoMax": 400,
       "requisitoReputazione": 10
     },
-	{
-      "id": "educazione_fanciulle",
-      "nome": "Educazione delle fanciulle",
-      "descrizione": "Insegna lettura, musica e buone maniere alle figlie delle famiglie benestanti del borgo.",
-      "avanzaGiorni": 7,
-      "messaggioConferma": "Dedicarsi all'educazione delle fanciulle richiede 7 giorni di lezioni e cure. Sarai impegnata presso le famiglie del borgo per tutto il periodo.",
-      "archetipiConsentiti": ["nobile_decaduta"],
-      "effetto": "educazione",
-      "condizione": "giorni_attesa",
-      "giorniAttesa": 30,
-      "guadagnoMin": 120,
-      "guadagnoMax": 300,
-      "requisitoReputazione": 15
-    },
     {
       "id": "vendita_beni",
       "nome": "Vendi beni di famiglia",
       "descrizione": "Vendi gioielli, arredi o cimeli di famiglia. Una perdita per l'orgoglio, un guadagno per il portafoglio.",
       "avanzaGiorni": 1,
-      "archetipiConsentiti": ["nobile_decaduto", "nobile_decaduta"],
+      "archetipiConsentiti": ["nobile_decaduto"],
       "effetto": "vendita_beni",
       "condizione": "giorni_attesa",
       "giorniAttesa": 90,
