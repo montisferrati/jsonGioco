@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Archetipi personaggio - Monferrato 1434"
   },
-  "updatedAt": "2026-06-07T12:00:00Z",
+  "updatedAt": "2026-06-09T12:00:00Z",
   "minAppVersion": 1,
 
   "differenzaSesso": {
@@ -14,7 +14,7 @@
       "nota": "Accesso completo a tutti gli archetipi"
     },
     "donna": {
-      "bonusSoldiIniziali": -50,
+      "bonusSoldiIniziali": 0,
       "archetipiDisponibili": ["tessitrice", "ostessa", "levatrice", "filatrice", "guaritrice", "villica"],
       "nota": "Mestieri specifici con bonus particolari, meno soldi iniziali"
     }
@@ -25,7 +25,7 @@
       "id": "mastro_muratore",
       "sesso": "uomo",
       "nome": "Mastro Muratore",
-      "descrizione": "Capomastro esperto nel lavorare il cotto e la pietra. I cantieri di mura e castelli cercano braccia abili. Chi sa alzare una torre guadagna pane e rispetto.",
+      "descrizione": "Capomastro esperto nel lavorare il cotto e la pietra. \nI cantieri di mura e castelli cercano braccia abili. \nChi sa alzare una torre guadagna pane e rispetto.",
       "caratteristiche": {
         "astuzia": 5,
         "forza": 8,
@@ -48,7 +48,7 @@
         "costoAffittoGiorno": 1
       },
       "vantaggi": [
-        "Accesso all'azione 'Lavora al cantiere' nei luoghi con cantieri",
+        "Mastro riconosciuto: priorità di ingaggio nei cantieri aperti, +30% di paga rispetto al lavorante",
         "Bonus reputazione presso Podestà e Capitani dopo 10 giorni di lavoro",
         "Può costruire e riparare abitazioni con sconto materiali al 20%"
       ],
@@ -75,7 +75,7 @@
       "id": "mercante",
       "sesso": "uomo",
       "nome": "Mercante di Panni",
-      "descrizione": "Traffica in panni di lana, fustagni e sete tra le fiere del Po. Casale diventa capitale: la corte cerca stoffe pregiate. Chivasso ha il porto ma dazi nuovi. Chi sa dove comprare guadagna, chi sbaglia strada perde tutto.",
+      "descrizione": "Traffica in panni di lana, fustagni e sete tra le fiere del Po. \nCasale diventa capitale: la corte cerca stoffe pregiate. \nChivasso ha il porto ma dazi nuovi. \nChi sa dove comprare guadagna, chi sbaglia strada perde tutto.",
       "caratteristiche": {
         "astuzia": 9,
         "forza": 2,
@@ -129,7 +129,7 @@
       "id": "barcarolo",
       "sesso": "uomo",
       "nome": "Barcarolo del Po e del Tanaro",
-      "descrizione": "Padrone di chiatta o barca, traghetta uomini, merci e bestie sul Po e Tanaro. Conosce secche, guadi e dazi di ogni porto. Il Po è l'autostrada del Monferrato: chi non ha un barcarolo amico non passa.",
+      "descrizione": "Padrone di chiatta o barca, traghetta uomini, merci e bestie sul Po e sul Tanaro. \nConosce secche, guadi e dazi di ogni porto. \nIl Po è l'autostrada del Monferrato: chi non ha un barcarolo amico non passa.",
       "caratteristiche": {
         "astuzia": 6,
         "forza": 7,
@@ -155,7 +155,7 @@
         "Azione 'Traghetta' sblocca viaggio rapido via fiume tra luoghi con tag 'porto'",
         "Bonus +100% guadagno quando trasporta archetipi 'Mercante', 'Nobile', 'Uomo d'Arme'",
         "Ignora dazio terrestre: non paga 2 soldi per cambio luogo se viaggia via fiume",
-        "Può contrabbandare: +200% guadagno ma rischio arresto per tratta 15%"
+        "Può contrabbandare: +200% guadagno, ma rischio di arresto per tratta 15%"
       ],
       "svantaggi": [
         "Rischio affondamento: 5% nei giorni di 'alluvione' o 'piena', perdita barca = game over",
@@ -183,7 +183,7 @@
       "id": "soldato",
       "sesso": "uomo",
       "nome": "Uomo d'Arme",
-      "descrizione": "Lancia, spada e corazza. Al soldo del Marchese Paleologo o di un capitano di ventura. La pace è fragile: Chivasso è sabauda, il confine brucia. Si paga bene chi sa menare le mani, ma il prezzo è il sangue.",
+      "descrizione": "Lancia, spada e corazza. \nAl soldo del Marchese Paleologo o di un capitano di ventura. \nLa pace è fragile: Chivasso è sabauda, il confine brucia. \nSi paga bene chi sa menare le mani, ma il prezzo è il sangue.",
       "caratteristiche": {
         "astuzia": 6,
         "forza": 9,
@@ -201,23 +201,23 @@
         "noteGuadagno": "Pace: 8-10 soldi/giorno di paga. Guerra/Scorta: 15-30 soldi. Sacco: 50-200 soldi una tantum, rischio impiccagione 20%. Ferita grave: -5 giorni lavoro + 20 soldi cerusico"
       },
       "abitazioneIniziale": {
-        "tipo": "uso",
+        "tipo": "caserma",
         "descrizione": "Pagliericcio nella caserma del castello. Vitto incluso quando il signore paga",
         "costoAffittoGiorno": 0
       },
       "vantaggi": [
-        "Paga fissa in tempo di pace dal signore",
+        "Paga fissa dal signore, in tempo di pace",
         "Azione 'Scorta carovana': +20 soldi per viaggio, rischio agguato 10%",
         "Bonus +100% guadagno durante eventi 'guerra' o 'assedio'",
         "Alloggio e rancio garantiti se al servizio di un luogo con tag 'guarnigione'",
         "Può esigere 'alloggio' dai villici: -2 reputazione, +3 soldi/giorno"
       ],
       "svantaggi": [
-        "Rischio morte in battaglia: 8% per evento 'guerra', game over se fallisce",
+        "Rischio di morte in battaglia: 8% per evento 'guerra', game over se fallisce",
         "Rischio ferita: 15% per azione militare, salta 3-7 giorni + costo cerusico",
         "Limitata libertà: non può lasciare luogo con tag 'guarnigione' senza permesso",
-        "Se il signore non paga, guadagno zero e si deve vivere di saccheggio",
-        "Spese equipaggiamento: 30 soldi ogni 60 giorni per riparare corazza/armi"
+        "Se il signore non paga, guadagno zero. Un'alternativa per sopravvivere è il saccheggio",
+        "Spese equipaggiamento: 30 soldi ogni 60 giorni per riparare corazza e armi"
       ],
       "fazione_affinita": ["paleologo"],
       "fazione_ostile": ["savoia"],
@@ -239,7 +239,7 @@
       "id": "notaro",
       "sesso": "uomo",
       "nome": "Notaro",
-      "descrizione": "Scriba pubblico, roga contratti, testamenti e atti di vendita. Conosce il latino e le leggi consuetudinarie. Senza un notaro non si compra una casa, non si fa una dote, non si eredita. Penna e calamaio valgono più della spada in tribunale.",
+      "descrizione": "Scriba pubblico, roga contratti, testamenti e atti di vendita. \nConosce il latino e le leggi consuetudinarie. \nSenza un notaro non si compra una casa, non si fa una dote, non si eredita. \nPenna e calamaio valgono più della spada in tribunale.",
       "caratteristiche": {
         "astuzia": 7,
         "forza": 2,
@@ -258,14 +258,14 @@
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Stanza-bottega in affitto con banco per ricevere clienti, vicino al palazzo del Podestà",
+        "descrizione": "Stanza in uno studio in affitto vicino al palazzo del Podestà, con banco per ricevere clienti, ",
         "costoAffittoGiorno": 2
       },
       "vantaggi": [
         "Azione 'Roga Atto': guadagno immediato 5-40 soldi in base al tipo di contratto",
         "Accesso al Palazzo del Podestà e agli archivi",
         "Bonus +100% reputazione presso 'Nobile', 'Mercante', 'Chierico'",
-        "Può leggere 'bando' e 'legge' prima degli altri archetipi",
+        "Può leggere i 'bandi' e le 'leggi' prima degli altri archetipi",
         "Azione 'Autentica Documento': smaschera atti falsi, guadagno 10 soldi + reputazione"
       ],
       "svantaggi": [
@@ -295,7 +295,7 @@
       "id": "nobile_decaduto",
       "sesso": "uomo",
       "nome": "Nobile Paleologo",
-      "descrizione": "Sangue dei Paleologi nelle vene, ma le casse sono vuote. La casa di famiglia cade a pezzi, i creditori bussano. Il nome conta ancora a corte, ma senza fiorini sei solo un pezzente con uno stemma. O risollevi la casata, o finisci in miseria.",
+      "descrizione": "Sangue dei Paleologi nelle vene, ma le casse sono vuote. \nLa casa di famiglia cade a pezzi, i creditori bussano. \nIl nome conta ancora a corte, ma senza fiorini è solo un pezzente con uno stemma. \nO risolleva la casata, o finisce in miseria.",
       "caratteristiche": {
         "astuzia": 6,
         "forza": 5,
@@ -314,22 +314,22 @@
       },
       "abitazioneIniziale": {
         "tipo": "proprieta",
-        "descrizione": "Casa di famiglia fatiscente in Casale. Tetto che perde, muri crepati. Ma è tua, e il popolo ti rispetta per questo",
+        "descrizione": "Casa di famiglia fatiscente. Tetto che perde, muri crepati. Ma è sua, e il popolo lo rispetta per questo",
         "costoAffittoGiorno": 0,
         "costoManutenzioneGiorno": 6
       },
       "vantaggi": [
-        "Azione 'Riscuoti Affitti': 8-12 soldi/giorno dalle terre, se i villici pagano",
+        "Azione 'Riscuoti Affitti': 8-12 soldi al giorno dalle terre, se i villici pagano",
         "Accesso alla corte: bonus +200% reputazione presso 'Marchese' e 'Podestà'",
         "Azione 'Incarico Diplomatico': 300-800 soldi per 15 giorni di missione",
-        "Azione 'Matrimonio Vantaggioso': 500-1500 soldi una tantum, ma perdi 30 giorni",
+        "Azione 'Matrimonio Vantaggioso': 500-1500 soldi una tantum, ma perde 30 giorni",
         "Può indebitarsi fino a 1000 soldi presso banchieri senza garanzie"
       ],
       "svantaggi": [
-        "Spese di rango obbligatorie: 9 soldi/giorno per servi, vestiti, cavallo. Se non paghi: -5 reputazione/giorno",
-        "Manutenzione casa: 6 soldi/giorno. Se salti 15 giorni, una parte della casa cade in rovina",
-        "Debiti: se superi 1000 soldi di debito, i creditori confiscano la casa",
-        "Rischio congiura: 3% al mese di accusa di tradimento se sei povero, processo = esilio",
+        "Spese di rango obbligatorie: 9 soldi al giorno per servi, vestiti e cavallo. Se non paga: -5 reputazione al giorno",
+        "Manutenzione casa: 6 soldi al giorno. Se salta 15 giorni, una parte della casa cade in rovina",
+        "Debiti: se supera 1000 soldi di debito, i creditori confiscano la casa",
+        "Rischio congiura: 3% al mese di accusa di tradimento se è povero, processo = esilio",
         "Non può fare lavori manuali: -90% guadagno da azioni 'Lavora', 'Mercato', 'Cantiere'",
         "In luoghi sabaudi: rischio di arresto se riconosciuto 50%"
       ],
@@ -354,7 +354,7 @@
       "id": "tessitrice",
       "sesso": "donna",
       "nome": "Tessitrice di Fustagni",
-      "descrizione": "Al telaio dall’alba al vespro. Produce fustagni, tele e panni grossi per il popolo. Arte povera ma onesta, tramandata di madre in figlia. Casale vuole sete per la corte, ma il borgo veste fustagno. Chi sa tessere non muore di fame, ma ricca non diventa mai.",
+      "descrizione": "Al telaio dall’alba al vespro. \nProduce fustagni, tele e panni grossi per il popolo. \nArte povera ma onesta, tramandata di madre in figlia. \nCasale vuole sete per la corte, ma il borgo veste fustagno. \nChi sa tessere non muore di fame, ma ricca non diventa mai.",
       "caratteristiche": {
         "astuzia": 7,
         "forza": 4,
@@ -378,10 +378,10 @@
       },
       "vantaggi": [
         "Azione 'Tessi Panno': 1 giorno lavoro = 1 pezza da vendere a 4-6 soldi",
-        "Azione 'Commessa su Misura': 3 giorni lavoro = 15-20 soldi da nobile/mercante",
+        "Azione 'Commessa su Misura': 3 giorni lavoro = 15-20 soldi da nobile o mercante",
         "Bonus +30% reputazione presso donne del borgo e 'Levatrice', 'Guaritrice'",
-        "Può riparare vestiti: +2 soldi/giorno extra con azione 'Rammenda'",
-        "In casa propria: -1 soldo/giorno spese perché non paga affitto telaio"
+        "In casa propria: -1 soldo al giorno di spese perché non paga l'affitto del telaio",
+        "Può riparare vestiti: 2 soldi al giorno extra con azione 'Rammenda'"
       ],
       "svantaggi": [
         "Immobile: malus -80% guadagno se lascia il luogo con il telaio",
@@ -410,8 +410,8 @@
     {
       "id": "ostessa",
       "sesso": "donna",
-      "nome": "Ostessa della Croce",
-      "descrizione": "Padrona dell’osteria sulla via dei pellegrini. Mesce vino, affitta pagliericci e ascolta tutti. Sa prima del Podestà chi è arrivato, chi è morto, chi tradisce. Il vino è annacquato, le voci no. Se i viaggiatori passano, le casse cantano.",
+      "nome": "Ostessa",
+      "descrizione": "Padrona dell’osteria sulla via dei pellegrini. \nMesce vino, affitta pagliericci e ascolta tutti. \nSa prima del Podestà chi è arrivato, chi è morto, chi tradisce. \nSe i viaggiatori passano, le casse cantano.",
       "caratteristiche": {
         "astuzia": 9,
         "forza": 3,
@@ -434,18 +434,18 @@
         "costoAffittoGiorno": 4
       },
       "vantaggi": [
-        "Azione 'Origlia Voci': sblocca 1 informazione segreta al giorno su eventi/fazioni/personaggi virtuali",
+        "Azione 'Origlia Voci': sblocca un'informazione segreta al giorno su eventi/fazioni/personaggi virtuali",
         "Azione 'Ospita Viandante': 2-8 soldi per notte in base al rango del cliente",
         "Bonus +100% guadagno durante eventi 'fiera', 'pellegrinaggio', 'mercato'",
         "Azione 'Vendi Informazione': 10-30 soldi se hai voce utile per 'Notaro', 'Uomo d'Arme', 'Nobile'",
-        "Può avvelenare o derubare un cliente: +50 soldi ma rischio di arresto e anche di esecuzione 25%"
+        "Può avvelenare e derubare un cliente: +50 soldi ma rischio di arresto 25%, o esecuzione se la colpa è molto grave"
       ],
       "svantaggi": [
-        "Spese fisse alte: affitto 4 + vino e cibo 3 + garzona 2 = 9 soldi/giorno anche senza clienti",
-        "Dipende dal traffico: nei giorni senza passaggio clienti, perdita secca di 9 soldi al giorno",
+        "Spese fisse alte: affitto, garzona, cibo e vino",
+        "Dipendente dal traffico: nei giorni senza passaggio clienti, perdita secca minima di 9 soldi al giorno, e in alcuni luoghi anche di più",
         "Rischio rissa: 5% al giorno con soldati e mercanti, danni alla locanda di 10-20 soldi",
-        "Tassa sull'osteria: 15 soldi ogni 30 giorni al Podestà, se non paghi chiusura",
-        "Malvista da Chierico e Nobili devoti: -20% guadagno se ti accusano",
+        "Tassa sull'osteria: 15 soldi ogni 30 giorni al Podestà, se non paga chiusura",
+        "Malvista da Chierico e Nobili devoti: -20% guadagno se accusata",
         "In tempo di peste o guerra: guadagno zero, rischio chiusura definitiva"
       ],
       "fazione_affinita": ["neutro"],
@@ -468,7 +468,7 @@
       "id": "levatrice",
       "sesso": "donna",
       "nome": "Levatrice del Borgo",
-      "descrizione": "Mani esperte che hanno visto nascere metà del borgo. Conosce erbe, preghiere e il corpo delle donne. Partorire è roulette: senza levatrice muoiono madre e figlio. Ti chiamano di notte, ti pagano in uova o soldi, ti maledicono se va male.",
+      "descrizione": "Mani esperte che hanno visto nascere metà del borgo. \nConosce erbe, preghiere e il corpo delle donne. \nPartorire è una roulette: senza levatrice muoiono madre e figlio. \nLa chiamano di notte, la pagano in uova o soldi, la maledicono se va male.",
       "caratteristiche": {
         "astuzia": 7,
         "forza": 3,
@@ -492,17 +492,17 @@
       },
       "vantaggi": [
         "Azione 'Assisti Parto': 3-25 soldi in base al rango della partoriente, 1-2 giorni di lavoro",
-        "Bonus +200% reputazione presso tutte le donne del borgo e 'Nobile' donna",
+        "Bonus +200% reputazione presso tutte le donne del borgo e 'Nobildonna'",
         "Azione 'Cura Malanni Femminili': 2-4 soldi per curare mestruo, febbri, sterilità",
         "Accesso esclusivo a informazioni: sa chi è incinta, chi è sterile, chi tradisce",
-        "Azione 'Vendi Erbe': 1-3 soldi/giorno da infusi per dolori e fertilità"
+        "Azione 'Vendi Erbe': 1-3 soldi al giorno da infusi per dolori e fertilità"
       ],
       "svantaggi": [
-        "Guadagno incostante: se non nascono bambini, incassi zero",
+        "Guadagno incostante: se non nascono bambini, incasso zero",
         "Rischio morte parto: 10% per parto, se muore madre o figlio -20 reputazione",
         "Accusa di stregoneria: 5% per anno, processo = esilio o rogo se fallisce",
-        "Chiamata notturna: 20% di evento 'parto urgente', devi mollare tutto e andare",
-        "Non può rifiutare un parto: se rifiuti, -30 reputazione + rischio scomunica",
+        "Chiamata notturna: 20% di evento 'parto urgente', deve mollare tutto e andare",
+        "Non può rifiutare un parto: se rifiuta, -30 reputazione + rischio scomunica",
         "In luoghi di fazione ostile: rischio di accusa se il bambino nasce deforme 20%",
         "Spese erbe: 5 soldi ogni 20 giorni per rifornire scorte"
       ],
@@ -526,7 +526,7 @@
       "id": "filatrice",
       "sesso": "donna",
       "nome": "Filatrice di Lana",
-      "descrizione": "Giovane al fuso, fila dall’alba al tramonto per i mercanti e le tessitrici. Dita callose, schiena curva, paga da fame. Senza filatrici non ci sono panni, ma nessuno ringrazia. Se rompi il filo, il padrone ti frusta. Se fili bene, forse mangi.",
+      "descrizione": "Giovane al fuso, fila dall’alba al tramonto per i mercanti e le tessitrici. \nDita callose, schiena curva, paga da fame. \nSenza filatrici non ci sono panni, ma nessuno ringrazia. \nSe rompi il filo, il padrone ti frusta. \nSe fili bene, forse mangi.",
       "caratteristiche": {
         "astuzia": 5,
         "forza": 3,
@@ -551,8 +551,8 @@
       "vantaggi": [
         "Azione 'Fila Lana': 1 giorno lavoro = 1 matassa da vendere a 1-2 soldi",
         "Azione 'Cottimo': 1 giorno lavoro intenso = 2 matasse = 4-6 soldi, rischio -1 forza temporanea",
-        "Bonus +50% guadagno se lavora per personaggio virtualo, o 'Mercante' o 'Tessitrice'",
-        "Spese minime: non paga affitto, mangia alla tavola del padrone",
+        "Bonus +50% guadagno se lavora per un personaggio virtuale ('Mercante' o 'Tessitrice')",
+        "Spese minime: non paga affitto, mangia alla tavola del padrone o del padre",
         "Può imparare 'tessitrice': dopo 60 giorni di lavoro sblocca avanzamento archetipo"
       ],
       "svantaggi": [
@@ -584,7 +584,7 @@
       "id": "guaritrice",
       "sesso": "donna",
       "nome": "Guaritrice di Erbe",
-      "descrizione": "Conosce le erbe del bosco, le febbri e le ossa rotte. Il cerusico costa fiorini, lei chiede uova o preghiere. Nel MCDXXXIV la peste è ricordo, ma la morte gira ogni giorno. Cura villici, soldati e lebbrosi. Se guarisce è santa, se fallisce è strega.",
+      "descrizione": "Conosce le erbe del bosco, le febbri e le ossa rotte. \nIl cerusico costa fiorini, lei chiede uova o preghiere. \nCura villici, soldati e lebbrosi. \nSe guarisce è santa, se fallisce è strega.",
       "caratteristiche": {
         "astuzia": 8,
         "forza": 3,
@@ -612,7 +612,7 @@
         "Azione 'Prepara Unguento': crea 3 dosi vendibili a 2 soldi l’una",
         "Bonus +150% reputazione presso 'Villico', 'Uomo d'Arme', 'Levatrice'",
         "Azione 'Allontana Malocchio': 5-8 soldi da chi crede di essere stregato",
-        "Immune a 'peste' evento: 80% non si ammala se cura appestati"
+        "Immune a evento 'peste': 80% non si ammala se cura appestati"
       ],
       "svantaggi": [
         "Rischio accusa stregoneria: 3% al mese base, +10% se paziente muore, +20% in luoghi con 'Chierico' ostile",
@@ -643,7 +643,7 @@
       "id": "villica",
       "sesso": "donna",
       "nome": "Villica del Monferrato",
-      "descrizione": "Moglie, madre, braccia per i campi. Zappa la terra, alleva porci, fa figli e li seppellisce. La vita vale quanto il grano che raccogle. Se grandina, muore di fame. Se passa l’esercito bruciano il campo e infliggono soprusi, perdi il raccolto, -20 salute e +2 trauma. Preghi Dio che l’inverno sia corto.",
+      "descrizione": "Moglie, madre, braccia per i campi. \nZappa la terra, alleva porci, fa figli e li seppellisce. \nLa vita vale quanto il grano che raccogle. \nSe grandina, muore di fame. \nSe passa l’esercito bruciano il campo e infliggono soprusi, perde raccolto, -20 salute e +2 trauma. \nPrega Dio che l’inverno sia corto.",
       "caratteristiche": {
         "astuzia": 6,
         "forza": 5,
@@ -662,11 +662,11 @@
       },
       "abitazioneIniziale": {
         "tipo": "uso",
-        "descrizione": "Capanna di fango e paglia con orto e porcile. Unico bene: la terra che lavori per il signore",
+        "descrizione": "Capanna di fango e paglia con orto e porcile. Unico bene: la terra che lavora per il signore",
         "costoAffittoGiorno": 0
       },
       "vantaggi": [
-        "Azione 'Lavora Campo': zero soldi ma produce cibo, -1 spesa/giorno se vive dei suoi prodotti",
+        "Azione 'Lavora Campo': zero soldi ma produce cibo, -1 soldi al giorno se vive dei suoi prodotti",
         "Azione 'Alleva Porco': 90 giorni lavoro = porco da vendere a 15-25 soldi",
         "Azione 'Vendi al Mercato': +50% prezzo su uova, verdure, formaggio nei giorni di mercato",
         "Resistenza fame: può sopravvivere con zero soldi per 10 giorni mangiando radici",
@@ -676,9 +676,9 @@
       "svantaggi": [
         "Povertà assoluta: guadagno basso, vive di sussistenza",
         "Dipende dal raccolto: grandine/alluvione = zero guadagno per 30-90 giorni",
-        "Rischio saccheggio: 15% per evento 'guerra', perdi casa + raccolto + rischio soprusi",
-        "Tasse signorili: 10 soldi ogni 90 giorni al padrone, se non paghi confisca terra",
-        "Malattia figli: 5% al mese evento 'figlio malato', -5 soldi cerusico o muore",
+        "Rischio saccheggio: 15% per evento 'guerra', perde casa + raccolto + rischio soprusi",
+        "Tasse signorili: 10 soldi ogni 90 giorni al padrone, se non paga confisca terra",
+        "Malattia figli: 5% al mese evento 'figlio malato', 5 soldi a cerusico o muore",
         "Non può lasciare la terra: malus -90% di guadagno se abbandona il luogo scelto, è serva della gleba",
         "In tempo di carestia: 40% di mortalità contro il 10% di altri archetipi",
         "Non può imparare a leggere: blocco conoscenza max 3"

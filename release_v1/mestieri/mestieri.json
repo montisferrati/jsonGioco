@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Mestieri, guadagni e spese per luogo - Monferrato 1434"
   },
-  "updatedAt": "2026-06-06T12:00:00Z",
+  "updatedAt": "2026-06-09T12:00:00Z",
   "minAppVersion": 1,
   "percentualeRimborsoDebito": 20,
 
@@ -66,23 +66,39 @@
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
-        "completa": "capanna_villica_completa"
+        "completa": "capanna_villica"
       }
     },
 	{
-      "id": "capanna",
-      "nome": "Capanna di Legno e fieno",
-      "descrizione": "Capanna di legno con tetto di strame per chi non ha altro",
+      "id": "capanna_barcarolo",
+      "nome": "Capanna di legno",
+      "descrizione": "Capanna di legno vicino al fiume",
       "tipoAccesso": "uso",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["barcarolo", "guaritrice"],
+      "archetipiConsentiti": ["barcarolo"],
       "livelloComfort": 1,
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
-        "completa": "capanna_completa"
+        "completa": "capanna_barcarolo"
+      }
+    },
+	{
+      "id": "capanna",
+      "nome": "Capanna di legno con tetto di strame",
+      "descrizione": "Capanna di legno con tetto di strame",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["guaritrice"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "capanna"
       }
     },
 	{
@@ -98,13 +114,13 @@
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
-        "completa": "angolo_paglia_completo"
+        "completa": "angolo_paglia"
       }
     },
     {
       "id": "stanza_affitto",
       "nome": "Stanza in affitto",
-      "descrizione": "Una singola stanza presso una casa vicino a un cantiere o presso una locanda",
+      "descrizione": "Una singola stanza presso una locanda",
       "tipoAccesso": "affitto",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 1,
@@ -117,9 +133,25 @@
         "completa": "stanza_affitto_completa"
       }
     },
+	{
+      "id": "stanza_muratore",
+      "nome": "Stanza in affitto",
+      "descrizione": "Una singola stanza presso una casa vicino a un cantiere",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 1,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["mastro_muratore"],
+      "livelloComfort": 2,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "stanza_affitto_completa"
+      }
+    },
     {
-      "id": "bottega_affitto",
-      "nome": "Bottega con stanza",
+      "id": "bottega_tes_affitto",
+      "nome": "Bottega in affitto",
       "descrizione": "Bottega in affitto con stanza al piano superiore ad uso abitativo",
       "tipoAccesso": "affitto",
       "costoAcquisto": 0,
@@ -130,13 +162,13 @@
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
-        "completa": "bottega_completa"
+        "completa": "bottega_tes_completa"
       }
     },
     {
       "id": "bottega_notaro",
-      "nome": "Bottega con stanza",
-      "descrizione": "Bottega in affitto con una stanza in più ad uso abitativo",
+      "nome": "Studio in affitto",
+      "descrizione": "Studio Notarile in affitto con una stanza in più ad uso abitativo",
       "tipoAccesso": "affitto",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 2,
@@ -146,12 +178,12 @@
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
-        "completa": "bottega_notaro_completa"
+        "completa": "bottega_notaro"
       }
     },
     {
       "id": "fondaco",
-      "nome": "Fondaco",
+      "nome": "Fondaco in affitto",
       "descrizione": "Magazzino con alloggio, ideale per il mercante",
       "tipoAccesso": "affitto",
       "costoAcquisto": 0,
@@ -166,8 +198,24 @@
       }
     },
     {
+      "id": "fondaco_po",
+      "nome": "Fondaco in affitto",
+      "descrizione": "Magazzino con alloggio vicino al fiume, ideale per il mercante",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 3,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["mercante"],
+      "livelloComfort": 3,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "fondaco_mare_completo"
+      }
+    },
+    {
       "id": "locanda",
-      "nome": "Locanda",
+      "nome": "Locanda in affitto",
       "descrizione": "Locanda con osteria al piano terra, stanza con un letto sopra la taverna",
       "tipoAccesso": "affitto",
       "costoAcquisto": 0,
@@ -185,7 +233,7 @@
       "id": "canonica",
       "nome": "Canonica",
       "descrizione": "Alloggio presso la chiesa, sobrio e sicuro",
-      "tipoAccesso": "uso",
+      "tipoAccesso": "Canonica",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 0,
@@ -201,7 +249,7 @@
       "id": "caserma",
       "nome": "Caserma",
       "descrizione": "Pagliericcio nella caserma del castello o del presidio del signore",
-      "tipoAccesso": "uso",
+      "tipoAccesso": "Caserma",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 0,
@@ -215,13 +263,13 @@
     },
     {
       "id": "casa_acquistata",
-      "nome": "Casa propria",
-      "descrizione": "Una casa di proprietà nel borgo, frutto di risparmio e lavoro",
+      "nome": "Casa acquistata",
+      "descrizione": "Una casa costruita nel borgo, frutto di risparmio e lavoro",
       "tipoAccesso": "proprieta",
       "costoAcquisto": 800,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 2,
-      "archetipiConsentiti": ["notaro", "cronista", "levatrice"],
+      "archetipiConsentiti": ["cronista"],
       "livelloComfort": 4,
       "immagineStadi": {
         "cantiere": "casa_cantiere_01",
@@ -229,6 +277,22 @@
         "completa": "casa_completa"
       },
       "giorniCostruzione": 30
+    },
+    {
+      "id": "casa_ereditata",
+      "nome": "Casa ereditata",
+      "descrizione": "Una casa di famiglia ereditata",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["levatrice"],
+      "livelloComfort": 3,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "casa_completa"
+      }
     },
 	{
       "id": "carrozza",
