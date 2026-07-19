@@ -1,0 +1,165 @@
+{
+  "_metaDatiJson": {
+    "nomeJson": "eventi_meteo",
+    "repoJson": "gioco",
+    "note": "Eventi atmosferici casuali, specifici per ogni stagione - Monferrato 1434. Modifica solo questo file per aggiungere/rimuovere eventi meteo: nessuna modifica al codice necessaria, a patto che i textureId usati esistano gia' nella mappatura locale Unity (terrainLayerMappings)."
+  },
+  "updatedAt": "2026-07-18T12:00:00Z",
+  "minAppVersion": 1,
+
+  "_schema_evento": {
+    "id": "identificativo univoco",
+    "titolo": "mostrato nel bando/messaggio",
+    "messaggio": "testo narrativo",
+    "probabilitaGiorno": "0-1, probabilita' di scattare ogni giorno di quella stagione",
+    "mostraBando": "se true mostra un bando/messaggio in UI quando scatta",
+    "effetti": {
+      "cambioTerreno": {
+        "textureId": "texture applicata durante l'evento",
+        "textureIdRitorno": "texture applicata quando l'evento finisce. Se omesso, torna alla texture della fase stagionale corrente",
+        "durataGiorni": "quanti giorni resta attiva la textureId prima di tornare a textureIdRitorno"
+      }
+    }
+  },
+
+  "eventiMeteoPerStagione": {
+
+    "primavera": [
+      {
+        "id": "pioggia_primavera",
+        "titolo": "Pioggia di primavera",
+        "messaggio": "Una pioggia leggera bagna i campi del Monferrato. L'aria si fa fresca, i sentieri scivolosi.",
+        "probabilitaGiorno": 0.05,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Wet",
+            "textureIdRitorno": "TL_Spring",
+            "durataGiorni": 2
+          }
+        }
+      },
+      {
+        "id": "fango_dopo_pioggia_primavera",
+        "titolo": "Sentieri infangati",
+        "messaggio": "Le piogge dei giorni scorsi hanno lasciato il terreno fangoso e difficile da percorrere.",
+        "probabilitaGiorno": 0.03,
+        "mostraBando": false,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Mud",
+            "textureIdRitorno": "TL_Spring",
+            "durataGiorni": 3
+          }
+        }
+      },
+      {
+        "id": "fioritura_primavera",
+        "titolo": "I campi fioriscono",
+        "messaggio": "Un tappeto di fiori colora le colline del Monferrato. Un raro momento di quiete e bellezza.",
+        "probabilitaGiorno": 0.02,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Flowers",
+            "textureIdRitorno": "TL_Spring",
+            "durataGiorni": 5
+          }
+        }
+      }
+    ],
+
+    "estate": [
+      {
+        "id": "caldo_intenso_estate",
+        "titolo": "Un caldo opprimente",
+        "messaggio": "Il sole picchia senza pieta'. La terra si secca e screpola sotto i piedi.",
+        "probabilitaGiorno": 0.04,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Dry",
+            "textureIdRitorno": "TL_Summer",
+            "durataGiorni": 4
+          }
+        }
+      },
+      {
+        "id": "temporale_estivo",
+        "titolo": "Temporale estivo",
+        "messaggio": "Un temporale improvviso rinfresca l'aria e bagna i campi assetati.",
+        "probabilitaGiorno": 0.03,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Wet",
+            "textureIdRitorno": "TL_Summer",
+            "durataGiorni": 1
+          }
+        }
+      }
+    ],
+
+    "autunno": [
+      {
+        "id": "caduta_foglie",
+        "titolo": "Le foglie cadono",
+        "messaggio": "Il vento d'autunno spoglia gli alberi. Un tappeto di foglie ricopre sentieri e campi.",
+        "probabilitaGiorno": 0.04,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Leaves",
+            "textureIdRitorno": "TL_Autumn",
+            "durataGiorni": 6
+          }
+        }
+      },
+      {
+        "id": "pioggia_autunnale",
+        "titolo": "Piogge autunnali",
+        "messaggio": "Le piogge autunnali rendono fangosi i campi appena arati.",
+        "probabilitaGiorno": 0.05,
+        "mostraBando": false,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Mud",
+            "textureIdRitorno": "TL_Autumn",
+            "durataGiorni": 3
+          }
+        }
+      }
+    ],
+
+    "inverno": [
+      {
+        "id": "nevicata_intensa",
+        "titolo": "Nevicata intensa",
+        "messaggio": "La neve cade fitta per l'intera giornata, coprendo ogni cosa di bianco.",
+        "probabilitaGiorno": 0.04,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Snow",
+            "textureIdRitorno": "TL_Wet",
+            "durataGiorni": 5
+          }
+        }
+      },
+      {
+        "id": "disgelo_improvviso",
+        "titolo": "Disgelo improvviso",
+        "messaggio": "Un'inattesa giornata mite scioglie parte della neve, lasciando il terreno fradicio.",
+        "probabilitaGiorno": 0.02,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Wet",
+            "textureIdRitorno": "TL_Snow",
+            "durataGiorni": 2
+          }
+        }
+      }
+    ]
+  }
+}

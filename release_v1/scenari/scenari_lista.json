@@ -21,6 +21,7 @@
       "ordinamento": 1,
       "fileScenario": "scenari/scenario_1434.json",
       "fileEventi": "eventi/eventi_1434.json",
+      "fileEventiMeteo": "eventi/eventi_meteo.json",
       "immagineCopertina": "scenario_1434_cover",
       "difficolta": "normale",
 	  "tags": [

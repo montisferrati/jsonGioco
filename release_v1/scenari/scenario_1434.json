@@ -67,28 +67,76 @@
       "textureTerrenoId": "TL_Spring",
       "bonusContadino": 5,
       "bonusContadina": 5,
-      "note": "Stagione del risveglio, semina e prime fiere"
+      "note": "Stagione del risveglio, semina e prime fiere",
+      "fasiTerreno": [
+        {
+          "textureId": "TL_Spring",
+          "giornoMinInizio": null,
+          "giornoMaxInizio": null,
+          "durataGiorniMin": 90,
+          "durataGiorniMax": 90,
+          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+        }
+      ]
     },
     "estate": {
       "mesi": [7, 8, 9],
       "textureTerrenoId": "TL_Summer",
       "bonusContadino": 8,
       "bonusContadina": 8,
-      "note": "Stagione del raccolto, mercati attivi, caldo intenso"
+      "note": "Stagione del raccolto, mercati attivi, caldo intenso",
+      "fasiTerreno": [
+        {
+          "textureId": "TL_Summer",
+          "giornoMinInizio": null,
+          "giornoMaxInizio": null,
+          "durataGiorniMin": 90,
+          "durataGiorniMax": 90,
+          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+        }
+      ]
     },
     "autunno": {
       "mesi": [10, 11, 12],
       "textureTerrenoId": "TL_Autumn",
       "bonusContadino": 10,
       "bonusContadina": 10,
-      "note": "Stagione del raccolto principale, fiere e vendemmia"
+      "note": "Stagione del raccolto principale, fiere e vendemmia",
+      "fasiTerreno": [
+        {
+          "textureId": "TL_Autumn",
+          "giornoMinInizio": null,
+          "giornoMaxInizio": null,
+          "durataGiorniMin": 90,
+          "durataGiorniMax": 90,
+          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+        }
+      ]
     },
     "inverno": {
       "mesi": [1, 2, 3],
       "textureTerrenoId": "TL_Snow",
       "bonusContadino": -3,
       "bonusContadina": -3,
-      "note": "Stagione dura, mercati ridotti, rischio malattia"
+      "note": "Stagione dura, mercati ridotti, rischio malattia",
+      "fasiTerreno": [
+        {
+          "textureId": "TL_Snow",
+          "giornoMinInizio": 0,
+          "giornoMaxInizio": 5,
+          "durataGiorniMin": 7,
+          "durataGiorniMax": 14,
+          "note": "La neve arriva in un giorno casuale tra 0 e 5 giorni dopo l'inizio della stagione, e resta tra 7 e 14 giorni"
+        },
+        {
+          "textureId": "TL_Wet",
+          "giornoMinInizio": null,
+          "giornoMaxInizio": null,
+          "durataGiorniMin": 90,
+          "durataGiorniMax": 90,
+          "note": "Dopo lo scioglimento resta fango/bagnato fino a primavera (ultima fase, dura indefinitamente)"
+        }
+      ]
     }
   },
 

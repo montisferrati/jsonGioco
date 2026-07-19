@@ -71,10 +71,8 @@
       "luoghiInteressatiTutti": true,
       "effetti": {
         "cambioStendardo": null,
-        "cambioTerreno": {
-          "textureId": "TL_Grass",
-          "note": "Terreno estivo"
-        },
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
         "bonusGuadagnoPercentuale": {
           "archetipi": ["contadino", "contadina"],
           "percentuale": 30
@@ -97,10 +95,8 @@
       "luoghiInteressatiTutti": true,
       "effetti": {
         "cambioStendardo": null,
-        "cambioTerreno": {
-          "textureId": "TL_Grass",
-          "note": "Terreno autunnale"
-        },
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
         "bonusGuadagnoPercentuale": {
           "archetipi": ["contadino", "contadina"],
           "percentuale": 40
@@ -123,10 +119,8 @@
       "luoghiInteressatiTutti": true,
       "effetti": {
         "cambioStendardo": null,
-        "cambioTerreno": {
-          "textureId": "TL_Snow",
-          "note": "Terreno innevato"
-        },
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
         "malusGuadagnoPercentuale": {
           "archetipi": ["contadino", "contadina", "mercante"],
           "percentuale": 20
@@ -153,10 +147,8 @@
       "luoghiInteressatiTutti": true,
       "effetti": {
         "cambioStendardo": null,
-        "cambioTerreno": {
-          "textureId": "TL_Grass",
-          "note": "Terreno primaverile"
-        }
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno"
       },
       "mostraBando": true,
       "bandoId": null,
