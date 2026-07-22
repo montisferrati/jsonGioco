@@ -2,16 +2,18 @@
   "_metaDatiJson": {
     "nomeJson": "eventi_meteo",
     "repoJson": "gioco",
-    "note": "Eventi atmosferici casuali, specifici per ogni stagione - Monferrato 1434. Modifica solo questo file per aggiungere/rimuovere eventi meteo: nessuna modifica al codice necessaria, a patto che i textureId usati esistano gia' nella mappatura locale Unity (terrainLayerMappings)."
+    "note": "Eventi atmosferici a data fissa, ed eventi atmosferici casuali specifici per ogni stagione. Modifica solo questo file per aggiungere/rimuovere eventi meteo: nessuna modifica al codice necessaria, a patto che i textureId usati esistano gia' nella mappatura locale Unity (terrainLayerMappings)."
   },
-  "updatedAt": "2026-07-18T12:00:00Z",
+  "updatedAt": "2026-07-21T12:00:00Z",
   "minAppVersion": 1,
 
   "_schema_evento": {
     "id": "identificativo univoco",
     "titolo": "mostrato nel bando/messaggio",
     "messaggio": "testo narrativo",
-    "probabilitaGiorno": "0-1, probabilita' di scattare ogni giorno di quella stagione",
+    "probabilitaGiorno": "0-1, probabilita' di scattare ogni giorno di quella stagione. Ignorato se e' presente dataTrigger",
+    "dataTrigger": "opzionale, formato AAAA-MM-GG (es. '1434-12-25'). Se presente, l'evento scatta esattamente in quel giorno di gioco, a prescindere dalla stagione meccanica attiva, e probabilitaGiorno viene ignorato. Ha priorita' sugli eventi casuali dello stesso giorno.",
+    "ripetibile": "solo per eventi con dataTrigger: se true puo' riscattare ogni volta che la data ricorre (utile per scenari pluriennali), se false/assente scatta una sola volta. Default: false",
     "mostraBando": "se true mostra un bando/messaggio in UI quando scatta",
     "effetti": {
       "cambioTerreno": {
@@ -50,6 +52,21 @@
             "textureId": "TL_Mud",
             "textureIdRitorno": "TL_Spring",
             "durataGiorni": 3
+          }
+        }
+      },
+      {
+        "id": "fioritura_annuale_di_san_marco",
+        "titolo": "La fioritura di San Marco",
+        "messaggio": "Come da tradizione, per la festa di San Marco i campi del Monferrato si coprono di fiori.",
+        "dataTrigger": "1435-04-25",
+        "ripetibile": false,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Flowers",
+            "textureIdRitorno": "TL_Spring",
+            "durataGiorni": 4
           }
         }
       },
@@ -132,6 +149,21 @@
     ],
 
     "inverno": [
+      {
+        "id": "nevicata_di_natale",
+        "titolo": "La neve del giorno di Natale",
+        "messaggio": "Come per un presagio, la neve cade fitta proprio nel giorno della Natività. Il borgo si ferma a guardare.",
+        "dataTrigger": "1434-12-25",
+        "ripetibile": false,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Snow",
+            "textureIdRitorno": "TL_Snow",
+            "durataGiorni": 3
+          }
+        }
+      },
       {
         "id": "nevicata_intensa",
         "titolo": "Nevicata intensa",
