@@ -1,0 +1,434 @@
+{
+  "_metaDatiJson": {
+    "nomeJson": "eventi_1431",
+    "repoJson": "gioco",
+    "note": "Eventi storici e casuali - Prequel Monferrato 1431-1435"
+  },
+  "updatedAt": "2026-07-21T12:00:00Z",
+  "minAppVersion": 1,
+
+  "eventi": [
+
+    {
+      "id": "alleanza_savoia_visconti",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "plausibile",
+      "_notaStorica": "L'alleanza tra Savoia e Visconti contro il Marchesato e' documentata nel 1431; il giorno esatto non e' stato reperito, la data qui usata e' una stima ragionevole",
+      "dataTrigger": "1431-08-16",
+      "titolo": "Voci di un'alleanza segreta",
+      "messaggio": "Corrono voci alla corte di Chivasso: il Duca di Milano e il Duca di Savoia avrebbero stretto un patto segreto contro il Marchesato. Nessuno osa dirlo apertamente, ma i mercanti che tornano da Milano parlano di truppe che si muovono.",
+      "luoghiInteressati": ["chivasso"],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "visconti",
+          "versoFazione": "paleologi",
+          "nuovoStato": "tensione"
+        },
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -5,
+          "luoghi": ["chivasso", "casale"]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_voci_alleanza",
+      "ripetibile": false
+    },
+
+    {
+      "id": "morte_erede_savoia",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "La morte di Amedeo di Savoia, principe di Piemonte, nell'agosto 1431 e' documentata dalle fonti (Treccani, Dizionario Biografico degli Italiani, voce Amedeo VIII); il giorno esatto entro il mese non e' specificato dalle fonti consultate",
+      "dataTrigger": "1431-08-15",
+      "titolo": "Lutto alla corte di Savoia",
+      "messaggio": "Notizie da Torino: Amedeo, primogenito del Duca Amedeo VIII e principe di Piemonte, e' morto improvvisamente. Si dice che il Duca, gia' provato dal lutto per la moglie, meditera' di ritirarsi dal governo attivo. Il titolo passa al secondogenito Ludovico.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "sbloccoQuest": ["quest_osservare_torino"]
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_lutto_savoia",
+      "ripetibile": false
+    },
+
+    {
+      "id": "inizio_estate_1431",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1431-06-21",
+      "dataTriggerFine": null,
+      "titolo": "L'estate è arrivata",
+      "messaggio": "Il sole scalda le campagne del Monferrato. I contadini lavorano dall'alba al tramonto. Il raccolto si annuncia abbondante.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["contadino", "contadina"],
+          "percentuale": 30
+        }
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": false
+    },
+
+    {
+      "id": "inizio_autunno_1431",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1431-09-21",
+      "dataTriggerFine": null,
+      "titolo": "L'autunno scende sul Monferrato",
+      "messaggio": "Le foglie ingialliscono sulle colline del Monferrato. È tempo di raccolto, di vendemmia e di fare provviste per l'inverno che verrà.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["contadino", "contadina"],
+          "percentuale": 40
+        }
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": false
+    },
+
+    {
+      "id": "inizio_inverno_1431",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1431-12-21",
+      "dataTriggerFine": null,
+      "titolo": "L'inverno stringe il Monferrato",
+      "messaggio": "Le prime nevi imbiancano le colline. I mercati si riducono, le strade sono difficili.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
+        "malusGuadagnoPercentuale": {
+          "archetipi": ["contadino", "contadina", "mercante"],
+          "percentuale": 20
+        },
+        "speseStraordinarie": {
+          "importo": 2,
+          "nota": "Costo riscaldamento giornaliero per tutti"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "inverno_bando_1431",
+      "ripetibile": false
+    },
+
+    {
+      "id": "inizio_primavera_1432",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1432-03-21",
+      "dataTriggerFine": null,
+      "titolo": "La primavera torna sul Monferrato",
+      "messaggio": "Le nevi si sciolgono, i fiori tornano sulle colline. Nuovi mercati si aprono, i viaggiatori riprendono le loro rotte.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno"
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": false
+    },
+
+    {
+      "id": "pace_di_ferrara",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "26 aprile 1433, Pace di Ferrara: il Visconti e' costretto ad accettare la restituzione dei territori monferrini occupati (fonte: Treccani, Dizionario Biografico, voce Giangiacomo Paleologo)",
+      "dataTrigger": "1433-04-26",
+      "titolo": "La Pace di Ferrara",
+      "messaggio": "A Ferrara viene sottoscritta una nuova pace: il Duca di Milano e' costretto a restituire al Marchese i territori monferrini occupati negli anni passati. A Chivasso si respira, per la prima volta da tempo, un'aria di sollievo.",
+      "luoghiInteressati": ["chivasso"],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "visconti",
+          "versoFazione": "paleologi",
+          "nuovoStato": "pace"
+        },
+        "bonusReputazione": {
+          "fazione": "paleologi",
+          "valore": 10,
+          "luoghi": ["chivasso", "casale"]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_pace_ferrara",
+      "ripetibile": false
+    },
+
+    {
+      "id": "fiera_san_giovanni_1433",
+      "tipo": "ricorrente",
+      "priorita": "media",
+      "dataTrigger": "1433-06-24",
+      "dataTriggerFine": "1433-06-27",
+      "titolo": "Fiera di San Giovanni a Chivasso",
+      "messaggio": "Si apre la grande fiera di San Giovanni. Mercanti da ogni borgo del Monferrato convergono a Chivasso, ancora capitale del Marchesato. I prezzi salgono, le opportunità abbondano.",
+      "luoghiInteressati": ["chivasso"],
+      "luoghiInteressatiTutti": false,
+      "effetti": {
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["mercante", "artigiano", "tessitrice", "ostessa"],
+          "percentuale": 50,
+          "durataGiorni": 4,
+          "note": "Guadagno aumentato del 50% per i giorni della fiera"
+        },
+        "sbloccoAzione": "compra_merce_fiera"
+      },
+      "mostraBando": true,
+      "bandoId": "fiera_san_giovanni_chivasso_bando",
+      "ripetibile": true
+    },
+
+    {
+      "id": "traslazione_corte_casale",
+      "capitolo": 3,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "licenza_narrativa",
+      "_notaStorica": "Le fonti concordano che Casale assunse il ruolo di centro principale del Marchesato come conseguenza della perdita di Chivasso nel 1435, non per un proclama isolato nel 1434. Questo evento dramatizza, con una data e un bando in-universe, un processo di trasferimento della corte che nella realta' fu graduale. Non presentarlo come atto storicamente certificato",
+      "dataTrigger": "1434-05-03",
+      "titolo": "La corte si trasferisce a Casale",
+      "messaggio": "Con Chivasso sempre più esposta alle pretese sabaude, Gian Giacomo Paleologo ordina che la sede principale della corte, del consiglio e della cancelleria sia trasferita a Casale. Chivasso resta terra del Marchesato, ma non più suo cuore pulsante.",
+      "luoghiInteressati": ["casale", "chivasso"],
+      "effetti": {
+        "bonusSoldi": {
+          "luogo": "casale",
+          "importo": 20,
+          "note": "Bonus una tantum per residenti a Casale"
+        },
+        "malusGuadagnoPercentuale": {
+          "archetipi": ["notaro", "mercante"],
+          "percentuale": 15,
+          "durataGiorni": 30,
+          "note": "A Chivasso il rallentamento degli affari di corte si fa sentire"
+        },
+        "sbloccoQuest": ["quest_corte_casale_01"]
+      },
+      "mostraBando": true,
+      "bandoId": "bandoCasale_0",
+      "ripetibile": false
+    },
+
+    {
+      "id": "rottura_tregua_visconti_1431",
+      "capitolo": 3,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "plausibile",
+      "dataTrigger": "1435-01-12",
+      "titolo": "Filippo Maria rompe la tregua",
+      "messaggio": "Il Duca di Milano Filippo Maria Visconti dichiara decaduti i patti con Johan Jacomo. Le truppe ducali si radunano ad Acqui.",
+      "luoghiInteressati": ["acqui"],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "visconti",
+          "versoFazione": "paleologi",
+          "nuovoStato": "guerra"
+        },
+        "attivaBando": "bandoAcqui_guerra",
+        "spawnEsercito": {
+          "id": "armata_viscontea_acqui",
+          "luogo": "acqui",
+          "forza": 1200,
+          "comandante": "locotenente_petrolo_della_croce"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoAcqui_guerra",
+      "ripetibile": false
+    },
+
+    {
+      "id": "ostaggio_giovanni_paleologo",
+      "capitolo": 3,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "7 gennaio 1435: Giovanni, figlio di Gian Giacomo Paleologo, viene arrestato e trattenuto come ostaggio mentre l'esercito sabaudo occupa Settimo e assedia Chivasso (fonte: Treccani, Dizionario Biografico, voce Giovanni IV Paleologo)",
+      "dataTrigger": "1435-01-07",
+      "titolo": "Il tranello di Torino",
+      "messaggio": "Giovanni, figlio del Marchese, si trovava a Torino per trattative diplomatiche. Con un pretesto viene arrestato e trattenuto come ostaggio, mentre l'esercito sabaudo occupa Settimo e muove su Chivasso. Gian Giacomo, informato, ordina alla guarnigione di resistere ad ogni costo, dichiarando di non essere disposto a cedere la città nemmeno per salvare il figlio.",
+      "luoghiInteressati": ["chivasso"],
+      "effetti": {
+        "cambioStatoLuogo": {
+          "luogo": "chivasso",
+          "nuovoStato": "assediato"
+        },
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -10,
+          "luoghi": ["chivasso"]
+        },
+        "malusGuadagnoPercentuale": {
+          "archetipi": ["mercante", "artigiano"],
+          "percentuale": 60,
+          "durataGiorni": 18
+        },
+        "sbloccoAzione": "arruolamento_milizia"
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_ostaggio",
+      "ripetibile": false
+    },
+
+    {
+      "id": "caduta_chivasso_1431",
+      "capitolo": 3,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "plausibile",
+      "_notaStorica": "L'anno 1435 e la perdita di Chivasso ai Savoia sono ampiamente documentati; il giorno esatto della resa/capitolazione non e' stato reperito con precisione nelle fonti consultate, si stima circa 18 giorni dopo l'inizio dell'assedio del 7 gennaio",
+      "dataTrigger": "1435-01-25",
+      "titolo": "Chivasso si arrende ai Savoia",
+      "messaggio": "Dopo settimane di assedio, con il figlio del Marchese ancora ostaggio a Torino, Chivasso apre le porte ad Amedeo VIII di Savoia. Il Monferrato perde la sua antica capitale, sede della corte marchionale per oltre un secolo. Casale, già cuore amministrativo del Marchesato dall'anno precedente, ne raccoglie ora definitivamente l'eredità.",
+      "luoghiInteressati": ["chivasso", "casale"],
+      "effetti": {
+        "cambioProprietario": {
+          "luogo": "chivasso",
+          "daFazione": "paleologi",
+          "aFazione": "savoia"
+        },
+        "disattivaBando": "bandoChivasso_paleologo",
+        "attivaBando": "bandoChivasso_sabaudo",
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -15,
+          "luoghi": ["casale", "moncalvo", "pontestura"]
+        },
+        "bonusSoldi": {
+          "luogo": "casale",
+          "importo": 15,
+          "note": "Casale, ora unica capitale, attira nuove opportunita' nonostante il lutto per Chivasso"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_sabaudo",
+      "ripetibile": false
+    },
+
+    {
+      "id": "epilogo_ultima_capitale",
+      "capitolo": 3,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "licenza_narrativa",
+      "_notaStorica": "Chiusura narrativa dello scenario: riepiloga in chiave storiografica il tramonto della signoria paleologa su Chivasso, senza introdurre nuovi fatti non documentati",
+      "dataTrigger": "1435-02-01",
+      "titolo": "Il tramonto di Chivasso",
+      "messaggio": "Con la perdita di Chivasso si chiude un'epoca: per oltre cento anni quella città fu il cuore del Marchesato. Ora Casale, già residenza della corte dall'anno prima, ne raccoglie il testimone. Il Marchesato sopravvive, ma il Monferrato che verrà non sarà più lo stesso.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoCasale_epilogo_1431",
+      "ripetibile": false
+    },
+
+    {
+      "id": "pestilenza_minore_1431",
+      "tipo": "casuale",
+      "priorita": "alta",
+      "dataTrigger": null,
+      "dataTriggerFine": null,
+      "probabilitaGiorno": 0.001,
+      "titolo": "Una malattia si diffonde",
+      "messaggio": "Una febbre misteriosa colpisce alcuni abitanti del borgo. Le levatrici sono al lavoro, la paura si diffonde tra la gente.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": false,
+      "luoghiCasuali": 1,
+      "effetti": {
+        "malusGuadagnoPercentuale": {
+          "archetipi": ["mercante", "artigiano", "tessitrice", "ostessa"],
+          "percentuale": 30,
+          "durataGiorni": 7
+        },
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["levatrice"],
+          "percentuale": 80,
+          "durataGiorni": 7
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "pestilenza_bando",
+      "ripetibile": true
+    },
+
+    {
+      "id": "passaggio_mercanti_1431",
+      "tipo": "casuale",
+      "priorita": "bassa",
+      "dataTrigger": null,
+      "dataTriggerFine": null,
+      "probabilitaGiorno": 0.05,
+      "titolo": "Una carovana di mercanti",
+      "messaggio": "Una carovana di mercanti si ferma nel borgo per la notte. Le osterie si riempiono, il mercato si anima di merci rare.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": false,
+      "luoghiCasuali": 1,
+      "effetti": {
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["ostessa", "mercante"],
+          "percentuale": 40,
+          "durataGiorni": 1
+        }
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": true
+    },
+
+    {
+      "id": "raccolto_abbondante_1431",
+      "tipo": "casuale",
+      "priorita": "media",
+      "dataTrigger": null,
+      "dataTriggerFine": null,
+      "probabilitaGiorno": 0.02,
+      "stagioneLimitata": "autunno",
+      "titolo": "Raccolto abbondante",
+      "messaggio": "Quest'anno la terra ha dato frutti oltre ogni aspettativa. I granai si riempiono, i contadini sorridono.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "bonusGuadagnoPercentuale": {
+          "archetipi": ["contadino", "contadina"],
+          "percentuale": 60,
+          "durataGiorni": 3
+        },
+        "bonusSoldiTutti": {
+          "importo": 5,
+          "note": "Tutti i residenti beneficiano dell'abbondanza"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "raccolto_bando",
+      "ripetibile": true
+    }
+  ]
+}

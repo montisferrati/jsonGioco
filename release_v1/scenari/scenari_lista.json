@@ -9,6 +9,36 @@
 
   "scenari": [
     {
+      "id": "scenario_1431",
+      "titolo": "L'Ultima Capitale",
+      "sottotitolo": "Chivasso, 1431 — le ombre si allungano sul Monferrato",
+      "descrizione": "Un'alleanza segreta tra Savoia e Visconti minaccia di cancellare il Marchesato. A Chivasso, capitale dei Paleologi da oltre un secolo, si respira la tensione di una frontiera sempre più esposta. Vivi i quattro anni che precedono la caduta.",
+      "dataInizio": "1431-08-15",
+      "dataFine": "1435-02-01",
+      "stagione": "estate",
+      "attivo": true,
+      "sbloccato": true,
+      "ordinamento": 0,
+      "fileScenario": "scenari/scenario_1431.json",
+      "fileEventi": "eventi/eventi_1431.json",
+      "fileEventiMeteo": "eventi/eventi_meteo_1431.json",
+      "bandiTag": "v0.0.1",
+      "bandiFolder": "release_1431",
+      "mappaRepo": "mappa",
+      "mappaTag": "v0.0.1",
+      "mappaFolder": "release_1431",
+      "mappaName": "mappa_1431.json",
+      "immagineCopertina": "scenario_1431_cover",
+      "difficolta": "difficile",
+      "tags": [
+        "paleologi",
+        "prequel",
+        "guerra_1431_1435",
+        "frontiera",
+        "chivasso"
+      ]
+    },
+    {
       "id": "scenario_1434",
       "titolo": "Il Marchesato del Monferrato",
       "sottotitolo": "Casale diventa Capitale — 3 maggio 1434",
@@ -22,6 +52,12 @@
       "fileScenario": "scenari/scenario_1434.json",
       "fileEventi": "eventi/eventi_1434.json",
       "fileEventiMeteo": "eventi/eventi_meteo.json",
+      "bandiTag": "v0.0.1",
+      "bandiFolder": "release_v1",
+      "mappaRepo": "mappa",
+      "mappaTag": "v0.0.1",
+      "mappaFolder": "release_v1",
+      "mappaName": "mappa.json",
       "immagineCopertina": "scenario_1434_cover",
       "difficolta": "normale",
 	  "tags": [
