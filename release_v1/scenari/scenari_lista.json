@@ -4,9 +4,8 @@
     "repoJson": "gioco",
     "note": "Lista scenari disponibili"
   },
-  "updatedAt": "2026-06-06T12:00:00Z",
+  "updatedAt": "2026-07-27T12:00:00Z",
   "minAppVersion": 1,
-
   "scenari": [
     {
       "id": "scenario_1431",
@@ -22,10 +21,10 @@
       "fileScenario": "scenari/scenario_1431.json",
       "fileEventi": "eventi/eventi_1431.json",
       "fileEventiMeteo": "eventi/eventi_meteo_1431.json",
-      "bandiTag": "v0.0.1",
+      "bandiTag": "v0.1.1",
       "bandiFolder": "release_1431",
       "mappaRepo": "mappa",
-      "mappaTag": "v0.0.1",
+      "mappaTag": "v0.1.2",
       "mappaFolder": "release_1431",
       "mappaName": "mappa_1431.json",
       "immagineCopertina": "scenario_1431_cover",
@@ -44,27 +43,27 @@
       "sottotitolo": "Casale diventa Capitale — 3 maggio 1434",
       "descrizione": "Johan Jacomo Paleologo proclama Casale nuova capitale. Savoia e Visconti premono ai confini. Scegli il tuo destino nel cuore del Monferrato.",
       "dataInizio": "1434-05-03",
-	  "dataFine": "1435-05-02",
+      "dataFine": "1435-05-02",
       "stagione": "primavera",
       "attivo": true,
-	  "sbloccato": true,
+      "sbloccato": true,
       "ordinamento": 1,
       "fileScenario": "scenari/scenario_1434.json",
       "fileEventi": "eventi/eventi_1434.json",
       "fileEventiMeteo": "eventi/eventi_meteo.json",
-      "bandiTag": "v0.0.1",
+      "bandiTag": "v0.1.1",
       "bandiFolder": "release_v1",
       "mappaRepo": "mappa",
-      "mappaTag": "v0.0.1",
+      "mappaTag": "v0.1.2",
       "mappaFolder": "release_v1",
       "mappaName": "mappa.json",
       "immagineCopertina": "scenario_1434_cover",
       "difficolta": "normale",
-	  "tags": [
-	     "paleologi",
-		 "guerra_1434_1435",
-		 "tutorial"
-	  ]
+      "tags": [
+        "paleologi",
+        "guerra_1434_1435",
+        "tutorial"
+      ]
     }
   ]
 }
