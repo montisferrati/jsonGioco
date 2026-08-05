@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Lista scenari disponibili"
   },
-  "updatedAt": "2026-07-27T12:00:00Z",
+  "updatedAt": "2026-08-05T12:00:00Z",
   "minAppVersion": 1,
   "scenari": [
     {
@@ -12,7 +12,7 @@
       "titolo": "L'Ultima Capitale",
       "sottotitolo": "Chivasso, 1431 — le ombre si allungano sul Monferrato",
       "descrizione": "Un'alleanza segreta tra Savoia e Visconti minaccia di cancellare il Marchesato. A Chivasso, capitale dei Paleologi da oltre un secolo, si respira la tensione di una frontiera sempre più esposta. Vivi i quattro anni che precedono la caduta.",
-      "dataInizio": "1431-08-15",
+      "dataInizio": "1431-01-01",
       "dataFine": "1435-02-01",
       "stagione": "estate",
       "attivo": true,

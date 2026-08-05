@@ -4,11 +4,21 @@
     "repoJson": "gioco",
     "note": "Eventi storici e casuali - Monferrato 1434"
   },
-  "updatedAt": "2026-06-06T12:00:00Z",
+  "updatedAt": "2026-08-05T12:00:00Z",
   "minAppVersion": 1,
-
+  "_schema_sequenzaMedia": {
+    "descrizione": "Campo opzionale su qualsiasi evento (storico o stagionale). Se presente, PersonaggioManager.AvanzaGiornoCoroutine mostra la sequenza di immagini tramite SequenzaMediaPlayer e attende che l'utente la chiuda prima di passare al giorno successivo. Se assente, l'evento si comporta come prima (solo bando/messaggio, nessuna pausa). Mostrata solo se mostraBando e' true.",
+    "esempio": {
+      "tipo": "immagini",
+      "immagini": [
+        "img_evento_01",
+        "img_evento_02",
+        "img_evento_03"
+      ],
+      "secondiPerImmagine": 4
+    }
+  },
   "eventi": [
-
     {
       "id": "proclama_capitale",
       "tipo": "storico",
@@ -16,22 +26,23 @@
       "dataTrigger": "1434-05-03",
       "titolo": "Casale diventa Capitale",
       "messaggio": "Johan Jacomo Paleologo proclama Casale Monferrato nuova capitale del Marchesato. La città si anima di cortigiani, funzionari e nuove opportunità.",
-      "luoghiInteressati": ["casale"],
+      "luoghiInteressati": [
+        "casale"
+      ],
       "effetti": {
         "bonusSoldi": {
           "luogo": "casale",
           "importo": 20,
           "note": "Bonus una tantum per residenti a Casale"
         },
-		"sbloccoQuest": [
-		"quest_corte_casale_01"
-		]
+        "sbloccoQuest": [
+          "quest_corte_casale_01"
+        ]
       },
       "mostraBando": true,
       "bandoId": "bandoCasale_0",
       "ripetibile": false
     },
-
     {
       "id": "fiera_san_giovanni",
       "tipo": "ricorrente",
@@ -40,14 +51,21 @@
       "dataTriggerFine": "1434-06-27",
       "titolo": "Fiera di San Giovanni a Casale",
       "messaggio": "Si apre la grande fiera di San Giovanni. Mercanti da ogni borgo del Monferrato convergono a Casale. I prezzi salgono, le opportunità abbondano.",
-      "luoghiInteressati": ["casale"],
+      "luoghiInteressati": [
+        "casale"
+      ],
       "luoghiInteressatiTutti": false,
       "effetti": {
         "bonusSoldi": null,
         "bonusGuadagnoPercentuale": {
-          "archetipi": ["mercante", "artigiano", "tessitrice", "ostessa"],
+          "archetipi": [
+            "mercante",
+            "artigiano",
+            "tessitrice",
+            "ostessa"
+          ],
           "percentuale": 50,
-		  "durataGiorni": 4,
+          "durataGiorni": 4,
           "note": "Guadagno aumentato del 50% per i giorni della fiera"
         },
         "cambioStendardo": null,
@@ -58,7 +76,6 @@
       "bandoId": "fiera_san_giovanni_bando",
       "ripetibile": true
     },
-
     {
       "id": "inizio_estate",
       "tipo": "stagionale",
@@ -74,15 +91,18 @@
         "cambioTerreno": null,
         "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
         "bonusGuadagnoPercentuale": {
-          "archetipi": ["contadino", "contadina"],
+          "archetipi": [
+            "contadino",
+            "contadina"
+          ],
           "percentuale": 30
         }
       },
       "mostraBando": true,
       "bandoId": null,
-      "ripetibile": false
+      "ripetibile": false,
+      "ricorrenzaAnnuale": true
     },
-
     {
       "id": "inizio_autunno",
       "tipo": "stagionale",
@@ -98,15 +118,18 @@
         "cambioTerreno": null,
         "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
         "bonusGuadagnoPercentuale": {
-          "archetipi": ["contadino", "contadina"],
+          "archetipi": [
+            "contadino",
+            "contadina"
+          ],
           "percentuale": 40
         }
       },
       "mostraBando": true,
       "bandoId": null,
-      "ripetibile": false
+      "ripetibile": false,
+      "ricorrenzaAnnuale": true
     },
-
     {
       "id": "inizio_inverno",
       "tipo": "stagionale",
@@ -122,7 +145,11 @@
         "cambioTerreno": null,
         "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
         "malusGuadagnoPercentuale": {
-          "archetipi": ["contadino", "contadina", "mercante"],
+          "archetipi": [
+            "contadino",
+            "contadina",
+            "mercante"
+          ],
           "percentuale": 20
         },
         "speseStraordinarie": {
@@ -132,9 +159,9 @@
       },
       "mostraBando": true,
       "bandoId": "inverno_bando",
-      "ripetibile": false
+      "ripetibile": false,
+      "ricorrenzaAnnuale": true
     },
-
     {
       "id": "inizio_primavera",
       "tipo": "stagionale",
@@ -152,9 +179,9 @@
       },
       "mostraBando": true,
       "bandoId": null,
-      "ripetibile": false
+      "ripetibile": false,
+      "ricorrenzaAnnuale": true
     },
-
     {
       "id": "pestilenza_minore",
       "tipo": "casuale",
@@ -169,12 +196,19 @@
       "luoghiCasuali": 1,
       "effetti": {
         "malusGuadagnoPercentuale": {
-          "archetipi": ["mercante", "artigiano", "tessitrice", "ostessa"],
+          "archetipi": [
+            "mercante",
+            "artigiano",
+            "tessitrice",
+            "ostessa"
+          ],
           "percentuale": 30,
           "durataGiorni": 7
         },
         "bonusGuadagnoPercentuale": {
-          "archetipi": ["levatrice"],
+          "archetipi": [
+            "levatrice"
+          ],
           "percentuale": 80,
           "durataGiorni": 7
         }
@@ -183,7 +217,6 @@
       "bandoId": "pestilenza_bando",
       "ripetibile": true
     },
-
     {
       "id": "passaggio_mercanti",
       "tipo": "casuale",
@@ -198,7 +231,10 @@
       "luoghiCasuali": 1,
       "effetti": {
         "bonusGuadagnoPercentuale": {
-          "archetipi": ["ostessa", "mercante"],
+          "archetipi": [
+            "ostessa",
+            "mercante"
+          ],
           "percentuale": 40,
           "durataGiorni": 1
         }
@@ -207,7 +243,6 @@
       "bandoId": null,
       "ripetibile": true
     },
-
     {
       "id": "raccolto_abbondante",
       "tipo": "casuale",
@@ -222,7 +257,10 @@
       "luoghiInteressatiTutti": true,
       "effetti": {
         "bonusGuadagnoPercentuale": {
-          "archetipi": ["contadino", "contadina"],
+          "archetipi": [
+            "contadino",
+            "contadina"
+          ],
           "percentuale": 60,
           "durataGiorni": 3
         },
@@ -235,15 +273,16 @@
       "bandoId": "raccolto_bando",
       "ripetibile": true
     },
-	
-	{
+    {
       "id": "tregua_rotta_visconti",
       "tipo": "storico",
       "priorita": "alta",
       "dataTrigger": "1435-01-12",
       "titolo": "Filippo Maria rompe la tregua",
       "messaggio": "Il Duca di Milano Filippo Maria Visconti dichiara decaduti i patti con Johan Jacomo. Le truppe ducali si radunano ad Acqui.",
-      "luoghiInteressati": ["acqui"],
+      "luoghiInteressati": [
+        "acqui"
+      ],
       "effetti": {
         "cambioStatoDiplomazia": {
           "daFazione": "visconti",
@@ -262,7 +301,6 @@
       "bandoId": "bandoAcqui_guerra",
       "ripetibile": false
     },
-
     {
       "id": "caduta_chivasso",
       "tipo": "storico",
@@ -270,7 +308,9 @@
       "dataTrigger": "1435-01-25",
       "titolo": "Chivasso si arrende ai Savoia",
       "messaggio": "Dopo mesi di assedio, Chivasso apre le porte ad Amedeo VIII di Savoia. Il Monferrato perde la sua antica capitale.",
-      "luoghiInteressati": ["chivasso"],
+      "luoghiInteressati": [
+        "chivasso"
+      ],
       "effetti": {
         "cambioProprietario": {
           "luogo": "chivasso",
@@ -282,15 +322,29 @@
         "malusReputazione": {
           "fazione": "paleologi",
           "valore": -15,
-          "luoghi": ["casale", "moncalvo", "pontestura"]
+          "luoghi": [
+            "casale",
+            "moncalvo",
+            "pontestura"
+          ]
         },
-        "sbloccoQuest": ["quest_difesa_moncalvo"]
+        "sbloccoQuest": [
+          "quest_difesa_moncalvo"
+        ]
       },
       "mostraBando": true,
       "bandoId": "bandoChivasso_sabaudo",
-      "ripetibile": false
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_caduta_chivasso_01",
+          "img_caduta_chivasso_02",
+          "img_caduta_chivasso_03"
+        ],
+        "secondiPerImmagine": 4
+      }
     },
-
     {
       "id": "moncalvo_sotto_assedio",
       "tipo": "storico",
@@ -298,7 +352,9 @@
       "dataTrigger": "1435-01-18",
       "titolo": "Moncalvo minacciata",
       "messaggio": "Corridori sabaudi sono stati visti presso i boschi di Moncalvo. Il castellano Theodoro Paleologo ordina di serrare le porte.",
-      "luoghiInteressati": ["moncalvo"],
+      "luoghiInteressati": [
+        "moncalvo"
+      ],
       "effetti": {
         "cambioStatoLuogo": {
           "luogo": "moncalvo",
@@ -307,7 +363,10 @@
         "disattivaBando": "bandoMoncalvo_pace",
         "attivaBando": "bandoMoncalvo_guerra",
         "malusGuadagnoPercentuale": {
-          "archetipi": ["mercante", "artigiano"],
+          "archetipi": [
+            "mercante",
+            "artigiano"
+          ],
           "percentuale": 50,
           "durataGiorni": 60
         },
@@ -317,7 +376,6 @@
       "bandoId": "bandoMoncalvo_guerra",
       "ripetibile": false
     },
-
     {
       "id": "blocco_po_visconteo",
       "tipo": "storico",
@@ -325,15 +383,26 @@
       "dataTrigger": "1435-02-10",
       "titolo": "I Visconti bloccano il Po",
       "messaggio": "Galere ducali da Valenza impediscono il transito sul Po. I traffici fluviali di Casale e Pontestura sono interrotti.",
-      "luoghiInteressati": ["casale", "pontestura", "valenza"],
+      "luoghiInteressati": [
+        "casale",
+        "pontestura",
+        "valenza"
+      ],
       "effetti": {
         "malusGuadagnoPercentuale": {
-          "archetipi": ["mercante", "barcarolo"],
+          "archetipi": [
+            "mercante",
+            "barcarolo"
+          ],
           "percentuale": 70,
           "durataGiorni": 90
         },
         "aumentoPrezzo": {
-          "merci": ["sale", "spezie", "panni"],
+          "merci": [
+            "sale",
+            "spezie",
+            "panni"
+          ],
           "percentuale": 40
         }
       },
@@ -341,7 +410,6 @@
       "bandoId": "blocco_po_bando",
       "ripetibile": false
     },
-
     {
       "id": "risposta_moncalvo",
       "tipo": "storico",
@@ -349,12 +417,18 @@
       "dataTrigger": "1435-02-03",
       "titolo": "Moncalvo rifiuta la resa",
       "messaggio": "Il castellano di Moncalvo respinge l’intimazione sabauda: 'Le chiavi non si danno se non al Marchese'. Il morale paleologo risale.",
-      "luoghiInteressati": ["moncalvo"],
+      "luoghiInteressati": [
+        "moncalvo"
+      ],
       "effetti": {
         "bonusReputazione": {
           "fazione": "paleologi",
           "valore": 10,
-          "luoghi": ["casale", "pontestura", "vignale"]
+          "luoghi": [
+            "casale",
+            "pontestura",
+            "vignale"
+          ]
         },
         "attivaBando": "bandoMoncalvo_risposta"
       },

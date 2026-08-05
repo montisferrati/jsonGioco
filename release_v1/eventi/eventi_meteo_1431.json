@@ -4,9 +4,8 @@
     "repoJson": "gioco",
     "note": "Eventi atmosferici casuali per stagione - Prequel Monferrato 1431-1435. File dedicato a questo scenario, indipendente da eventi_meteo.json di scenario_1434."
   },
-  "updatedAt": "2026-07-21T12:00:00Z",
+  "updatedAt": "2026-08-03T12:00:00Z",
   "minAppVersion": 1,
-
   "_schema_evento": {
     "id": "identificativo univoco",
     "titolo": "mostrato nel bando/messaggio",
@@ -19,13 +18,11 @@
       "cambioTerreno": {
         "textureId": "texture applicata durante l'evento",
         "textureIdRitorno": "texture applicata quando l'evento finisce. Se omesso, torna alla texture della fase stagionale corrente",
-        "durataGiorni": "quanti giorni resta attiva la textureId prima di tornare a textureIdRitorno"
+        "durataGiorni": "opzionale: quanti giorni resta attiva la textureId prima di tornare a textureIdRitorno. Se omesso, la textureId non ha scadenza a tempo e resta finche' non arriva un nuovo evento meteo o un cambio stagione"
       }
     }
   },
-
   "eventiMeteoPerStagione": {
-
     "primavera": [
       {
         "id": "pioggia_primavera",
@@ -40,22 +37,7 @@
             "durataGiorni": 2
           }
         }
-      },
-      {
-        "id": "fango_dopo_pioggia_primavera",
-        "titolo": "Sentieri infangati",
-        "messaggio": "Le piogge dei giorni scorsi hanno lasciato il terreno fangoso e difficile da percorrere.",
-        "probabilitaGiorno": 0.03,
-        "mostraBando": true,
-        "effetti": {
-          "cambioTerreno": {
-            "textureId": "TL_Mud",
-            "textureIdRitorno": "TL_Spring",
-            "durataGiorni": 3
-          }
-        }
-      },
-      {
+      },{
         "id": "fioritura_annuale_di_san_marco",
         "titolo": "La fioritura di San Marco",
         "messaggio": "Come da tradizione, per la festa di San Marco i campi del Monferrato si coprono di fiori.",
@@ -65,8 +47,7 @@
         "effetti": {
           "cambioTerreno": {
             "textureId": "TL_Flowers",
-            "textureIdRitorno": "TL_Spring",
-            "durataGiorni": 4
+            "textureIdRitorno": "TL_Spring"
           }
         }
       },
@@ -79,13 +60,11 @@
         "effetti": {
           "cambioTerreno": {
             "textureId": "TL_Flowers",
-            "textureIdRitorno": "TL_Spring",
-            "durataGiorni": 5
+            "textureIdRitorno": "TL_Spring"
           }
         }
       }
     ],
-
     "estate": [
       {
         "id": "caldo_intenso_estate",
@@ -116,22 +95,7 @@
         }
       }
     ],
-
     "autunno": [
-      {
-        "id": "caduta_foglie",
-        "titolo": "Le foglie cadono",
-        "messaggio": "Il vento d'autunno spoglia gli alberi. Un tappeto di foglie ricopre sentieri e campi.",
-        "probabilitaGiorno": 0.04,
-        "mostraBando": true,
-        "effetti": {
-          "cambioTerreno": {
-            "textureId": "TL_Leaves",
-            "textureIdRitorno": "TL_Autumn",
-            "durataGiorni": 6
-          }
-        }
-      },
       {
         "id": "pioggia_autunnale",
         "titolo": "Le piovane del semenzare",
@@ -140,14 +104,13 @@
         "mostraBando": true,
         "effetti": {
           "cambioTerreno": {
-            "textureId": "TL_Mud",
+            "textureId": "TL_Wet",
             "textureIdRitorno": "TL_Autumn",
             "durataGiorni": 3
           }
         }
       }
     ],
-
     "inverno": [
       {
         "id": "nevicata_di_natale",
@@ -187,8 +150,7 @@
         "effetti": {
           "cambioTerreno": {
             "textureId": "TL_Wet",
-            "textureIdRitorno": "TL_Snow",
-            "durataGiorni": 2
+            "textureIdRitorno": "TL_Snow"
           }
         }
       }

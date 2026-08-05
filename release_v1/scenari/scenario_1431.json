@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Scenario prequel - Chivasso capitale contesa, 1431-1435"
   },
-  "updatedAt": "2026-07-21T12:00:00Z",
+  "updatedAt": "2026-08-05T12:00:00Z",
   "minAppVersion": 1,
 
   "scenario": {
@@ -12,8 +12,8 @@
     "titolo": "L'Ultima Capitale",
     "sottotitolo": "Chivasso, 1431 — le ombre si allungano sul Monferrato",
     "descrizione": "Nell'agosto del 1431 muore improvvisamente Amedeo di Savoia, principe di Piemonte ed erede al ducato. Nello stesso anno Savoia e Visconti stringono un'alleanza segreta contro il Marchesato. Chivasso, capitale dei Paleologi da oltre un secolo, si scopre sempre più sola sulla frontiera. Vivi i quattro anni che porteranno alla sua caduta.",
-    "dataInizio": "1431-08-15",
-    "stagione": "estate",
+    "dataInizio": "1431-01-01",
+    "stagione": "inverno",
     "attivo": true,
     "immagineCopertina": "scenario_1431_cover"
   },
