@@ -1,0 +1,178 @@
+{
+  "_metaDatiJson": {
+    "nomeJson": "scenario_1440",
+    "repoJson": "gioco",
+    "note": "Scenario principale - Monferrato 1440"
+  },
+  "updatedAt": "2026-08-29T12:00:00Z",
+  "minAppVersion": 1,
+
+  "scenario": {
+    "id": "scenario_1440",
+    "titolo": "Il Marchesato del Monferrato 1440",
+    "sottotitolo": "Casale 1440",
+    "descrizione": "Epoca 1440. Scegli il tuo destino.",
+    "dataInizio": "1440-10-01",
+    "stagione": "autunno",
+    "attivo": true,
+    "immagineCopertina": "scenario_1440_cover"
+  },
+
+  "dominazioni": [
+    {
+      "famigliaId": "paleologi",
+      "nomeFamiglia": "Paleologi",
+      "coloreStendardo": "#FFD700",
+      "textureStendardo": "Stendardo_Paleologi",
+      "descrizione": "Marchesi del Monferrato per discendenza dai Paleologi di Bisanzio",
+      "luoghiControllati": [
+        "casale", "moncalvo", "pontestura","chivasso",
+        "alfiano", "altavilla", "balzola", "borgo_san_martino", "bozzole", 
+		"calliano", "camagna", "camino", "casorzo", "castagnole", 
+		"castelletto", "castelletto_scazzoso", "cella", "cereseto", 
+		"cerrina", "cerro", "coniolo", "conzano", "cuccaro", 
+		"frassinello", "frassineto", "fubine", "gabiano", "giarole", 
+		"lignano", "lu", "mirabello", "mombello", "montemagno", 
+		"morano", "murisengo", "occimiano", "odalengo_grande", 
+		"odalengo_piccolo", "olivola", "ozzano", "penango", 
+		"pessine", "pobietto", "refrancore", "roncaglia", 
+		"rosignano", "sala", "sangiorgio", "sansalvatore", 
+		"terruggia", "ticineto", "treville", "valmacca", 
+		"vignale", "villanova"
+      ]
+    },
+    {
+      "famigliaId": "visconti",
+      "nomeFamiglia": "Visconti",
+      "coloreStendardo": "#228B22",
+      "textureStendardo": "Stendardo_Visconti",
+      "descrizione": "Duchi di Milano. Controllano il Po a Sud e le vie verso Genova",
+      "luoghiControllatI": [
+	    "acqui", "bassignana", "castello_di_annone", "valenza"
+	  ]
+    },
+    {
+      "famigliaId": "savoia",
+      "nomeFamiglia": "Savoia",
+      "coloreStendardo": "#CC0000",
+      "textureStendardo": "Stendardo_Savoia",
+      "descrizione": "Duchi di Savoia. Pressione sui confini occidentali del Monferrato",
+      "luoghiControllatI": ["trino"]
+    }
+  ],
+
+  "stagioni": {
+    "primavera": {
+      "mesi": [4, 5, 6],
+      "textureTerrenoId": "TL_Spring",
+      "bonusContadino": 5,
+      "bonusContadina": 5,
+      "note": "Stagione del risveglio, semina e prime fiere",
+      "fasiTerreno": [
+        {
+          "textureId": "TL_Spring",
+          "giornoMinInizio": null,
+          "giornoMaxInizio": null,
+          "durataGiorniMin": 90,
+          "durataGiorniMax": 90,
+          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+        }
+      ]
+    },
+    "estate": {
+      "mesi": [7, 8, 9],
+      "textureTerrenoId": "TL_Summer",
+      "bonusContadino": 8,
+      "bonusContadina": 8,
+      "note": "Stagione del raccolto, mercati attivi, caldo intenso",
+      "fasiTerreno": [
+        {
+          "textureId": "TL_Summer",
+          "giornoMinInizio": null,
+          "giornoMaxInizio": null,
+          "durataGiorniMin": 90,
+          "durataGiorniMax": 90,
+          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+        }
+      ]
+    },
+    "autunno": {
+      "mesi": [10, 11, 12],
+      "textureTerrenoId": "TL_Autumn",
+      "bonusContadino": 10,
+      "bonusContadina": 10,
+      "note": "Stagione del raccolto principale, fiere e vendemmia",
+      "fasiTerreno": [
+        {
+          "textureId": "TL_Autumn",
+          "giornoMinInizio": null,
+          "giornoMaxInizio": null,
+          "durataGiorniMin": 90,
+          "durataGiorniMax": 90,
+          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+        }
+      ]
+    },
+    "inverno": {
+      "mesi": [1, 2, 3],
+      "textureTerrenoId": "TL_Snow",
+      "bonusContadino": -3,
+      "bonusContadina": -3,
+      "note": "Stagione dura, mercati ridotti, rischio malattia",
+      "fasiTerreno": [
+        {
+          "textureId": "TL_Snow",
+          "giornoMinInizio": 0,
+          "giornoMaxInizio": 5,
+          "durataGiorniMin": 7,
+          "durataGiorniMax": 14,
+          "note": "La neve arriva in un giorno casuale tra 0 e 5 giorni dopo l'inizio della stagione, e resta tra 7 e 14 giorni"
+        },
+        {
+          "textureId": "TL_Wet",
+          "giornoMinInizio": null,
+          "giornoMaxInizio": null,
+          "durataGiorniMin": 90,
+          "durataGiorniMax": 90,
+          "note": "Dopo lo scioglimento resta fango/bagnato fino a primavera (ultima fase, dura indefinitamente)"
+        }
+      ]
+    }
+  },
+
+  "personaggiStorici": [
+    {
+      "id": "johan_jacomo_paleologo",
+      "nomeDisplay": "Johan Jacomo Paleologo",
+      "nomeStorico": "Gian Giacomo Paleologo", 
+      "ruolo": "Marchese del Monferrato",
+      "famigliaId": "paleologi",
+      "attivo": true,
+      "npcAddress": "Marchese_01",
+      "luogoPrincipale": "casale",
+      "dataNascita": "1395-03-23",
+      "dataMorte": "1445-03-12",
+      "descrizione": "Marchese dal 1418. Il 3 maggio 1434 sposta la capitale a Casale per sfuggire alla pressione sabauda su Chivasso"
+    },
+    {
+      "id": "amedeo_viii_savoia",
+      "nomeDisplay": "Amedeo VIII di Savoia",
+      "ruolo": "Duca di Savoia",
+      "famigliaId": "savoia",
+      "attivo": true,
+      "npcAddress": "Duca_01",
+      "luogoPrincipale": "torino",
+      "descrizione": "Duca dal 1416, Antipapa Felice V dal 1439. Rivendica il Monferrato"
+    },
+	{
+      "id": "filippo_maria_visconti",
+      "nomeDisplay": "Filippo Maria Visconti",
+      "ruolo": "Duca di Milano",
+      "famigliaId": "visconti",
+      "attivo": true,
+      "npcAddress": "Duca_02",
+      "luogoPrincipale": "milano",
+      "descrizione": "Ultimo Visconti. Tiene Acqui e Valenza. Alleato instabile dei Paleologi"
+    }
+  ]
+}

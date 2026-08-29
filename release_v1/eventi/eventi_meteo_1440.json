@@ -1,0 +1,159 @@
+{
+  "_metaDatiJson": {
+    "nomeJson": "eventi_meteo_1440",
+    "repoJson": "gioco",
+    "note": "Eventi atmosferici casuali per stagione - 1440."
+  },
+  "updatedAt": "2026-08-29T12:00:00Z",
+  "minAppVersion": 1,
+  "_schema_evento": {
+    "id": "identificativo univoco",
+    "titolo": "mostrato nel bando/messaggio",
+    "messaggio": "testo narrativo",
+    "probabilitaGiorno": "0-1, probabilita' di scattare ogni giorno di quella stagione. Ignorato se e' presente dataTrigger",
+    "dataTrigger": "opzionale, formato AAAA-MM-GG (es. '1434-12-25'). Se presente, l'evento scatta esattamente in quel giorno di gioco, a prescindere dalla stagione meccanica attiva, e probabilitaGiorno viene ignorato. Ha priorita' sugli eventi casuali dello stesso giorno.",
+    "ripetibile": "solo per eventi con dataTrigger: se true puo' riscattare ogni volta che la data ricorre (utile per scenari pluriennali), se false/assente scatta una sola volta. Default: false",
+    "mostraBando": "se true mostra un bando/messaggio in UI quando scatta",
+    "effetti": {
+      "cambioTerreno": {
+        "textureId": "texture applicata durante l'evento",
+        "textureIdRitorno": "texture applicata quando l'evento finisce. Se omesso, torna alla texture della fase stagionale corrente",
+        "durataGiorni": "opzionale: quanti giorni resta attiva la textureId prima di tornare a textureIdRitorno. Se omesso, la textureId non ha scadenza a tempo e resta finche' non arriva un nuovo evento meteo o un cambio stagione"
+      }
+    }
+  },
+  "eventiMeteoPerStagione": {
+    "primavera": [
+      {
+        "id": "pioggia_primavera",
+        "titolo": "Pioggetta",
+        "messaggio": "Una pioggia leggera bagna i campi del Monferrato. L'aria si fa fresca, i sentieri scivolosi.",
+        "probabilitaGiorno": 0.05,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Wet",
+            "textureIdRitorno": "TL_Spring",
+            "durataGiorni": 2
+          }
+        }
+      },{
+        "id": "fioritura_annuale_di_san_marco",
+        "titolo": "La fioritura di San Marco",
+        "messaggio": "Come da tradizione, per la festa di San Marco i campi del Monferrato si coprono di fiori.",
+        "dataTrigger": "1441-04-25",
+        "ripetibile": true,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Flowers",
+            "textureIdRitorno": "TL_Spring"
+          }
+        }
+      },
+      {
+        "id": "fioritura_primavera",
+        "titolo": "I campi fioriscono",
+        "messaggio": "Un tappeto di fiori colora le colline del Monferrato. Un raro momento di quiete e bellezza.",
+        "probabilitaGiorno": 0.02,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Flowers",
+            "textureIdRitorno": "TL_Spring"
+          }
+        }
+      }
+    ],
+    "estate": [
+      {
+        "id": "caldo_intenso_estate",
+        "titolo": "Un caldo opprimente",
+        "messaggio": "Il sole picchia senza pieta'. La terra si secca e screpola sotto i piedi.",
+        "probabilitaGiorno": 0.04,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Dry",
+            "textureIdRitorno": "TL_Summer",
+            "durataGiorni": 4
+          }
+        }
+      },
+      {
+        "id": "temporale_estivo",
+        "titolo": "Acqua pia della canicola",
+        "messaggio": "Un temporale improvviso rinfresca l'aria e bagna i campi assetati.",
+        "probabilitaGiorno": 0.03,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Wet",
+            "textureIdRitorno": "TL_Summer",
+            "durataGiorni": 1
+          }
+        }
+      }
+    ],
+    "autunno": [
+      {
+        "id": "pioggia_autunnale",
+        "titolo": "Le piovane del semenzare",
+        "messaggio": "Le piogge rendono fangosi i campi appena arati.",
+        "probabilitaGiorno": 0.05,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Wet",
+            "textureIdRitorno": "TL_Autumn",
+            "durataGiorni": 3
+          }
+        }
+      }
+    ],
+    "inverno": [
+      {
+        "id": "nevicata_di_natale",
+        "titolo": "La neve del giorno di Natale",
+        "messaggio": "Come per un presagio, la neve cade fitta proprio nel giorno della Natività. Il borgo si ferma a guardare.",
+        "dataTrigger": "1440-12-25",
+        "ripetibile": false,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Snow",
+            "textureIdRitorno": "TL_Snow",
+            "durataGiorni": 3
+          }
+        }
+      },
+      {
+        "id": "nevicata_intensa",
+        "titolo": "Nevicata intensa",
+        "messaggio": "La neve cade fitta per l'intera giornata, coprendo ogni cosa di bianco.",
+        "probabilitaGiorno": 0.04,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Snow",
+            "textureIdRitorno": "TL_Wet",
+            "durataGiorni": 5
+          }
+        }
+      },
+      {
+        "id": "disgelo_improvviso",
+        "titolo": "Disgelo improvviso",
+        "messaggio": "Un'inattesa giornata mite scioglie parte della neve, lasciando il terreno fradicio.",
+        "probabilitaGiorno": 0.02,
+        "mostraBando": true,
+        "effetti": {
+          "cambioTerreno": {
+            "textureId": "TL_Wet",
+            "textureIdRitorno": "TL_Snow"
+          }
+        }
+      }
+    ]
+  }
+}

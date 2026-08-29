@@ -221,9 +221,9 @@
       ],
       "fazione_affinita": ["paleologo"],
       "fazione_ostile": ["savoia"],
-      "luoghi_spawn_ok": ["casale", "moncalvo", "trino", "acqui", "valenza"],
+      "luoghi_spawn_ok": [],
       "luoghi_bonus": ["casale"],
-      "luoghi_vietati": ["chivasso", "borgo_san_martino"],
+      "luoghi_vietati": [],
       "azioni_sbloccate": [
         "monta_di_guardia",
         "scorta_carovana",
@@ -566,7 +566,7 @@
       ],
       "fazione_affinita": ["neutro"],
       "fazione_ostile": [],
-      "luoghi_spawn_ok": ["casale", "moncalvo", "acqui", "trino", "valenza", "pontestura", "borgo_san_martino", "chivasso"],
+      "luoghi_spawn_ok": [],
       "luoghi_bonus": [],
       "luoghi_malus": [],
       "azioni_sbloccate": [

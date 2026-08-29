@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Lista scenari disponibili"
   },
-  "updatedAt": "2026-08-06T12:00:00Z",
+  "updatedAt": "2026-08-29T12:00:00Z",
   "minAppVersion": 1,
   "scenari": [
     {
@@ -21,7 +21,7 @@
       "fileScenario": "scenari/scenario_1431.json",
       "fileEventi": "eventi/eventi_1431.json",
       "fileEventiMeteo": "eventi/eventi_meteo_1431.json",
-      "bandiTag": "v0.1.2",
+      "bandiTag": "v0.1.3",
       "bandiFolder": "release_1431",
       "mappaRepo": "mappa",
       "mappaTag": "v0.1.2",
@@ -51,7 +51,7 @@
       "fileScenario": "scenari/scenario_1434.json",
       "fileEventi": "eventi/eventi_1434.json",
       "fileEventiMeteo": "eventi/eventi_meteo.json",
-      "bandiTag": "v0.1.2",
+      "bandiTag": "v0.1.3",
       "bandiFolder": "release_v1",
       "mappaRepo": "mappa",
       "mappaTag": "v0.1.2",
@@ -62,6 +62,34 @@
       "tags": [
         "paleologi",
         "guerra_1434_1435",
+        "tutorial"
+      ]
+    },
+    {
+      "id": "scenario_1440",
+      "titolo": "Scenario Test",
+      "sottotitolo": "Monferrato",
+      "descrizione": "Nel cuore del Monferrato.",
+      "dataInizio": "1440-10-01",
+      "dataFine": "1450-10-01",
+      "stagione": "autunno",
+      "attivo": true,
+      "sbloccato": true,
+      "ordinamento": 2,
+      "fileScenario": "scenari/scenario_1440.json",
+      "fileEventi": "eventi/eventi_1440.json",
+      "fileEventiMeteo": "eventi/eventi_meteo_1440.json",
+      "bandiTag": "v0.1.3",
+      "bandiFolder": "release_v1",
+      "mappaRepo": "mappa",
+      "mappaTag": "v0.1.2",
+      "mappaFolder": "release_v1",
+      "mappaName": "mappa.json",
+      "immagineCopertina": "scenario_1440_cover",
+      "difficolta": "normale",
+      "tags": [
+        "paleologi",
+        "monferrato_1440",
         "tutorial"
       ]
     }

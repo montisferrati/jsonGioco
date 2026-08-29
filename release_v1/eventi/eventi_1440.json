@@ -1,6 +1,6 @@
 {
   "_metaDatiJson": {
-    "nomeJson": "eventi_1434",
+    "nomeJson": "eventi_1440",
     "repoJson": "gioco",
     "note": "Eventi storici e casuali - Monferrato 1434"
   },
@@ -26,8 +26,8 @@
       "priorita": "alta",
       "certezzaStorica": "documentata",
       "_notaStorica": "La morte di Amedeo di Savoia, principe di Piemonte, nell'agosto 1431 e' documentata dalle fonti (Treccani, Dizionario Biografico degli Italiani, voce Amedeo VIII); il giorno esatto entro il mese non e' specificato dalle fonti consultate",
-      "dataTrigger": "1434-05-05",
-      "titolo": "Lutto alla corte di Savoia - 1434",
+      "dataTrigger": "1440-10-05",
+      "titolo": "Lutto alla corte di Savoia - 1440",
       "messaggio": "Notizie da Torino: Amedeo, primogenito del Duca Amedeo VIII e principe di Piemonte, e' morto improvvisamente. Si dice che il Duca, gia' provato dal lutto per la moglie, meditera' di ritirarsi dal governo attivo. Il titolo passa al secondogenito Ludovico.",
       "luoghiInteressati": [],
       "luoghiInteressatiTutti": true,
@@ -55,8 +55,8 @@
       "priorita": "alta",
       "certezzaStorica": "plausibile",
       "_notaStorica": "L'alleanza tra Savoia e Visconti contro il Marchesato e' documentata nel 1431; il giorno esatto non e' stato reperito, la data qui usata e' una stima ragionevole",
-      "dataTrigger": "1434-05-08",
-      "titolo": "Voci di un'alleanza segreta - 1434",
+      "dataTrigger": "1440-10-08",
+      "titolo": "Voci di un'alleanza segreta - 1440",
       "messaggio": "Corrono voci alla corte di Chivasso: il Duca di Milano e il Duca di Savoia avrebbero stretto un patto segreto contro il Marchesato. Nessuno osa dirlo apertamente, ma i mercanti che tornano da Milano parlano di truppe che si muovono.",
       "luoghiInteressati": [
         "chivasso"

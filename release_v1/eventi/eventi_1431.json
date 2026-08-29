@@ -4,16 +4,16 @@
     "repoJson": "gioco",
     "note": "Eventi storici e casuali - Prequel Monferrato 1431-1435"
   },
-  "updatedAt": "2026-08-05T12:00:00Z",
+  "updatedAt": "2026-08-29T12:00:00Z",
   "minAppVersion": 1,
   "_schema_sequenzaMedia": {
     "descrizione": "Campo opzionale su qualsiasi evento (storico o stagionale). Se presente, PersonaggioManager.AvanzaGiornoCoroutine mostra la sequenza di immagini tramite SequenzaMediaPlayer e attende che l'utente la chiuda prima di passare al giorno successivo. Se assente, l'evento si comporta come prima (solo bando/messaggio, nessuna pausa). Mostrata solo se mostraBando e' true.",
     "esempio": {
       "tipo": "immagini",
       "immagini": [
-        "img_evento_01",
-        "img_evento_02",
-        "img_evento_03"
+        "ImgsEventi/img_evento_01",
+        "ImgsEventi/img_evento_02",
+        "ImgsEventi/img_evento_03"
       ],
       "secondiPerImmagine": 4
     }
@@ -27,7 +27,7 @@
       "certezzaStorica": "documentata",
       "_notaStorica": "La morte di Amedeo di Savoia, principe di Piemonte, nell'agosto 1431 e' documentata dalle fonti (Treccani, Dizionario Biografico degli Italiani, voce Amedeo VIII); il giorno esatto entro il mese non e' specificato dalle fonti consultate",
       "dataTrigger": "1431-01-15",
-      "titolo": "Lutto alla corte di Savoia",
+      "titolo": "Lutto alla corte di Savoia - 1431",
       "messaggio": "Notizie da Torino: Amedeo, primogenito del Duca Amedeo VIII e principe di Piemonte, e' morto improvvisamente. Si dice che il Duca, gia' provato dal lutto per la moglie, meditera' di ritirarsi dal governo attivo. Il titolo passa al secondogenito Ludovico.",
       "luoghiInteressati": [],
       "luoghiInteressatiTutti": true,
@@ -42,8 +42,8 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "img_erede_01",
-          "img_erede_02"
+          "ImgsEventi/img_erede_01",
+          "ImgsEventi/img_erede_02"
         ],
         "secondiPerImmagine": 4
       }
@@ -56,7 +56,7 @@
       "certezzaStorica": "plausibile",
       "_notaStorica": "L'alleanza tra Savoia e Visconti contro il Marchesato e' documentata nel 1431; il giorno esatto non e' stato reperito, la data qui usata e' una stima ragionevole",
       "dataTrigger": "1431-01-25",
-      "titolo": "Voci di un'alleanza segreta",
+      "titolo": "Voci di un'alleanza segreta - 1431",
       "messaggio": "Corrono voci alla corte di Chivasso: il Duca di Milano e il Duca di Savoia avrebbero stretto un patto segreto contro il Marchesato. Nessuno osa dirlo apertamente, ma i mercanti che tornano da Milano parlano di truppe che si muovono.",
       "luoghiInteressati": [
         "chivasso"
@@ -82,9 +82,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "img_alleanza_01",
-          "img_alleanza_02",
-          "img_alleanza_03"
+          "ImgsEventi/img_alleanza_01",
+          "ImgsEventi/img_alleanza_02",
+          "ImgsEventi/img_alleanza_03"
         ],
         "secondiPerImmagine": 4
       }
