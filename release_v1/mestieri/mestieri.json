@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Mestieri, guadagni e spese per luogo - Monferrato 1434"
   },
-  "updatedAt": "2026-06-10T12:00:00Z",
+  "updatedAt": "2026-09-04T12:00:00Z",
   "minAppVersion": 1,
   "percentualeRimborsoDebito": 20,
 
@@ -38,38 +38,6 @@
 
   "abitazioni": [
     {
-      "id": "casolare",
-      "nome": "Casolare",
-      "descrizione": "Piccola abitazione rurale, essenziale e sobria",
-      "tipoAccesso": "uso",
-      "costoAcquisto": 0,
-      "costoAffittoGiorno": 0,
-      "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["tutti"],
-      "livelloComfort": 1,
-      "immagineStadi": {
-        "cantiere": null,
-        "meta": null,
-        "completa": "casolare_completo"
-      }
-    },
-	{
-      "id": "capanna_villica",
-      "nome": "Capanna di fango e paglia",
-      "descrizione": "Capanna di fango e paglia con orto e porcile.",
-      "tipoAccesso": "uso",
-      "costoAcquisto": 0,
-      "costoAffittoGiorno": 0,
-      "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["villica"],
-      "livelloComfort": 1,
-      "immagineStadi": {
-        "cantiere": null,
-        "meta": null,
-        "completa": "capanna_villica"
-      }
-    },
-	{
       "id": "capanna_barcarolo",
       "nome": "Capanna di legno",
       "descrizione": "Capanna di legno vicino al fiume",
@@ -85,55 +53,7 @@
         "completa": "capanna_barcarolo"
       }
     },
-	{
-      "id": "capanna",
-      "nome": "Capanna di legno con tetto di strame",
-      "descrizione": "Capanna di legno con tetto di strame",
-      "tipoAccesso": "uso",
-      "costoAcquisto": 0,
-      "costoAffittoGiorno": 0,
-      "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["guaritrice"],
-      "livelloComfort": 1,
-      "immagineStadi": {
-        "cantiere": null,
-        "meta": null,
-        "completa": "capanna"
-      }
-    },
-	{
-      "id": "angolo_paglia",
-      "nome": "Angolo di Paglia",
-      "descrizione": "Angolo di paglia nella casa del padrone o del padre",
-      "tipoAccesso": "uso",
-      "costoAcquisto": 0,
-      "costoAffittoGiorno": 0,
-      "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["filatrice"],
-      "livelloComfort": 1,
-      "immagineStadi": {
-        "cantiere": null,
-        "meta": null,
-        "completa": "angolo_paglia"
-      }
-    },
     {
-      "id": "stanza_affitto",
-      "nome": "Stanza in affitto",
-      "descrizione": "Una singola stanza presso una locanda",
-      "tipoAccesso": "affitto",
-      "costoAcquisto": 0,
-      "costoAffittoGiorno": 1,
-      "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["tutti"],
-      "livelloComfort": 2,
-      "immagineStadi": {
-        "cantiere": null,
-        "meta": null,
-        "completa": "stanza_affitto_completa"
-      }
-    },
-	{
       "id": "stanza_muratore",
       "nome": "Stanza in affitto",
       "descrizione": "Una singola stanza presso una casa vicino a un cantiere",
@@ -146,39 +66,7 @@
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
-        "completa": "stanza_affitto_completa"
-      }
-    },
-    {
-      "id": "bottega_tes_affitto",
-      "nome": "Bottega in affitto",
-      "descrizione": "Bottega in affitto con stanza al piano superiore ad uso abitativo",
-      "tipoAccesso": "affitto",
-      "costoAcquisto": 0,
-      "costoAffittoGiorno": 2,
-      "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["tessitrice"],
-      "livelloComfort": 3,
-      "immagineStadi": {
-        "cantiere": null,
-        "meta": null,
-        "completa": "bottega_tes_completa"
-      }
-    },
-    {
-      "id": "bottega_notaro",
-      "nome": "Studio in affitto",
-      "descrizione": "Studio Notarile in affitto con una stanza in più ad uso abitativo",
-      "tipoAccesso": "affitto",
-      "costoAcquisto": 0,
-      "costoAffittoGiorno": 2,
-      "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["notaro"],
-      "livelloComfort": 3,
-      "immagineStadi": {
-        "cantiere": null,
-        "meta": null,
-        "completa": "bottega_notaro"
+        "completa": "stanza_muratore"
       }
     },
     {
@@ -214,35 +102,38 @@
       }
     },
     {
-      "id": "locanda",
-      "nome": "Locanda in affitto",
-      "descrizione": "Locanda con osteria al piano terra, stanza con un letto sopra la taverna",
-      "tipoAccesso": "affitto",
+      "id": "casa_nobiliare",
+      "nome": "Casa di famiglia",
+      "descrizione": "Casa nobiliare appartenuta alla casata. Conserva il prestigio della famiglia, ma necessita di manutenzione continua e di personale per essere mantenuta decorosamente.",
+      "tipoAccesso": "proprieta",
       "costoAcquisto": 0,
-      "costoAffittoGiorno": 3,
-      "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["ostessa"],
-      "livelloComfort": 2,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 4,
+      "archetipiConsentiti": [
+        "nobile_decaduto",
+        "nobile_donna_decaduta"
+      ],
+      "livelloComfort": 6,
       "immagineStadi": {
-        "cantiere": null,
-        "meta": null,
-        "completa": "locanda_completa"
+        "cantiere": "casa_nobil_cantiere",
+        "meta": "casa_nobil_fine",
+        "completa": "casa_nobil_completa"
       }
     },
     {
-      "id": "canonica",
-      "nome": "Canonica",
-      "descrizione": "Alloggio presso la chiesa, sobrio e sicuro",
-      "tipoAccesso": "Canonica",
+      "id": "bottega_notaro",
+      "nome": "Studio in affitto",
+      "descrizione": "Studio Notarile in affitto con una stanza in più ad uso abitativo",
+      "tipoAccesso": "affitto",
       "costoAcquisto": 0,
-      "costoAffittoGiorno": 0,
+      "costoAffittoGiorno": 2,
       "costoManutenzioneGiorno": 0,
-      "archetipiConsentiti": ["chierico"],
-      "livelloComfort": 2,
+      "archetipiConsentiti": ["notaro"],
+      "livelloComfort": 3,
       "immagineStadi": {
         "cantiere": null,
         "meta": null,
-        "completa": "canonica_completa"
+        "completa": "bottega_notaro"
       }
     },
     {
@@ -262,6 +153,54 @@
       }
     },
     {
+      "id": "casa_bartolo_lena",
+      "nome": "Casa in affitto",
+      "descrizione": "Due stanze, una per dormire e una con il telaio di Maddalena e una cucina piccola con camino e forno per il pane.",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 3,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["filatrice"],
+      "livelloComfort": 3,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "casa_bartolo_lena"
+      }
+    },
+    {
+      "id": "bottega_tes_affitto",
+      "nome": "Bottega in affitto",
+      "descrizione": "Bottega in affitto con stanza al piano superiore ad uso abitativo",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 2,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["filatrice"],
+      "livelloComfort": 3,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "bottega_tes_completa"
+      }
+    },
+    {
+      "id": "capanna",
+      "nome": "Capanna",
+      "descrizione": "Capanna di legno con tetto di strame",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["guaritrice"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "capanna"
+      }
+    },
+    {
       "id": "casa_acquistata",
       "nome": "Casa acquistata",
       "descrizione": "Una casa costruita nel borgo, frutto di risparmio e lavoro",
@@ -269,7 +208,7 @@
       "costoAcquisto": 800,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 2,
-      "archetipiConsentiti": ["cronista"],
+      "archetipiConsentiti": ["levatrice"],
       "livelloComfort": 4,
       "immagineStadi": {
         "cantiere": "casa_cantiere_01",
@@ -279,6 +218,86 @@
       "giorniCostruzione": 30
     },
     {
+      "id": "locanda",
+      "nome": "Locanda in affitto",
+      "descrizione": "Locanda con osteria al piano terra, stanza con un letto sopra la taverna",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 3,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["ostessa"],
+      "livelloComfort": 2,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "locanda_completa"
+      }
+    },
+	{
+      "id": "capanna_villica",
+      "nome": "Capanna di fango e paglia",
+      "descrizione": "Capanna di fango e paglia con orto e porcile.",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 1,
+      "archetipiConsentiti": ["villica"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "capanna_villica"
+      }
+    },
+    {
+      "id": "stanza_affitto",
+      "nome": "Stanza in affitto",
+      "descrizione": "Una singola stanza presso una locanda",
+      "tipoAccesso": "affitto",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 1,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["tutti"],
+      "livelloComfort": 2,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "stanza_affitto_completa"
+      }
+    },
+    {
+      "id": "angolo_paglia",
+      "nome": "Angolo di Paglia",
+      "descrizione": "Angolo di paglia nella casa del padrone o del padre",
+      "tipoAccesso": "uso",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["filatrice"],
+      "livelloComfort": 1,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "angolo_paglia"
+      }
+    },
+    {
+      "id": "canonica",
+      "nome": "Canonica",
+      "descrizione": "Alloggio presso la chiesa, sobrio e sicuro",
+      "tipoAccesso": "Canonica",
+      "costoAcquisto": 0,
+      "costoAffittoGiorno": 0,
+      "costoManutenzioneGiorno": 0,
+      "archetipiConsentiti": ["chierico"],
+      "livelloComfort": 2,
+      "immagineStadi": {
+        "cantiere": null,
+        "meta": null,
+        "completa": "canonica_completa"
+      }
+    },
+    {
       "id": "casa_ereditata",
       "nome": "Casa ereditata",
       "descrizione": "Una casa di famiglia ereditata",
@@ -286,7 +305,7 @@
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 1,
-      "archetipiConsentiti": ["levatrice"],
+      "archetipiConsentiti": ["cronista"],
       "livelloComfort": 3,
       "immagineStadi": {
         "cantiere": null,
@@ -294,7 +313,7 @@
         "completa": "casa_completa"
       }
     },
-	{
+    {
       "id": "carrozza",
       "nome": "Carrozza",
       "descrizione": "Una vecchia carrozza adibita ad abitazione, parcheggiata ai margini del borgo. Tende colorate, erbe essiccate e simboli misteriosi decorano l'interno. Casa e bottega in uno.",
@@ -313,33 +332,20 @@
     {
       "id": "torre_nobiliare",
       "nome": "Torre di famiglia",
-      "descrizione": "Torre, di proprietà ma che necessita continua manutenzione",
+      "descrizione": "Torre fortificata appartenuta alla casata. È un simbolo del prestigio familiare, ma necessita continua manutenzione e costose riparazioni.",
       "tipoAccesso": "proprieta",
       "costoAcquisto": 0,
       "costoAffittoGiorno": 0,
       "costoManutenzioneGiorno": 5,
-      "archetipiConsentiti": ["nobile_decaduto"],
+      "archetipiConsentiti": [
+        "nobile_decaduto",
+        "nobildonna_decaduta"
+      ],
       "livelloComfort": 5,
       "immagineStadi": {
         "cantiere": "torre_cantiere",
         "meta": "torre_meta",
         "completa": "torre_completa"
-      }
-    },
-    {
-      "id": "casa_nobiliare",
-      "nome": "Casa di famiglia",
-      "descrizione": "Casa nobiliare, di proprietà ma che necessita continua manutenzione",
-      "tipoAccesso": "proprieta",
-      "costoAcquisto": 0,
-      "costoAffittoGiorno": 0,
-      "costoManutenzioneGiorno": 4,
-      "archetipiConsentiti": ["nobile_decaduto"],
-      "livelloComfort": 6,
-      "immagineStadi": {
-        "cantiere": "casa_nobil_cantiere",
-        "meta": "casa_nobil_fine",
-        "completa": "casa_nobil_completa"
       }
     }
   ],
@@ -358,7 +364,16 @@
       "nome": "Vai al mercato",
       "descrizione": "Compra o vendi merci al mercato del luogo",
       "avanzaGiorni": 1,
-      "archetipiConsentiti": ["mercante", "nobile_decaduto", "tessitrice", "ostessa", "filatrice", "guaritrice", "villica" ],
+      "archetipiConsentiti": [
+        "mercante",
+        "nobile_decaduto",
+        "nobildonna_decaduta",
+        "tessitrice",
+        "ostessa",
+        "filatrice",
+        "guaritrice",
+        "villica"
+      ],
       "effetto": "mercato"
     },
     {
@@ -388,12 +403,15 @@
       "condizione": "soldi_sotto_soglia",
       "soglia": 20
     },
-	{
+    {
       "id": "riscatta_casa",
       "nome": "Riscatta la tua casa",
       "descrizione": "Il banchiere ti offre la possibilità di riscattare la tua casa prima che vada all'asta.",
       "avanzaGiorni": 0,
-      "archetipiConsentiti": ["nobile_decaduto"],
+      "archetipiConsentiti": [
+        "nobile_decaduto",
+        "nobildonna_decaduta"
+      ],
       "effetto": "riscatto_casa",
       "condizione": "casa_confiscata"
     },
@@ -406,13 +424,15 @@
       "effetto": "acquisto_reale",
       "note": "Meccanica di acquisto in-app"
     },
-	{
+    {
       "id": "matrimonio_vantaggioso",
       "nome": "Cerca un matrimonio vantaggioso",
-      "descrizione": "Cerca un partito ricco tra le famiglie del borgo. Richiede tempo e reputazione.",
+      "descrizione": "Cerca un partito ricco tra le famiglie del borgo. Il tuo nome nobile può trasformarsi in una preziosa alleanza.",
       "avanzaGiorni": 30,
       "messaggioConferma": "Sposarsi richiede 30 giorni di corteggiamento e trattative. Durante questo tempo sarai impegnato nelle relazioni sociali e non potrai svolgere altre attività.",
-      "archetipiConsentiti": ["nobile_decaduto"],
+      "archetipiConsentiti": [
+        "nobile_decaduto"
+      ],
       "effetto": "matrimonio",
       "condizione": "non_sposato",
       "guadagnoMin": 500,
@@ -425,7 +445,10 @@
       "descrizione": "Offri i tuoi servigi alla corte del Marchese per una missione diplomatica.",
       "avanzaGiorni": 15,
       "messaggioConferma": "L'incarico diplomatico richiede 15 giorni di viaggio e trattative per conto del Marchese. Sarai lontano dal tuo borgo e impegnato nella missione.",
-      "archetipiConsentiti": ["nobile_decaduto"],
+      "archetipiConsentiti": [
+        "nobile_decaduto",
+        "nobildonna_decaduta"
+      ],
       "effetto": "incarico",
       "condizione": "giorni_attesa",
       "giorniAttesa": 60,
@@ -439,7 +462,9 @@
       "descrizione": "Un mercante cerca protezione per i suoi traffici. Il tuo nome nobile vale ancora qualcosa.",
       "avanzaGiorni": 7,
       "messaggioConferma": "Offrire protezione al mercante richiede 7 giorni di accompagnamento lungo le strade del Monferrato. Sarai lontano da casa per tutto il periodo.",
-      "archetipiConsentiti": ["nobile_decaduto"],
+      "archetipiConsentiti": [
+        "nobile_decaduto"
+      ],
       "effetto": "protezione",
       "condizione": "giorni_attesa",
       "giorniAttesa": 30,
@@ -452,13 +477,155 @@
       "nome": "Vendi beni di famiglia",
       "descrizione": "Vendi gioielli, arredi o cimeli di famiglia. Una perdita per l'orgoglio, un guadagno per il portafoglio.",
       "avanzaGiorni": 1,
-      "archetipiConsentiti": ["nobile_decaduto"],
+      "archetipiConsentiti": [
+        "nobile_decaduto",
+        "nobildonna_decaduta"
+      ],
       "effetto": "vendita_beni",
       "condizione": "giorni_attesa",
       "giorniAttesa": 90,
       "guadagnoMin": 200,
       "guadagnoMax": 600,
       "requisitoReputazione": 0
+    },
+    {
+      "id": "amministra_rendite",
+      "nome": "Amministra le rendite",
+      "descrizione": "Dedica la giornata alla gestione delle terre, degli affitti e dei diritti della casata. Una buona amministrazione aumenta le entrate, ma i villici potrebbero opporsi alla riscossione.",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "riscossione_rendite",
+      "guadagnoMin": 8,
+      "guadagnoMax": 12,
+      "requisitoReputazione": 10
+    },
+    {
+      "id": "organizza_matrimonio",
+      "nome": "Organizza un matrimonio",
+      "descrizione": "Avvia trattative matrimoniali con una famiglia di rango. Il matrimonio può portare denaro, prestigio e una nuova alleanza politica, ma richiede tempo e una buona reputazione.",
+      "avanzaGiorni": 30,
+      "messaggioConferma": "Le trattative matrimoniali richiederanno 30 giorni. Durante questo periodo sarai impegnata in visite, incontri e negoziazioni tra le famiglie.",
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "matrimonio_nobiliare",
+      "condizione": "non_sposata",
+      "guadagnoMin": 500,
+      "guadagnoMax": 1500,
+      "requisitoReputazione": 30
+    },
+    {
+      "id": "gestisci_dote",
+      "nome": "Gestisci la dote",
+      "descrizione": "Amministra denaro, terre, gioielli e altri beni appartenenti alla dote familiare. Una gestione accorta può proteggere il patrimonio della casata.",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "gestione_dote",
+      "condizione": "possiede_dote",
+      "guadagnoMin": 10,
+      "guadagnoMax": 30,
+      "requisitoReputazione": 10
+    },
+    {
+      "id": "intercedi_presso_nobile",
+      "nome": "Intercedi presso un nobile",
+      "descrizione": "Usa il prestigio della casata e la tua rete di relazioni per chiedere clemenza, un favore o la revisione di una decisione.",
+      "avanzaGiorni": 3,
+      "messaggioConferma": "Dovrai dedicare diversi giorni a visite e colloqui presso la famiglia nobiliare.",
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "intercessione_nobiliare",
+      "condizione": "relazione_nobile",
+      "requisitoReputazione": 20
+    },
+    {
+      "id": "patronato_religioso",
+      "nome": "Esercita il patronato religioso",
+      "descrizione": "Offri sostegno a una chiesa, una confraternita o un monastero. Il gesto aumenta il prestigio della casata e rafforza i rapporti con gli ambienti religiosi.",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "patronato_religioso",
+      "costoMin": 10,
+      "costoMax": 30
+    },
+    {
+      "id": "invita_a_banchetto",
+      "nome": "Organizza un banchetto",
+      "descrizione": "Invita famiglie nobili, funzionari e persone influenti nella tua casa. Un banchetto ben riuscito rafforza le relazioni, ma è costoso.",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "banchetto_nobiliare",
+      "costoMin": 20,
+      "costoMax": 60,
+      "bonusReputazioneMin": 2,
+      "bonusReputazioneMax": 8,
+      "requisitoReputazione": 15
+    },
+    {
+      "id": "scrivi_lettera_nobiliare",
+      "nome": "Scrivi una lettera nobiliare",
+      "descrizione": "Invia una lettera a una famiglia influente, a un funzionario o alla corte. Le parole possono aprire porte che il denaro non riesce ad aprire.",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "lettera_nobiliare",
+      "requisitoReputazione": 10
+    },
+    {
+      "id": "organizza_alleanza_familiare",
+      "nome": "Organizza un'alleanza familiare",
+      "descrizione": "Metti in contatto la tua casata con un'altra famiglia per costruire un'alleanza politica, commerciale o matrimoniale.",
+      "avanzaGiorni": 7,
+      "messaggioConferma": "Le trattative richiederanno 7 giorni di incontri, lettere e negoziazioni.",
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "alleanza_familiare",
+      "condizione": "famiglia_alleata_disponibile",
+      "requisitoReputazione": 25
+    },
+    {
+      "id": "visita_monastero",
+      "nome": "Visita il monastero",
+      "descrizione": "Trascorri del tempo presso un monastero sotto la protezione o il patrocinio della famiglia. Puoi ottenere informazioni, contatti e prestigio religioso.",
+      "avanzaGiorni": 2,
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "visita_monastero",
+      "requisitoDevozione": 6
+    },
+    {
+      "id": "gestisci_casa",
+      "nome": "Gestisci la casa",
+      "descrizione": "Dedica la giornata all'amministrazione della casa, dei servi e delle provviste. Una casa ben amministrata riduce gli sprechi e mantiene alto il prestigio della famiglia.",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "gestione_casa",
+      "requisitoAbitazione": "casa_nobiliare"
+    },
+    {
+      "id": "consiglia_famiglia",
+      "nome": "Consiglia la famiglia",
+      "descrizione": "Usa la tua esperienza, le tue relazioni e la conoscenza degli equilibri tra le casate per influenzare le decisioni della famiglia.",
+      "avanzaGiorni": 1,
+      "archetipiConsentiti": [
+        "nobildonna_decaduta"
+      ],
+      "effetto": "consiglio_familiare",
+      "requisitoReputazione": 15
     }
   ]
 }
