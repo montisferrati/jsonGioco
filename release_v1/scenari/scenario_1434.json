@@ -2,18 +2,18 @@
   "_metaDatiJson": {
     "nomeJson": "scenario_1434",
     "repoJson": "gioco",
-    "note": "Scenario principale - Monferrato 3 maggio 1434"
+    "note": "Scenario principale - Monferrato 1434"
   },
-  "updatedAt": "2026-08-06T12:00:00Z",
+  "updatedAt": "2026-09-12T12:00:00Z",
   "minAppVersion": 1,
 
   "scenario": {
     "id": "scenario_1434",
     "titolo": "Il Marchesato del Monferrato",
-    "sottotitolo": "Casale diventa Capitale",
-    "descrizione": "Nel 1434 Gian Giacomo Paleologo trasferisce la sede Marchionale da Chivasso a Casale Monferrato, la nuova capitale del Marchesato. Un'epoca di cambiamenti ha inizio. Scegli il tuo destino.",
-    "dataInizio": "1434-05-03",
-    "stagione": "primavera",
+    "sottotitolo": "Casale diventa Capitale - 1434",
+    "descrizione": "Nel 1434 Gian Giacomo Paleologo trasferisce la sede Marchionale da Chivasso a Casale, la nuova capitale del Marchesato. Un'epoca di cambiamenti ha inizio. Scegli il tuo destino.",
+    "dataInizio": "1434-01-01",
+    "stagione": "inverno",
     "attivo": true,
     "immagineCopertina": "scenario_1434_cover"
   },
@@ -75,7 +75,7 @@
           "giornoMaxInizio": null,
           "durataGiorniMin": 90,
           "durataGiorniMax": 90,
-          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+          "note": "Texture unica per tutta la stagione, finche non aggiungi altre fasi"
         }
       ]
     },
@@ -92,7 +92,7 @@
           "giornoMaxInizio": null,
           "durataGiorniMin": 90,
           "durataGiorniMax": 90,
-          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+          "note": "Texture unica per tutta la stagione, finche non aggiungi altre fasi"
         }
       ]
     },
@@ -109,7 +109,7 @@
           "giornoMaxInizio": null,
           "durataGiorniMin": 90,
           "durataGiorniMax": 90,
-          "note": "Texture unica per tutta la stagione, finch\u00e9 non aggiungi altre fasi"
+          "note": "Texture unica per tutta la stagione, finche non aggiungi altre fasi"
         }
       ]
     },

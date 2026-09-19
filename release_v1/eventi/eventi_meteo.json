@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Eventi atmosferici casuali, specifici per ogni stagione - Monferrato 1434. Modifica solo questo file per aggiungere/rimuovere eventi meteo: nessuna modifica al codice necessaria, a patto che i textureId usati esistano gia' nella mappatura locale Unity (terrainLayerMappings)."
   },
-  "updatedAt": "2026-08-03T12:00:00Z",
+  "updatedAt": "2026-09-12T12:00:00Z",
   "minAppVersion": 1,
   "_schema_evento": {
     "id": "identificativo univoco",

@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Archetipi personaggio - Monferrato 1434"
   },
-  "updatedAt": "2026-09-04T12:00:00Z",
+  "updatedAt": "2026-09-12T12:00:00Z",
   "minAppVersion": 1,
 
   "differenzaSesso": {
@@ -16,7 +16,7 @@
     "donna": {
       "bonusSoldiIniziali": 0,
       "archetipiDisponibili": ["tessitrice", "ostessa", "levatrice", "guaritrice", "villica", "nobildonna_decaduta"],
-      "nota": "Mestieri specifici con bonus particolari, meno soldi iniziali"
+      "nota": "Mestieri specifici con bonus particolari"
     }
   },
 
@@ -45,8 +45,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "uso",
-        "descrizione": "Capanna di legno sulla riva, vicino all'attracco della barca",
-        "costoAffittoGiorno": 0
+        "descrizione": "Capanna di legno sulla riva, vicino all'attracco della barca"
       },
       "vantaggi": [
         "Azione 'Traghetta' sblocca viaggio rapido via fiume tra luoghi con tag 'porto'",
@@ -65,6 +64,7 @@
       "luoghi_spawn_ok": ["casale", "valenza", "trino", "pontestura", "borgo_san_martino", "chivasso"],
       "luoghi_bonus": ["valenza", "casale", "chivasso"],
       "luoghi_malus": [],
+      "luoghi_vietati": [],
       "azioni_sbloccate": [
         "traghetta_passeggeri",
         "traghetta_merci",
@@ -99,8 +99,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Stanza in affitto presso una casa vicino a un cantiere",
-        "costoAffittoGiorno": 1
+        "descrizione": "Stanza in affitto presso una casa vicino a un cantiere"
       },
       "vantaggi": [
         "Mastro riconosciuto: priorità di ingaggio nei cantieri aperti, +30% di paga rispetto al lavorante",
@@ -149,8 +148,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Fondaco in affitto con magazzino al piano terra e alloggio al piano superiore, vicino al mercato",
-        "costoAffittoGiorno": 3
+        "descrizione": "Fondaco in affitto con magazzino al piano terra e alloggio \nal piano superiore, accanto al fiume e vicino al mercato"
       },
       "vantaggi": [
         "Accesso all'azione 'Mercato' in ogni luogo",
@@ -203,9 +201,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "proprieta",
-        "descrizione": "Casa di famiglia fatiscente. Tetto che perde, muri crepati. Ma è sua, e il popolo lo rispetta per questo",
-        "costoAffittoGiorno": 0,
-        "costoManutenzioneGiorno": 6
+        "descrizione": "Casa di famiglia fatiscente. Tetto che perde, muri crepati. \nMa è sua, e il popolo lo rispetta per questo"
       },
       "vantaggi": [
         "Azione 'Riscuoti Affitti': 8-12 soldi al giorno dalle terre, se i villici pagano",
@@ -262,8 +258,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Stanza in uno studio in affitto vicino al palazzo del Podestà, con banco per ricevere clienti, ",
-        "costoAffittoGiorno": 2
+        "descrizione": "Stanza in uno studio in affitto vicino al palazzo del Podestà, \ncon banco per ricevere clienti"
       },
       "vantaggi": [
         "Azione 'Roga Atto': guadagno immediato 5-40 soldi in base al tipo di contratto",
@@ -318,8 +313,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "caserma",
-        "descrizione": "Pagliericcio nella caserma del castello. Vitto incluso quando il signore paga",
-        "costoAffittoGiorno": 0
+        "descrizione": "Pagliericcio nella caserma del castello. \nVitto incluso quando il signore paga"
       },
       "vantaggi": [
         "Paga fissa dal signore, in tempo di pace",
@@ -374,8 +368,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Stanza con telaio verticale. Puzza di lana bagnata. Alloggio nello stesso locale",
-        "costoAffittoGiorno": 3
+        "descrizione": "Stanza con telaio verticale. Puzza di lana bagnata. \nAlloggio al piano superiore"
       },
       "vantaggi": [
         "Azione 'Tessi Panno': 1 giorno lavoro = 1 pezza da vendere a 4-6 soldi",
@@ -431,8 +424,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "uso",
-        "descrizione": "Capanna ai margini del borgo con orto di erbe medicinali. Puzza di aglio, salvia e sangue secco. La gente bussa ma ha paura",
-        "costoAffittoGiorno": 0
+        "descrizione": "Capanna ai margini del borgo con orto di erbe medicinali. \nPuzza di aglio, salvia e sangue secco. La gente bussa ma ha paura"
       },
       "vantaggi": [
         "Azione 'Cura Malato': 1-20 soldi in base a gravità e rango paziente, 1-3 giorni lavoro",
@@ -489,9 +481,8 @@
         "noteGuadagno": "Base: 0 soldi/giorno se nessuno partorisce. Parto villica: 3-5 soldi o 12 uova. Parto mercante: 8-12 soldi. Parto nobile: 15-25 soldi. Parto morto: 0 soldi + rischio accusa stregoneria 15%"
       },
       "abitazioneIniziale": {
-        "tipo": "uso",
-        "descrizione": "Stanza in casa propria con tavolo per le erbe, pentole e panni puliti. La gente bussa a ogni ora",
-        "costoAffittoGiorno": 0
+        "tipo": "proprieta",
+        "descrizione": "Stanza in casa propria con tavolo per le erbe, \npentole e panni puliti. La gente bussa a ogni ora"
       },
       "vantaggi": [
         "Azione 'Assisti Parto': 3-25 soldi in base al rango della partoriente, 1-2 giorni di lavoro",
@@ -548,9 +539,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "proprieta",
-        "descrizione": "Casa nobiliare appartenuta alla famiglia. Gli arredi sono ormai consumati e alcune stanze necessitano di riparazioni, ma la casa conserva ancora il prestigio della casata",
-        "costoAffittoGiorno": 0,
-        "costoManutenzioneGiorno": 4
+        "descrizione": "Casa nobiliare appartenuta alla famiglia. \nGli arredi sono ormai consumati e alcune stanze necessitano di riparazioni, ma la casa conserva ancora il prestigio della casata"
       },
       "vantaggi": [
         "Azione 'Amministra Rendite': 8-12 soldi al giorno dalle terre familiari, se i villici pagano",
@@ -631,8 +620,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "affitto",
-        "descrizione": "Locanda in affitto: piano terra con bancone e tavolacci, piano superiore con 3 pagliericci per viandanti",
-        "costoAffittoGiorno": 4
+        "descrizione": "Locanda in affitto: piano terra con bancone e tavolacci, \nal piano superiore stanze con pagliericci per viandanti"
       },
       "vantaggi": [
         "Azione 'Origlia Voci': sblocca un'informazione segreta al giorno su eventi/fazioni/personaggi virtuali",
@@ -688,8 +676,7 @@
       },
       "abitazioneIniziale": {
         "tipo": "uso",
-        "descrizione": "Capanna di fango e paglia con orto e porcile. Unico bene: la terra che lavora per il signore",
-        "costoAffittoGiorno": 0
+        "descrizione": "Capanna di fango e paglia con orto e porcile. \nUnico bene: la terra che lavora per il signore"
       },
       "vantaggi": [
         "Azione 'Lavora Campo': zero soldi ma produce cibo, -1 soldi al giorno se vive dei suoi prodotti",
