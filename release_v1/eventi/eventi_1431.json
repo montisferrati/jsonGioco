@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Eventi storici e casuali - Prequel Monferrato 1431-1435"
   },
-  "updatedAt": "2026-11-07T12:00:00Z",
+  "updatedAt": "2026-11-11T12:00:00Z",
   "minAppVersion": 1,
   "_schema_sequenzaMedia": {
     "descrizione": "Campo opzionale su qualsiasi evento (storico o stagionale). Se presente, PersonaggioManager.AvanzaGiornoCoroutine mostra la sequenza di immagini tramite SequenzaMediaPlayer e attende che l'utente la chiuda prima di passare al giorno successivo. Se assente, l'evento si comporta come prima (solo bando/messaggio, nessuna pausa). Mostrata solo se mostraBando e' true.",
@@ -39,9 +39,9 @@
 	  "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_guerra_venezia_01",
-          "ImgsEventi/img_guerra_venezia_02",
-          "ImgsEventi/img_guerra_venezia_03"
+          "img_guerra_venezia_01",
+          "img_guerra_venezia_02",
+          "img_guerra_venezia_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -75,9 +75,9 @@
 	  "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_cocconato_01",
-          "ImgsEventi/img_cocconato_02",
-          "ImgsEventi/img_cocconato_03"
+          "img_cocconato_01",
+          "img_cocconato_02",
+          "img_cocconato_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -132,9 +132,9 @@
 	  "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_patto_segreto_01",
-          "ImgsEventi/img_patto_segreto_02",
-          "ImgsEventi/img_patto_segreto_03"
+          "img_patto_segreto_01",
+          "img_patto_segreto_02",
+          "img_patto_segreto_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -159,9 +159,9 @@
 	  "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_attacco_asti_01",
-          "ImgsEventi/img_attacco_asti_02",
-          "ImgsEventi/img_attacco_asti_03"
+          "img_attacco_asti_01",
+          "img_attacco_asti_02",
+          "img_attacco_asti_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -190,9 +190,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_morte_erede_01",
-          "ImgsEventi/img_morte_erede_02",
-          "ImgsEventi/img_morte_erede_03"
+          "img_morte_erede_01",
+          "img_morte_erede_02",
+          "img_morte_erede_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -217,9 +217,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_spedizione_genova_01",
-          "ImgsEventi/img_spedizione_genova_02",
-          "ImgsEventi/img_spedizione_genova_03"
+          "img_spedizione_genova_01",
+          "img_spedizione_genova_02",
+          "img_spedizione_genova_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -253,9 +253,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_sconfitta_sestri_01",
-          "ImgsEventi/img_sconfitta_sestri_02",
-          "ImgsEventi/img_sconfitta_sestri_03"
+          "img_sconfitta_sestri_01",
+          "img_sconfitta_sestri_02",
+          "img_sconfitta_sestri_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -302,9 +302,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_invasione_sforza_01",
-          "ImgsEventi/img_invasione_sforza_02",
-          "ImgsEventi/img_invasione_sforza_03"
+          "img_invasione_sforza_01",
+          "img_invasione_sforza_02",
+          "img_invasione_sforza_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -338,9 +338,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_rifugio_chivasso_01",
-          "ImgsEventi/img_rifugio_chivasso_02",
-          "ImgsEventi/img_rifugio_chivasso_03"
+          "img_rifugio_chivasso_01",
+          "img_rifugio_chivasso_02",
+          "img_rifugio_chivasso_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -379,9 +379,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_sforza_casale_01",
-          "ImgsEventi/img_sforza_casale_02",
-          "ImgsEventi/img_sforza_casale_03"
+          "img_sforza_casale_01",
+          "img_sforza_casale_02",
+          "img_sforza_casale_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -446,9 +446,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_alleanza_formale_01",
-          "ImgsEventi/img_alleanza_formale_02",
-          "ImgsEventi/img_alleanza_formale_03"
+          "img_alleanza_formale_01",
+          "img_alleanza_formale_02",
+          "img_alleanza_formale_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -480,9 +480,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_amedeo_guerra_01",
-          "ImgsEventi/img_amedeo_guerra_02",
-          "ImgsEventi/img_amedeo_guerra_03"
+          "img_amedeo_guerra_01",
+          "img_amedeo_guerra_02",
+          "img_amedeo_guerra_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -521,9 +521,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_lavigny_moncalvo_01",
-          "ImgsEventi/img_lavigny_moncalvo_02",
-          "ImgsEventi/img_lavigny_moncalvo_03"
+          "img_lavigny_moncalvo_01",
+          "img_lavigny_moncalvo_02",
+          "img_lavigny_moncalvo_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -563,9 +563,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_thonon_01",
-          "ImgsEventi/img_thonon_02",
-          "ImgsEventi/img_thonon_03"
+          "img_thonon_01",
+          "img_thonon_02",
+          "img_thonon_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -596,9 +596,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_patto_thonon_01",
-          "ImgsEventi/img_patto_thonon_02",
-          "ImgsEventi/img_patto_thonon_03"
+          "img_patto_thonon_01",
+          "img_patto_thonon_02",
+          "img_patto_thonon_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -635,9 +635,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_visconte_acqui_01",
-          "ImgsEventi/img_visconte_acqui_02",
-          "ImgsEventi/img_visconte_acqui_03"
+          "img_visconte_acqui_01",
+          "img_visconte_acqui_02",
+          "img_visconte_acqui_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -661,9 +661,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_venezia_01",
-          "ImgsEventi/img_venezia_02",
-          "ImgsEventi/img_venezia_03"
+          "img_venezia_01",
+          "img_venezia_02",
+          "img_venezia_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -698,9 +698,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_occupazione_01",
-          "ImgsEventi/img_occupazione_02",
-          "ImgsEventi/img_occupazione_03"
+          "img_occupazione_01",
+          "img_occupazione_02",
+          "img_occupazione_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -740,9 +740,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_pace_ferrara_01",
-          "ImgsEventi/img_pace_ferrara_02",
-          "ImgsEventi/img_pace_ferrara_03"
+          "img_pace_ferrara_01",
+          "img_pace_ferrara_02",
+          "img_pace_ferrara_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -779,9 +779,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_ritorno_casale_01",
-          "ImgsEventi/img_ritorno_casale_02",
-          "ImgsEventi/img_ritorno_casale_03"
+          "img_ritorno_casale_01",
+          "img_ritorno_casale_02",
+          "img_ritorno_casale_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -806,9 +806,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_richiesta_amedeo_01",
-          "ImgsEventi/img_richiesta_amedeo_02",
-          "ImgsEventi/img_richiesta_amedeo_03"
+          "img_richiesta_amedeo_01",
+          "img_richiesta_amedeo_02",
+          "img_richiesta_amedeo_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -857,9 +857,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_traslacorte_casale_01",
-          "ImgsEventi/img_traslacorte_casale_02",
-          "ImgsEventi/img_traslacorte_casale_03"
+          "img_traslacorte_casale_01",
+          "img_traslacorte_casale_02",
+          "img_traslacorte_casale_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -884,9 +884,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_giovanni_torino_01",
-          "ImgsEventi/img_giovanni_torino_02",
-          "ImgsEventi/img_giovanni_torino_03"
+          "img_giovanni_torino_01",
+          "img_giovanni_torino_02",
+          "img_giovanni_torino_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -910,9 +910,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_giovanni_tratta_01",
-          "ImgsEventi/img_giovanni_tratta_02",
-          "ImgsEventi/img_giovanni_tratta_03"
+          "img_giovanni_tratta_01",
+          "img_giovanni_tratta_02",
+          "img_giovanni_tratta_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -960,9 +960,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_ostaggio_giovanni_01",
-          "ImgsEventi/img_ostaggio_giovanni_02",
-          "ImgsEventi/img_ostaggio_giovanni_03"
+          "img_ostaggio_giovanni_01",
+          "img_ostaggio_giovanni_02",
+          "img_ostaggio_giovanni_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -987,9 +987,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_giangiacomo_torino_01",
-          "ImgsEventi/img_giangiacomo_torino_02",
-          "ImgsEventi/img_giangiacomo_torino_03"
+          "img_giangiacomo_torino_01",
+          "img_giangiacomo_torino_02",
+          "img_giangiacomo_torino_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -1038,9 +1038,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_caduta_chivasso_01",
-          "ImgsEventi/img_caduta_chivasso_02",
-          "ImgsEventi/img_caduta_chivasso_03"
+          "img_caduta_chivasso_01",
+          "img_caduta_chivasso_02",
+          "img_caduta_chivasso_03"
         ],
         "secondiPerImmagine": 4
       }
@@ -1064,9 +1064,9 @@
       "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_epilogo_01",
-          "ImgsEventi/img_epilogo_02",
-          "ImgsEventi/img_epilogo_03"
+          "img_epilogo_01",
+          "img_epilogo_02",
+          "img_epilogo_03"
         ],
         "secondiPerImmagine": 4
       }

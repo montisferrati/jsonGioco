@@ -4,7 +4,7 @@
     "repoJson": "gioco",
     "note": "Eventi storici e casuali - Monferrato 1434"
   },
-  "updatedAt": "2026-09-12T12:00:00Z",
+  "updatedAt": "2026-11-11T12:00:00Z",
   "minAppVersion": 1,
   "_schema_sequenzaMedia": {
     "descrizione": "Campo opzionale su qualsiasi evento (storico o stagionale). Se presente, PersonaggioManager.AvanzaGiornoCoroutine mostra la sequenza di immagini tramite SequenzaMediaPlayer e attende che l'utente la chiuda prima di passare al giorno successivo. Se assente, l'evento si comporta come prima (solo bando/messaggio, nessuna pausa). Mostrata solo se mostraBando e' true.",
@@ -20,50 +20,100 @@
   },
   "eventi": [
     {
-      "id": "morte_erede_savoia",
+      "id": "ripresa_guerra_venezia_visconti_1431",
       "capitolo": 1,
       "tipo": "storico",
-      "priorita": "alta",
+      "priorita": "media",
       "certezzaStorica": "documentata",
-      "_notaStorica": "La morte di Amedeo di Savoia, principe di Piemonte, nell'agosto 1431 e' documentata dalle fonti (Treccani, Dizionario Biografico degli Italiani, voce Amedeo VIII); il giorno esatto entro il mese non e' specificato dalle fonti consultate",
-      "dataTrigger": "1434-05-05",
-      "titolo": "Lutto alla corte di Savoia - 1434",
-      "messaggio": "Notizie da Torino: Amedeo, primogenito del Duca Amedeo VIII e principe di Piemonte, e' morto improvvisamente. Si dice che il Duca, gia' provato dal lutto per la moglie, meditera' di ritirarsi dal governo attivo. Il titolo passa al secondogenito Ludovico.",
+      "_notaStorica": "Febbraio 1431: ripresa della guerra tra Venezia e Filippo Maria Visconti; le ostilita' si aprono anche in Monferrato con scorrerie reciproche (Treccani, DBI, voce 'Giangiacomo Paleologo'). Il mese e' documentato; il giorno 15, il testo della grida e le misure ordinate (guardie, armi pronte, divieto di uscire) sono ricostruzioni verosimili. Contesto: il 16 marzo 1431 Sforza sorprende i veneziani a Soncino; lo Sforza invade poi il Monferrato (in agosto secondo Treccani, DBI, voce 'Francesco I Sforza', il 29 ottobre invece secondo Treccani, DBI, voce 'Giangiacomo Paleologo').",
+	  "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/ - https://www.treccani.it/enciclopedia/francesco-i-sforza-duca-di-milano_%28Dizionario-Biografico%29/",
+	  "dataTrigger": "1431-02-15",
+      "titolo": "Riprende la guerra tra Venezia e il Visconti",
+      "messaggio": "Le notizie da Milano parlano di nuove ostilita' tra Venezia e il Duca Filippo Maria Visconti. A Chivasso si teme che il conflitto si allarghi presto anche ai confini del Marchesato: le prime scorrerie di frontiera sono gia' cominciate.",
       "luoghiInteressati": [],
       "luoghiInteressatiTutti": true,
-      "effetti": {
-        "sbloccoQuest": [
-          "quest_osservare_torino"
-        ]
-      },
+      "effetti": {},
       "mostraBando": true,
-      "bandoId": "bandoChivasso_lutto_savoia",
+      "bandoId": "bandoChivasso_ripresa_guerra",
       "ripetibile": false,
-      "sequenzaMedia": {
+	  "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_erede_01",
-          "ImgsEventi/img_erede_02"
+          "img_guerra_venezia_01",
+          "img_guerra_venezia_02",
+          "img_guerra_venezia_03"
         ],
         "secondiPerImmagine": 4
       }
     },
     {
-      "id": "alleanza_savoia_visconti",
+      "id": "occupazione_cocconato_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "media",
+      "certezzaStorica": "plausibile",
+      "_notaStorica": "Primavera 1431 (giorno non specificato; il 20 aprile e' convenzionale): con l'assenso veneziano, Giangiacomo occupa le terre dei signori di Cocconato, dei Turco e del vescovo di Asti, alleati del Visconti (la grida del Marchese usa la lettura di parte); le forze monferrine a sinistra del Po si sbandano di fronte agli avversari. Contesto: il capitano generale Giovanni Turco era stato impiccato il 19 dicembre 1430 per intese segrete con il nemico. Fonte: Treccani, DBI, voce 'Giangiacomo Paleologo, marchese di Monferrato'.",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/",
+      "dataTrigger": "1431-04-20",
+      "titolo": "Il Marchese occupa le terre di Cocconato",
+      "messaggio": "Con l'assenso di Venezia, Gian Giacomo Paleologo muove contro le terre dei signori di Cocconato, dei Turco e del vescovo d'Asti, alleati del Visconti. Il successo e' pero' effimero: le forze del Marchese a sinistra del Po si sbandano di fronte alla reazione nemica.",
+	  "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -5,
+          "luoghi": [
+            "chivasso",
+            "casale"
+          ]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_cocconato",
+      "ripetibile": false,
+	  "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_cocconato_01",
+          "img_cocconato_02",
+          "img_cocconato_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "occupazione_cocconato_1431_grida_cocconato",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "media",
+      "certezzaStorica": "plausibile",
+      "_notaStorica": "Evento tecnico gemello di 'occupazione_cocconato_1431' (stessa data convenzionale, 20 aprile 1431): serve solo ad attivare la grida di Cocconato nella tavola dei bandi di quel luogo, senza pannello, immagini ne' effetti. La nota storica e le fonti sono quelle dell'evento principale.",
+      "dataTrigger": "1431-04-20",
+	  "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bando_occupazione_cocconato",
+      "ripetibile": false
+    },
+    {
+      "id": "patto_segreto_savoia_visconti_1431",
       "capitolo": 1,
       "tipo": "storico",
       "priorita": "alta",
       "certezzaStorica": "plausibile",
-      "_notaStorica": "L'alleanza tra Savoia e Visconti contro il Marchesato e' documentata nel 1431; il giorno esatto non e' stato reperito, la data qui usata e' una stima ragionevole",
-      "dataTrigger": "1434-05-08",
-      "titolo": "Voci di un'alleanza segreta - 1434",
-      "messaggio": "Corrono voci alla corte di Chivasso: il Duca di Milano e il Duca di Savoia avrebbero stretto un patto segreto contro il Marchesato. Nessuno osa dirlo apertamente, ma i mercanti che tornano da Milano parlano di truppe che si muovono.",
+      "_notaStorica": "Nel gioco il 24 maggio 1431 (data convenzionale) è il momento in cui le voci arrivano a Chivasso, senza alcun atto ufficiale: Amedeo VIII di Savoia e Filippo Maria Visconti concludono un patto segreto per spartirsi il Marchesato ai danni di Giangiacomo, che reagisce intrigando in Francia (Treccani, DBI, 'Giangiacomo Paleologo': 'nel contempo' con l'occupazione primaverile di Cocconato e prima dell'azione su Asti del 16 giugno). Le fonti divergono: Caserta (Fondazione Torino Musei) lo data a febbraio 1431. Il progetto di spartizione e' piu' antico: DBI 'Guglielmo VIII' lo riconduce alla politica sabaudo-viscontea del 1425-26. L'alleanza formale e' del 18 dicembre 1431 (DBI 'Luigi Crotti'). Intesa sabaudo-viscontea dal 1427-28 (Vercelli ceduta all’8.12.1427; Pace di Ferrara 18.4.1428), con il Monferrato insidiato da entrambi (Cognasso, via cap. V Univ. Cattolica). Per la stessa fonte il trattato di spartizione e’ firmato da Amedeo solo a dicembre 1431, dopo l’attacco visconteo.",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/ - https://www.treccani.it/enciclopedia/guglielmo-viii-marchese-di-monferrato_(Dizionario-Biografico)/ - https://www.treccani.it/enciclopedia/luigi-crotti_(Dizionario-Biografico)/ - https://gestione.fondazionetorinomusei.it/media/2025/03/04_CATALOGAZIONE_PM8_Oddone-Caserta_2402_CORR.pdf?lang=it",
+      "dataTrigger": "1431-05-24",
+      "titolo": "Un patto segreto contro il Marchesato",
+      "messaggio": "Corrono voci alla corte di Chivasso, sempre più insistenti: il Duca di Milano e il Duca di Savoia avrebbero stretto un accordo per spartirsi il Marchesato ai danni del Marchese. Nessuno osa dirlo apertamente, ma i mercanti che tornano da Milano e Torino parlano di trattative concluse e di truppe pronte a mettersi in movimento.",
       "luoghiInteressati": [
         "chivasso"
       ],
       "effetti": {
         "cambioStatoDiplomazia": {
-          "daFazione": "visconti",
+          "daFazione": "savoia",
           "versoFazione": "paleologi",
           "nuovoStato": "tensione"
         },
@@ -77,183 +127,952 @@
         }
       },
       "mostraBando": true,
-      "bandoId": "bandoChivasso_voci_alleanza",
+      "bandoId": "bandoChivasso_patto_segreto",
       "ripetibile": false,
-      "sequenzaMedia": {
+	  "sequenzaMedia": {
         "tipo": "immagini",
         "immagini": [
-          "ImgsEventi/img_alleanza_01",
-          "ImgsEventi/img_alleanza_02",
-          "ImgsEventi/img_alleanza_03"
+          "img_patto_segreto_01",
+          "img_patto_segreto_02",
+          "img_patto_segreto_03"
         ],
         "secondiPerImmagine": 4
       }
     },
     {
-      "id": "proclama_capitale",
+      "id": "fallito_attacco_asti_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "bassa",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "16 giugno 1431: Giangiacomo intraprende un'azione militare contro Asti, che il Savoia sventa con un minaccioso intervento (Treccani, DBI, voce 'Giangiacomo Paleologo, marchese di Monferrato'). Il 16 giugno e' la data dell'iniziativa; la fonte non dice quando avvenne l'intervento sabaudo, che nel gioco e' compresso nello stesso giorno. L'episodio segue l'intrigo di Giangiacomo in Francia contro il Savoia, reazione al patto segreto Savoia-Visconti. Secondo Cognasso (via cap. V Univ. Cattolica) il marchese, nonostante l’ordine di Sigismondo di aiutare Milano, attacco’ Asti; truppe piemontesi giunsero in soccorso del presidio visconteo.",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/",
+      "dataTrigger": "1431-06-16",
+      "titolo": "Il Marchese rinuncia ad Asti",
+      "messaggio": "Il Marchese ha mosso contro Asti, ma la minaccia di un intervento sabaudo lo costringe a fermarsi. La corte di Chivasso lo apprende con inquietudine: pare che il Duca di Savoia sorvegli ormai ogni mossa del Marchesato.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_attacco_asti",
+      "ripetibile": false,
+	  "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_attacco_asti_01",
+          "img_attacco_asti_02",
+          "img_attacco_asti_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "morte_erede_savoia_1431",
+      "capitolo": 1,
       "tipo": "storico",
       "priorita": "alta",
-      "dataTrigger": "1434-05-03",
-      "titolo": "Casale diventa Capitale",
-      "messaggio": "Johan Jacomo Paleologo proclama Casale Monferrato nuova capitale del Marchesato. La città si anima di cortigiani, funzionari e nuove opportunità.",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "17 agosto 1431: muore a Torino Amedeo, principe di Piemonte, figlio di Amedeo VIII; gli succede nel titolo il fratello Ludovico, che sposera' Anna di Lusignano, gia' promessa ad Amedeo (Treccani, DBI, voce 'Ludovico I di Savoia'). La fonte non indica la causa della morte. Contesto: Amedeo era nipote di Giangiacomo (la marchesa Giovanna di Savoia era sorella di Amedeo VIII). Il ritiro di Amedeo VIII a Ripaille e' del 7 novembre 1434 (stessa voce): nel messaggio e' un'anticipazione narrativa, come voce. Nel gioco la notizia e la grida arrivano a Chivasso lo stesso giorno della morte.",
+      "_fonti": "https://www.treccani.it/enciclopedia/ludovico-i-di-savoia-duca-di-savoia_(Dizionario-Biografico)/",
+      "dataTrigger": "1431-08-17",
+      "titolo": "Lutto alla corte di Savoia",
+      "messaggio": "Notizie da Torino: Amedeo, erede del Duca Amedeo VIII e principe di Piemonte, e' morto. Si dice che il Duca, gia' provato dal lutto per la moglie, potrebbe presto ritirarsi dal governo attivo. Il titolo di principe di Piemonte passa al fratello Ludovico.",
+	  "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "sbloccoQuest": [
+          "quest_osservare_torino"
+        ]
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_lutto_savoia",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_morte_erede_01",
+          "img_morte_erede_02",
+          "img_morte_erede_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "fallita_spedizione_genova_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "bassa",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "Agosto 1431: Giangiacomo tenta un'azione sfortunata contro Genova in accordo con il fuoruscito Barnaba Adorno (Treccani, DBI, voce 'Giangiacomo Paleologo, marchese di Monferrato'). Il giorno dell'azione non e' specificato: nel gioco l'evento e' datato 27 agosto 1431, giorno della battaglia di Rapallo, in cui la flotta veneziana di Pietro Loredan sconfigge quella genovese di Francesco Spinola (DBI 'Pietro Loredan'; DBI 'Orsotto Giustinian'). Il successivo tentativo di rovesciare il governo genovese con l'Adorno fallisce (DBI 'Pietro Loredan').",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/ - https://www.treccani.it/enciclopedia/pietro-loredan_(Dizionario-Biografico)/ - https://www.treccani.it/enciclopedia/orsotto-giustinian_(Dizionario-Biografico)/",
+      "dataTrigger": "1431-08-27",
+      "titolo": "Una spedizione verso Genova",
+      "messaggio": "Il Marchese, in accordo con il fuoruscito genovese Barnaba Adorno, tenta un'azione contro Genova. La flotta veneziana intanto sconfigge quella genovese a Rapallo, ma le sorti del Marchesato restano incerte.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_spedizione_genova",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_spedizione_genova_01",
+          "img_spedizione_genova_02",
+          "img_spedizione_genova_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "sconfitta_sestri_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "media",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "9 ottobre 1431: le truppe inviate da Giangiacomo a Sestri vengono facilmente sconfitte da Niccolo' Piccinino, al servizio del Visconti (Treccani, DBI, voce 'Giangiacomo Paleologo, marchese di Monferrato'). La fonte colloca lo scontro nella stessa fase dell'azione contro Genova dell'agosto 1431. Il testo della grida e' ricostruito.",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/",
+      "dataTrigger": "1431-10-09",
+      "titolo": "Disfatta a Sestri",
+      "messaggio": "Le truppe che il Marchese aveva inviato a Sestri sono state facilmente sconfitte da Niccolo' Piccinino, capitano al servizio del Visconti. La notizia getta un'ombra cupa su Chivasso: il vento sembra ora soffiare contro il Marchesato.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -10,
+          "luoghi": [
+            "chivasso",
+            "casale"
+          ]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_sestri",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_sconfitta_sestri_01",
+          "img_sconfitta_sestri_02",
+          "img_sconfitta_sestri_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "invasione_sforza_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "29 ottobre 1431: il Visconti scatena contro Giangiacomo la compagnia di Francesco Sforza (Treccani, DBI, voce 'Giangiacomo Paleologo, marchese di Monferrato'). La stessa voce dice che lo Sforza occupa poi facilmente le terre oltre il Tanaro e invade il territorio tra Tanaro e Po, prima dell'8 dicembre: nel messaggio, datato 29 ottobre, queste fasi sono solo temute. Le fonti divergono: la voce DBI 'Francesco I Sforza' colloca l'invasione del Monferrato in agosto. Si segue il 29 ottobre perche' coerente con la sequenza della voce su Giangiacomo (Sestri 9 ottobre, rifugio a Chivasso 8 dicembre, Casale 10 dicembre). Cognasso (via cap. V Univ. Cattolica) colloca gli attacchi dello Sforza nel Monferrato mentre il contingente sabaudo era in Lombardia (ritirato in ottobre): le prime incursioni precedono il 29 ottobre.",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/ - https://www.treccani.it/enciclopedia/francesco-i-sforza-duca-di-milano_%28Dizionario-Biografico%29/",
+      "dataTrigger": "1431-10-29",
+      "titolo": "Francesco Sforza invade il Monferrato",
+      "messaggio": "Il Duca di Milano ha scatenato contro il Marchesato la compagnia di Francesco Sforza. Le prime terre sulla sua strada sono quelle monferrine oltre il Tanaro; si teme che l'avanzata giunga presto fino al Po. A Chivasso si serrano le porte.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "visconti",
+          "versoFazione": "paleologi",
+          "nuovoStato": "guerra"
+        },
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -10,
+          "luoghi": [
+            "chivasso",
+            "casale"
+          ]
+        },
+        "malusGuadagnoPercentuale": {
+          "archetipi": [
+            "mercante",
+            "artigiano"
+          ],
+          "percentuale": 30,
+          "durataGiorni": 60
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_invasione_sforza",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_invasione_sforza_01",
+          "img_invasione_sforza_02",
+          "img_invasione_sforza_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "giangiacomo_rifugio_chivasso_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "8 dicembre 1431: Giangiacomo, sopraffatto dall'avanzata sforzesca, e' costretto a rifugiarsi a Chivasso. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/",
+      "dataTrigger": "1431-12-08",
+      "titolo": "Il Marchese si rifugia a Chivasso",
+      "messaggio": "Sopraffatto dall'avanzata delle truppe sforzesche, il Marchese Gian Giacomo Paleologo si e' rifugiato entro le mura di Chivasso. La citta', sede della corte marchionale, si prepara al peggio.",
+	  "luoghiInteressati": [
+        "chivasso"
+      ],
+      "effetti": {
+        "bonusReputazione": {
+          "fazione": "paleologi",
+          "valore": 5,
+          "luoghi": [
+            "chivasso"
+          ]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_rifugio_marchese",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_rifugio_chivasso_01",
+          "img_rifugio_chivasso_02",
+          "img_rifugio_chivasso_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "sforza_occupa_casale_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "10 dicembre 1431: Francesco Sforza occupa Casale. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/",
+      "dataTrigger": "1431-12-10",
+      "titolo": "Casale cade in mano allo Sforza",
+      "messaggio": "Due giorni dopo il rifugio del Marchese a Chivasso, giunge la notizia peggiore: Francesco Sforza ha occupato Casale. Gran parte del Monferrato e' ormai in mano ai Viscontei.",
       "luoghiInteressati": [
         "casale"
       ],
       "effetti": {
+        "cambioProprietario": {
+          "luogo": "casale",
+          "daFazione": "paleologi",
+          "aFazione": "visconti"
+        },
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -15,
+          "luoghi": [
+            "chivasso"
+          ]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bando_casale_occupata_1431",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_sforza_casale_01",
+          "img_sforza_casale_02",
+          "img_sforza_casale_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+	{
+      "id": "sforza_occupa_casale_1431_grida_chivasso",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "Evento tecnico gemello di 'sforza_occupa_casale_1431' (10 dicembre 1431): attiva la grida del Marchese nella tavola dei bandi di Chivasso, senza pannello, immagini ne' effetti. Il testo della grida e' ricostruito.",
+      "dataTrigger": "1431-12-10",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_casale_occupata",
+      "ripetibile": false
+    },
+    {
+      "id": "alleanza_formale_savoia_visconti_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "18 dicembre 1431: Amedeo VIII di Savoia e Filippo Maria Visconti stipulano un accordo contro il Marchesato di Monferrato (Treccani, DBI, voce 'Luigi Crotti'). Secondo Cognasso (I Savoia, 1971, pp. 224-229, riportato nel cap. V dell'Univ. Cattolica) e' un trattato di spartizione del Monferrato, firmato da Amedeo dopo l'attacco visconteo dello Sforza; Amedeo dichiara poi ufficialmente guerra al marchese, offrendogli in segreto il proprio aiuto (vedi evento successivo e DBI 'Giangiacomo Paleologo'). Le clausole non sono documentate nelle fonti consultate: il messaggio parla solo di spartizione. Nel gioco l'evento e' datato 20 dicembre 1431, due giorni dopo la stipula (18 dicembre), il tempo perche' la notizia giunga a Chivasso: la data di arrivo e' una scelta narrativa.",
+      "_fonti": "https://www.treccani.it/enciclopedia/luigi-crotti_(Dizionario-Biografico)/ - https://publicatt.unicatt.it/retrieve/8a503bda-6120-4f80-8a58-953a0e1125ae/06capitolo5.pdf",
+      "dataTrigger": "1431-12-20",
+      "titolo": "L'alleanza si fa guerra",
+      "messaggio": "A Chivasso non restano più dubbi: il Duca di Milano e il Duca di Savoia si sono accordati per spartirsi il Marchesato. L'intesa risale al 18 dicembre, e il patto sussurrato a maggio è ormai un accordo concluso. I messaggeri corrono tra Torino e Milano e, con Casale già in mano allo Sforza, nessuno sa quanto tempo resti prima della mossa sabauda.",
+	  "luoghiInteressati": [
+        "chivasso",
+        "casale"
+      ],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "savoia",
+          "versoFazione": "visconti",
+          "nuovoStato": "alleanza"
+        },
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -10,
+          "luoghi": [
+            "chivasso",
+            "casale",
+            "monferrato"
+          ]
+        },
+        "bonusReputazione": {
+          "fazione": "visconti",
+          "valore": 5,
+          "luoghi": [
+            "torino",
+            "milano"
+          ]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_alleanza_formale",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_alleanza_formale_01",
+          "img_alleanza_formale_02",
+          "img_alleanza_formale_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "amedeo_dichiara_guerra_1431",
+      "capitolo": 1,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "plausibile",
+      "_notaStorica": "Dicembre 1431 (giorno esatto non specificato, 'poco dopo' il 10 dicembre; il 22 dicembre e' convenzionale e corrisponde all'arrivo del messaggio a Chivasso): Amedeo VIII, rinfacciando a Giangiacomo gli intrighi antisabaudi orditi in Francia, gli dichiara solennemente guerra e nel contempo gli offre il suo aiuto come parente e amico: Giangiacomo dovra' rinunciare a combattere e mettere le terre rimaste sotto la protezione sabauda, recandosi a conferire con Amedeo a Thonon (Treccani, DBI, voce 'Giangiacomo Paleologo, marchese di Monferrato'). Per Cognasso (cap. V Univ. Cattolica) Amedeo dichiara guerra ufficialmente mentre in segreto offre aiuto al marchese. La stessa voce DBI dice che Giangiacomo 'non aveva altra scelta che accettare': l'8 gennaio 1432 Lavigny e' gia' a Moncalvo.",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/ - https://publicatt.unicatt.it/retrieve/8a503bda-6120-4f80-8a58-953a0e1125ae/06capitolo5.pdf",
+      "dataTrigger": "1431-12-22",
+      "titolo": "Amedeo VIII dichiara guerra, ma offre una via d'uscita",
+      "messaggio": "Il Duca di Savoia Amedeo VIII, rinfacciando al Marchese i suoi intrighi in Francia contro Casa Savoia, gli dichiara solennemente guerra. Ma nel contempo, come parente e amico, gli offre il suo aiuto: il Marchese rinunci a combattere, ponga le terre rimaste sotto la protezione sabauda e si rechi a Thonon a conferire con lui. A Chivasso nessuno sa se fidarsi.",
+      "luoghiInteressati": [
+        "chivasso"
+      ],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "savoia",
+          "versoFazione": "paleologi",
+          "nuovoStato": "guerra"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_dichiarazione_guerra",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_amedeo_guerra_01",
+          "img_amedeo_guerra_02",
+          "img_amedeo_guerra_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "lavigny_governatore_moncalvo_1432",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "8 gennaio 1432: Ottonino di Lavigny si installa a Moncalvo come capitano generale del Monferrato per conto del duca di Savoia, mentre la bandiera sabauda viene issata sulle 28 localita' non ancora occupate (Treccani, DBI, voce 'Giangiacomo Paleologo, marchese di Monferrato'). La voce colloca l'episodio dopo l'accettazione dell'offerta sabauda da parte di Giangiacomo ('non aveva altra scelta'). Moncalvo era la sede abituale del Parlamento monferrino, poi usato dal regime sabaudo per riscuotere denaro (stessa voce). La grida di Moncalvo e' ricostruita.",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/",
+      "dataTrigger": "1432-01-08",
+	  "titolo": "Ottonino di Lavigny, capitano generale sabaudo a Moncalvo",
+      "messaggio": "Accettata dal Marchese la protezione sabauda, Ottonino di Lavigny si e' insediato a Moncalvo come capitano generale del Monferrato per conto del Duca di Savoia. Sulle ventotto localita' del Marchesato non ancora occupate viene issata la bandiera sabauda: il Monferrato, di fatto, e' ormai sotto controllo sabaudo.",
+      "luoghiInteressati": [
+        "moncalvo"
+      ],
+      "effetti": {
+        "cambioStatoLuogo": {
+          "luogo": "moncalvo",
+          "nuovoStato": "occupato"
+        },
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -10,
+          "luoghi": [
+            "chivasso",
+            "moncalvo"
+          ]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoMoncalvo_lavigny",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_lavigny_moncalvo_01",
+          "img_lavigny_moncalvo_02",
+          "img_lavigny_moncalvo_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+	{
+      "id": "lavigny_governatore_moncalvo_1432_grida_chivasso",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "plausibile",
+      "_notaStorica": "Evento tecnico gemello di 'lavigny_governatore_moncalvo_1432' (8 gennaio 1432): attiva la grida del Marchese nella tavola dei bandi di Chivasso, senza pannello, immagini ne' effetti. Il testo della grida e' ricostruito.",
+      "dataTrigger": "1432-01-08",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_protezione_sabauda",
+      "ripetibile": false
+    },
+    {
+      "id": "giangiacomo_a_thonon_1432",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "31 gennaio 1432: Giangiacomo, insieme al primogenito Giovanni e a pochi fidi, giunge a Thonon, mettendosi totalmente nelle mani del cognato Amedeo VIII; soggiorna poi al castello di Gaillard, presso Thonon (Treccani, DBI, voce 'Giangiacomo Paleologo, marchese di Monferrato'). Nel gioco la notizia giunge a Chivasso lo stesso giorno (compressione); la marchesa era rimasta a Chivasso (stessa voce, a proposito del ritorno di Giovanni, maggio 1432). Il testo della grida e' ricostruito.",
+      "_fonti": "https://www.treccani.it/enciclopedia/giangiacomo-paleologo-marchese-di-monferrato_(Dizionario-Biografico)/",
+      "dataTrigger": "1432-01-31",
+      "titolo": "Il Marchese si consegna a Thonon",
+      "messaggio": "Con il figlio primogenito Giovanni e pochi fedelissimi, il Marchese e' giunto a Thonon, mettendosi interamente nelle mani del cognato Amedeo VIII di Savoia. Non gli resta altra scelta: il Monferrato e' ormai stretto da ogni lato.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_thonon",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_thonon_01",
+          "img_thonon_02",
+          "img_thonon_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "patto_thonon_1432",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "13 febbraio 1432: Giangiacomo firma un patto segreto con Amedeo VIII: il Duca si impegna a restituirgli il Marchesato, in cambio Giangiacomo dona il territorio a sinistra del Po e a destra del Tanaro (da infeudare al primogenito) e si dichiara 'aderente' perpetuo di Savoia per tutte le restanti terre. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "dataTrigger": "1432-02-13",
+      "titolo": "Il patto di Thonon",
+      "messaggio": "E' stato firmato il patto tra il Marchese e il Duca di Savoia: Amedeo VIII si impegna a restituire il Marchesato a Giangiacomo. In cambio, il territorio a sinistra del Po e a destra del Tanaro viene donato per essere infeudato al figlio primogenito, e per tutte le restanti terre il Marchese si dichiara 'aderente' perpetuo di Casa Savoia.",
+      "luoghiInteressati": [
+        "chivasso"
+      ],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "savoia",
+          "versoFazione": "paleologi",
+          "nuovoStato": "protettorato"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_patto_thonon",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_patto_thonon_01",
+          "img_patto_thonon_02",
+          "img_patto_thonon_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+	{
+      "id": "avanzata_viscontea_acqui_1432",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "licenza_narrativa",
+      "dataTrigger": "1432-02-15",
+      "titolo": "Filippo Maria avanza nel Monferrato",
+      "messaggio": "Le truppe di Filippo Maria Visconti minacciano i territori di Giangiacomo Paleologo. Acqui, fedele al marchese, si prepara alla guerra.",
+      "luoghiInteressati": [
+        "acqui"
+      ],
+      "effetti": {
+       "cambioStatoDiplomazia": {
+          "daFazione": "visconti",
+          "versoFazione": "paleologi",
+          "nuovoStato": "guerra"
+        },
+        "attivaBando": "bandoAcqui_guerra",
+        "spawnEsercito": {
+          "id": "armata_viscontea_acqui",
+          "luogo": "acqui",
+          "forza": 1200,
+          "comandante": "locotenente_petrolo_della_croce"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoAcqui_guerra",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_visconte_acqui_01",
+          "img_visconte_acqui_02",
+          "img_visconte_acqui_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "giangiacomo_a_venezia_1432",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "media",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "17 maggio 1432: dopo un lungo viaggio attraverso Berna, il Tirolo e la Valsugana, Giangiacomo giunge a Venezia, dove il doge Francesco Foscari gli assegna una pensione di 300 ducati al mese. Il figlio Giovanni nel frattempo e' tornato a Chivasso, dove era rimasta la marchesa. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "dataTrigger": "1432-05-17",
+      "titolo": "Il Marchese accolto a Venezia",
+      "messaggio": "Dopo un lungo viaggio attraverso Berna, il Tirolo e la Valsugana, il Marchese e' giunto a Venezia, dove il doge Francesco Foscari lo ha accolto con onore, assegnandogli una pensione di trecento ducati al mese. Il figlio Giovanni intanto e' tornato a Chivasso, dove la marchesa lo attendeva.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_venezia",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_venezia_01",
+          "img_venezia_02",
+          "img_venezia_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "inizio_occupazione_dura_1432",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "14 agosto 1432: inizia un lungo periodo (fino al 19 febbraio 1435) in cui il regime di occupazione sabaudo organizza lo sfruttamento delle terre monferrine: il Parlamento locale viene convocato spesso solo per estorcere denaro, si arriva a prendere ostaggi dalla popolazione, e scoppiano sollevazioni represse con le armi. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "dataTrigger": "1432-08-14",
+      "titolo": "Il peso dell'occupazione si fa sentire",
+      "messaggio": "Da mesi il Monferrato vive sotto l'amministrazione sabauda, ma ora il peso si fa sentire davvero: il Parlamento viene convocato solo per estorcere nuove imposte, si parla di ostaggi presi dalla popolazione nei borghi piu' riottosi. A Chivasso cresce il malcontento.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "malusGuadagnoPercentuale": {
+          "archetipi": [
+            "mercante",
+            "artigiano",
+            "contadino",
+            "contadina"
+          ],
+          "percentuale": 20,
+          "durataGiorni": 180
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_occupazione_dura",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_occupazione_01",
+          "img_occupazione_02",
+          "img_occupazione_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "pace_di_ferrara_1433",
+      "capitolo": 2,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "26 aprile 1433, Pace di Ferrara: Filippo Maria Visconti è costretto ad accettare la restituzione dei territori monferrini da lui occupati, ma ne rinvia l'esecuzione con vari pretesti. Giangiacomo Paleologo rientra a Casale solo l'11 dicembre 1433. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'.",
+      "dataTrigger": "1433-04-26",
+      "titolo": "La Pace di Ferrara",
+      "messaggio": "A Ferrara viene sottoscritta una nuova pace: il Duca di Milano è costretto ad accettare la restituzione dei territori monferrini occupati negli anni passati. A Chivasso si respira, per la prima volta da tempo, un'aria di sollievo, anche se nessuno crede che Milano restituirà subito quanto preso.",
+      "luoghiInteressati": [
+        "chivasso",
+        "casale"
+      ],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "visconti",
+          "versoFazione": "paleologi",
+          "nuovoStato": "tregua"
+        },  
+        "bonusReputazione": {
+          "fazione": "paleologi",
+          "valore": 10,
+          "luoghi": [
+            "chivasso",
+            "casale"
+          ]
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_pace_ferrara",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_pace_ferrara_01",
+          "img_pace_ferrara_02",
+          "img_pace_ferrara_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "giangiacomo_ritorno_casale_1433",
+      "capitolo": 3,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "11 dicembre 1433: dopo essere stato presente a Mantova come testimone di un diploma dell'imperatore Sigismondo (22 settembre 1433) e ricevuto onorevolmente a Milano dal Visconti, Giangiacomo fa ritorno alle sue terre e giunge a Casale. L’effettivo rientro di Casale è dedotto dall’arrivo del marchese; nessuna fonte dà una data precisa. Fonte: Treccani, Dizionario Biografico degli Italiani, voce Giangiacomo Paleologo, marchese di Monferrato",
+      "dataTrigger": "1433-12-11",
+      "titolo": "Il Marchese torna dall'esilio: approda a Casale",
+      "messaggio": "Dopo mesi di peregrinazioni per le corti d'Italia e d'Europa, il Marchese Gian Giacomo Paleologo e' finalmente tornato alle sue terre. Ricevuto con onore a Milano dallo stesso Visconti, e' giunto a Casale, dove da ora stabilisce la sua residenza.",
+      "luoghiInteressati": [
+        "casale",
+        "chivasso"
+      ],
+      "effetti": {
+		"cambioProprietario": {
+          "luogo": "casale",
+          "daFazione": "visconti",
+          "aFazione": "paleologi"
+		},
         "bonusSoldi": {
           "luogo": "casale",
-          "importo": 20,
-          "note": "Bonus una tantum per residenti a Casale"
+          "importo": 15,
+          "note": "Il ritorno del Marchese porta nuova vita a Casale"
+        }
+      },
+      "mostraBando": true,
+      "bandoId": "bandoCasale_ritorno_marchese",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_ritorno_casale_01",
+          "img_ritorno_casale_02",
+          "img_ritorno_casale_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "richiesta_amedeo_1434",
+      "capitolo": 4,
+      "tipo": "storico",
+      "priorita": "media",
+      "certezzaStorica": "plausibile",
+      "_notaStorica": "Gennaio 1434 (giorno esatto non specificato): mentre sono ancora in corso le trattative per la restituzione dei territori occupati dal Visconti, Amedeo VIII chiede il rispetto degli impegni di Thonon; Giangiacomo cerca in ogni modo di sottrarsi, appellandosi a Papa Eugenio IV, all'imperatore Sigismondo e allo stesso Visconti. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "dataTrigger": "1434-01-20",
+      "titolo": "Amedeo VIII chiede il rispetto dei patti",
+      "messaggio": "Il Duca di Savoia chiede formalmente il rispetto degli impegni presi a Thonon. Il Marchese cerca ogni appiglio per sottrarsi: scrive al Papa Eugenio IV, all'imperatore Sigismondo, persino al Visconti. Nessuno pare disposto a intervenire in suo favore.",
+      "luoghiInteressati": [
+        "chivasso"
+      ],
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_richiesta_amedeo",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_richiesta_amedeo_01",
+          "img_richiesta_amedeo_02",
+          "img_richiesta_amedeo_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+	{
+      "id": "traslazione_corte_casale_1434",
+      "capitolo": 4,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "tradizione_storiografica",
+      "_notaStorica": "3 marzo 1434, data convenzionale: secondo la tradizione storiografica e locale, Giangiacomo Paleologo istituisce Casale Monferrato capitale del Marchesato e avvia il trasferimento della sede marchionale da Chivasso, esposta alle pressioni sabaude. Il giorno esatto non è documentato. Il trasferimento si compie nel 1435, quando Chivasso passa ai Savoia. Fonti: 'Il Castello di Casale Monferrato' (Storie Piemontesi); Luca Gianazza, 'La monetazione dei Paleologo in Monferrato'; Comune di Chivasso, 'Storia della Città di Chivasso'.",
+      "dataTrigger": "1434-03-03",
+      "titolo": "Casale, nuova sede del Marchese",
+      "messaggio": "Con Chivasso sempre più esposta alle pretese dei Savoia, Gian Giacomo Paleologo sceglie Casale come nuova sede del Marchesato. La corte inizia a trasferirsi lungo il Po: cancellieri, consiglieri e familiari del Marchese preparano il passaggio. Chivasso resta per ora terra paleologa, ma Casale comincia a diventare il cuore politico del Monferrato.",
+      "luoghiInteressati": [
+        "casale",
+        "chivasso"
+      ],
+      "effetti": {
+        "cambioStatoDiplomazia": {
+          "daFazione": "paleologi",
+          "versoFazione": "paleologi",
+          "nuovoStato": "riorganizzazione"
+        },
+        "bonusSoldi": {
+          "luogo": "casale",
+          "importo": 15,
+          "note": "Primi benefici economici per Casale, futura sede della corte"
+        },
+        "malusGuadagnoPercentuale": {
+          "archetipi": [
+            "notaro",
+            "mercante"
+          ],
+          "percentuale": 10,
+          "durataGiorni": 30,
+          "note": "A Chivasso si avverte l'incertezza del trasferimento della corte"
         },
         "sbloccoQuest": [
           "quest_corte_casale_01"
         ]
       },
       "mostraBando": true,
-      "bandoId": "bandoCasale_0",
-      "ripetibile": false
+      "bandoId": "bandoCasale_capitale_1434",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_traslacorte_casale_01",
+          "img_traslacorte_casale_02",
+          "img_traslacorte_casale_03"
+        ],
+        "secondiPerImmagine": 4
+      }
     },
     {
-      "id": "fiera_san_giovanni",
-      "tipo": "ricorrente",
-      "priorita": "media",
-      "dataTrigger": "1434-06-24",
-      "dataTriggerFine": "1434-06-27",
-      "titolo": "Fiera di San Giovanni a Casale",
-      "messaggio": "Si apre la grande fiera di San Giovanni. Mercanti da ogni borgo del Monferrato convergono a Casale. I prezzi salgono, le opportunità abbondano.",
+      "id": "giovanni_inviato_torino_1434",
+      "capitolo": 4,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "21 novembre 1434: Giangiacomo, ormai completamente isolato, sotto il pretesto di una indisposizione fisica invia ad Avigliana e poi a Torino, con numerosa scorta, il figlio Giovanni. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "dataTrigger": "1434-11-21",
+      "titolo": "Giovanni inviato a Torino",
+      "messaggio": "Ormai isolato da ogni alleanza, il Marchese ha inviato il figlio Giovanni ad Avigliana e poi a Torino, con numerosa scorta, adducendo come pretesto una propria indisposizione fisica. A Chivasso si teme che sia in realta' l'inizio della fine.",
       "luoghiInteressati": [
-        "casale"
+        "chivasso"
       ],
-      "luoghiInteressatiTutti": false,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_giovanni_torino",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_giovanni_torino_01",
+          "img_giovanni_torino_02",
+          "img_giovanni_torino_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "giovanni_autorizzato_trattare_1434",
+      "capitolo": 4,
+      "tipo": "storico",
+      "priorita": "media",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "29 novembre 1434: Giovanni viene autorizzato a trattare in nome del padre con Ludovico di Savoia, luogotenente di Amedeo VIII in Piemonte. I Savoiardi pretendono 300.000 fiorini di indennizzo per le spese di occupazione e l'osservanza dei patti di Thonon. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "dataTrigger": "1434-11-29",
+      "titolo": "Trattative con Ludovico di Savoia",
+      "messaggio": "Giovanni e' stato autorizzato dal padre a trattare con Ludovico di Savoia, luogotenente in Piemonte di Amedeo VIII. Le richieste sabaude sono pesantissime: trecentomila fiorini di indennizzo per le spese di occupazione, oltre alla piena osservanza dei patti di Thonon.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_trattative_ludovico",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_giovanni_tratta_01",
+          "img_giovanni_tratta_02",
+          "img_giovanni_tratta_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "ostaggio_giovanni_paleologo_1435",
+      "capitolo": 5,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+	  "_notaStorica": "7 gennaio 1435: Giovanni, figlio di Giangiacomo Paleologo, viene arrestato a Torino e trattenuto come ostaggio, mentre l'esercito sabaudo occupa Settimo e assedia Chivasso. Giangiacomo ordina al presidio di resistere a oltranza. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giovanni IV Paleologo, marchese di Monferrato'.",
+      "dataTrigger": "1435-01-07",
+      "titolo": "Il tranello di Torino",
+	  "messaggio": "Giovanni, figlio del Marchese, si trovava a Torino per trattative diplomatiche. Con un pretesto viene arrestato e trattenuto come ostaggio, mentre l'esercito sabaudo occupa Settimo e muove su Chivasso. Gian Giacomo, informato, ordina alla guarnigione di resistere ad ogni costo, dichiarando di non essere disposto a cedere la città nemmeno per salvare il figlio.",
+      "luoghiInteressati": [
+        "chivasso",
+        "torino",
+        "settimo"
+      ],
       "effetti": {
-        "bonusSoldi": null,
-        "bonusGuadagnoPercentuale": {
-          "archetipi": [
-            "mercante",
-            "artigiano",
-            "tessitrice",
-            "ostessa"
-          ],
-          "percentuale": 50,
-          "durataGiorni": 4,
-          "note": "Guadagno aumentato del 50% per i giorni della fiera"
+        "cambioStatoLuogo": {
+          "luogo": "chivasso",
+          "nuovoStato": "assediato"
         },
-        "cambioStendardo": null,
-        "cambioTerreno": null,
-        "sbloccoAzione": "compra_merce_fiera"
-      },
-      "mostraBando": true,
-      "bandoId": "fiera_san_giovanni_bando",
-      "ripetibile": true
-    },
-    {
-      "id": "inizio_estate",
-      "tipo": "stagionale",
-      "priorita": "bassa",
-      "dataTrigger": "1434-06-21",
-      "dataTriggerFine": null,
-      "titolo": "L'estate è arrivata",
-      "messaggio": "Il sole scalda le campagne del Monferrato. I contadini lavorano dall'alba al tramonto. Il raccolto si annuncia abbondante.",
-      "luoghiInteressati": [],
-      "luoghiInteressatiTutti": true,
-      "effetti": {
-        "cambioStendardo": null,
-        "cambioTerreno": null,
-        "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
-        "bonusGuadagnoPercentuale": {
-          "archetipi": [
-            "contadino",
-            "contadina"
-          ],
-          "percentuale": 30
-        }
-      },
-      "mostraBando": true,
-      "bandoId": null,
-      "ripetibile": false,
-      "ricorrenzaAnnuale": true
-    },
-    {
-      "id": "inizio_autunno",
-      "tipo": "stagionale",
-      "priorita": "bassa",
-      "dataTrigger": "1434-09-21",
-      "dataTriggerFine": null,
-      "titolo": "L'autunno scende sul Monferrato",
-      "messaggio": "Le foglie ingialliscono sulle colline del Monferrato. È tempo di raccolto, di vendemmia e di fare provviste per l'inverno che verrà. I mercati si animano di prodotti della terra.",
-      "luoghiInteressati": [],
-      "luoghiInteressatiTutti": true,
-      "effetti": {
-        "cambioStendardo": null,
-        "cambioTerreno": null,
-        "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
-        "bonusGuadagnoPercentuale": {
-          "archetipi": [
-            "contadino",
-            "contadina"
-          ],
-          "percentuale": 40
-        }
-      },
-      "mostraBando": true,
-      "bandoId": null,
-      "ripetibile": false,
-      "ricorrenzaAnnuale": true
-    },
-    {
-      "id": "inizio_inverno",
-      "tipo": "stagionale",
-      "priorita": "bassa",
-      "dataTrigger": "1434-12-21",
-      "dataTriggerFine": null,
-      "titolo": "L'inverno stringe il Monferrato",
-      "messaggio": "Le prime nevi imbiancano le colline. I mercati si riducono, le strade sono difficili. Chi ha fatto provviste starà al caldo.",
-      "luoghiInteressati": [],
-      "luoghiInteressatiTutti": true,
-      "effetti": {
-        "cambioStendardo": null,
-        "cambioTerreno": null,
-        "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -10,
+          "luoghi": [
+            "chivasso"
+          ]
+        },
         "malusGuadagnoPercentuale": {
           "archetipi": [
-            "contadino",
-            "contadina",
-            "mercante"
+            "mercante",
+            "artigiano"
           ],
-          "percentuale": 20
+          "percentuale": 60,
+          "durataGiorni": 18
         },
-        "speseStraordinarie": {
-          "importo": 2,
-          "nota": "Costo riscaldamento giornaliero per tutti"
+        "sbloccoAzione": "arruolamento_milizia"
+      },
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_ostaggio",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_ostaggio_giovanni_01",
+          "img_ostaggio_giovanni_02",
+          "img_ostaggio_giovanni_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "giangiacomo_a_torino_1435",
+      "capitolo": 5,
+      "tipo": "storico",
+      "priorita": "media",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "21 gennaio 1435: Giangiacomo si reca personalmente a Torino per trattare la fine dell'assedio. Fonte: Treccani, Dizionario Biografico degli Italiani, voce 'Giangiacomo Paleologo, marchese di Monferrato'",
+      "dataTrigger": "1435-01-21",
+      "titolo": "Il Marchese si reca a Torino",
+      "messaggio": "Con la citta' ormai stremata dall'assedio, il Marchese si e' recato personalmente a Torino per trattare la fine delle ostilita'. A Chivasso, sulle mura, si attende con il fiato sospeso.",
+      "luoghiInteressati": [
+        "chivasso"
+      ],
+      "effetti": {},
+      "mostraBando": true,
+      "bandoId": "bandoChivasso_marchese_torino",
+      "ripetibile": false,
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_giangiacomo_torino_01",
+          "img_giangiacomo_torino_02",
+          "img_giangiacomo_torino_03"
+        ],
+        "secondiPerImmagine": 4
+      }
+    },
+    {
+      "id": "caduta_chivasso_1435",
+      "capitolo": 5,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "documentata",
+      "_notaStorica": "24 gennaio 1435: Giangiacomo Paleologo e il figlio Giovanni, ostaggio a Torino, sottoscrivono gli impegni imposti dai Savoia. Chivasso e altre località canavesane sono cedute e annesse al Ducato sabaudo; la remissione e la presa di possesso sono documentate il 28 e il 30 gennaio 1435. Fonti: Treccani, Dizionario Biografico degli Italiani, voce 'Giovanni IV Paleologo, marchese di Monferrato'; Archivio di Stato di Torino, Protocolli dei notai ducali e camerali.",
+      "dataTrigger": "1435-01-24",
+      "titolo": "Chivasso passa ai Savoia",
+      "messaggio": "A Torino, con il figlio ancora ostaggio, Giangiacomo Paleologo sottoscrive gli impegni imposti dai Savoia. Chivasso, antica sede della corte marchionale, è ceduta al Ducato sabaudo. Casale, già scelta come nuova capitale l'anno prima, raccoglie definitivamente l'eredità politica e amministrativa del Monferrato paleologo.",
+      "luoghiInteressati": [
+        "chivasso",
+        "casale",
+        "torino"
+      ],
+      "effetti": {
+        "cambioProprietario": {
+          "luogo": "chivasso",
+          "daFazione": "paleologi",
+          "aFazione": "savoia"
+        },
+        "disattivaBando": "bandoChivasso_paleologo",
+        "attivaBando": "bandoChivasso_sabaudo",
+        "malusReputazione": {
+          "fazione": "paleologi",
+          "valore": -15,
+          "luoghi": [
+            "casale",
+            "moncalvo",
+            "pontestura"
+          ]
+        },
+        "bonusSoldi": {
+          "luogo": "casale",
+          "importo": 15,
+          "note": "Casale, ora unica capitale, attira nuove opportunita' nonostante il lutto per Chivasso"
         }
       },
       "mostraBando": true,
-      "bandoId": "inverno_bando",
+      "bandoId": "bandoChivasso_sabaudo",
       "ripetibile": false,
-      "ricorrenzaAnnuale": true
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_caduta_chivasso_01",
+          "img_caduta_chivasso_02",
+          "img_caduta_chivasso_03"
+        ],
+        "secondiPerImmagine": 4
+      }
     },
     {
-      "id": "inizio_primavera",
-      "tipo": "stagionale",
-      "priorita": "bassa",
-      "dataTrigger": "1435-03-21",
-      "dataTriggerFine": null,
-      "titolo": "La primavera torna sul Monferrato",
-      "messaggio": "Le nevi si sciolgono, i fiori tornano sulle colline. Nuovi mercati si aprono, i viaggiatori riprendono le loro rotte.",
+      "id": "epilogo_ultima_capitale_1435",
+      "capitolo": 5,
+      "tipo": "storico",
+      "priorita": "alta",
+      "certezzaStorica": "licenza_narrativa",
+      "_notaStorica": "Chiusura narrativa dello scenario: riepiloga in chiave storiografica il tramonto della signoria paleologa su Chivasso, senza introdurre nuovi fatti non documentati",
+      "dataTrigger": "1435-02-01",
+      "titolo": "Il tramonto di Chivasso",
+      "messaggio": "Con la perdita di Chivasso si chiude un'epoca: per oltre cento anni quella città fu il cuore del Marchesato. Ora Casale, già residenza della corte dall'anno prima, ne raccoglie il testimone. Il Marchesato sopravvive, ma il Monferrato che verrà non sarà più lo stesso.",
       "luoghiInteressati": [],
       "luoghiInteressatiTutti": true,
-      "effetti": {
-        "cambioStendardo": null,
-        "cambioTerreno": null,
-        "_nota_cambioTerreno": "Gestito ora da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno"
-      },
+      "effetti": {},
       "mostraBando": true,
-      "bandoId": null,
+      "bandoId": "bandoCasale_epilogo_1435",
       "ripetibile": false,
-      "ricorrenzaAnnuale": true
+      "sequenzaMedia": {
+        "tipo": "immagini",
+        "immagini": [
+          "img_epilogo_01",
+          "img_epilogo_02",
+          "img_epilogo_03"
+        ],
+        "secondiPerImmagine": 4
+      }
     },
     {
-      "id": "pestilenza_minore",
+      "id": "pestilenza_minore_1431",
       "tipo": "casuale",
       "priorita": "alta",
       "dataTrigger": null,
@@ -262,7 +1081,7 @@
       "titolo": "Una malattia si diffonde",
       "messaggio": "Una febbre misteriosa colpisce alcuni abitanti del borgo. Le levatrici sono al lavoro, la paura si diffonde tra la gente.",
       "luoghiInteressati": [],
-      "luoghiInteressatiTutti": false,
+      "luoghiInteressatiTutti": true,
       "luoghiCasuali": 1,
       "effetti": {
         "malusGuadagnoPercentuale": {
@@ -288,7 +1107,7 @@
       "ripetibile": true
     },
     {
-      "id": "passaggio_mercanti",
+      "id": "passaggio_mercanti_1431",
       "tipo": "casuale",
       "priorita": "bassa",
       "dataTrigger": null,
@@ -297,7 +1116,7 @@
       "titolo": "Una carovana di mercanti",
       "messaggio": "Una carovana di mercanti si ferma nel borgo per la notte. Le osterie si riempiono, il mercato si anima di merci rare.",
       "luoghiInteressati": [],
-      "luoghiInteressatiTutti": false,
+      "luoghiInteressatiTutti": true,
       "luoghiCasuali": 1,
       "effetti": {
         "bonusGuadagnoPercentuale": {
@@ -314,7 +1133,7 @@
       "ripetibile": true
     },
     {
-      "id": "raccolto_abbondante",
+      "id": "raccolto_abbondante_1431",
       "tipo": "casuale",
       "priorita": "media",
       "dataTrigger": null,
@@ -344,167 +1163,140 @@
       "ripetibile": true
     },
     {
-      "id": "tregua_rotta_visconti",
-      "tipo": "storico",
-      "priorita": "alta",
-      "dataTrigger": "1435-01-12",
-      "titolo": "Filippo Maria rompe la tregua",
-      "messaggio": "Il Duca di Milano Filippo Maria Visconti dichiara decaduti i patti con Johan Jacomo. Le truppe ducali si radunano ad Acqui.",
-      "luoghiInteressati": [
-        "acqui"
-      ],
+      "id": "inizio_estate_1431",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1431-06-21",
+      "dataTriggerFine": null,
+      "titolo": "L'estate è arrivata",
+      "messaggio": "Il sole scalda le campagne del Monferrato. I contadini lavorano dall'alba al tramonto. Il raccolto si annuncia abbondante.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
       "effetti": {
-        "cambioStatoDiplomazia": {
-          "daFazione": "visconti",
-          "versoFazione": "paleologi",
-          "nuovoStato": "guerra"
-        },
-        "attivaBando": "bandoAcqui_guerra",
-        "spawnEsercito": {
-          "id": "armata_viscontea_acqui",
-          "luogo": "acqui",
-          "forza": 1200,
-          "comandante": "locotenente_petrolo_della_croce"
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
+        "bonusGuadagnoPercentuale": {
+          "archetipi": [
+            "contadino",
+            "contadina"
+          ],
+          "percentuale": 30
         }
       },
       "mostraBando": true,
-      "bandoId": "bandoAcqui_guerra",
-      "ripetibile": false
-    },
-    {
-      "id": "caduta_chivasso",
-      "tipo": "storico",
-      "priorita": "alta",
-      "dataTrigger": "1435-01-25",
-      "titolo": "Chivasso si arrende ai Savoia",
-      "messaggio": "Dopo mesi di assedio, Chivasso apre le porte ad Amedeo VIII di Savoia. Il Monferrato perde la sua antica capitale.",
-      "luoghiInteressati": [
-        "chivasso"
-      ],
-      "effetti": {
-        "cambioProprietario": {
-          "luogo": "chivasso",
-          "daFazione": "paleologi",
-          "aFazione": "savoia"
-        },
-        "disattivaBando": "bandoChivasso_paleologo",
-        "attivaBando": "bandoChivasso_sabaudo",
-        "malusReputazione": {
-          "fazione": "paleologi",
-          "valore": -15,
-          "luoghi": [
-            "casale",
-            "moncalvo",
-            "pontestura"
-          ]
-        },
-        "sbloccoQuest": [
-          "quest_difesa_moncalvo"
-        ]
-      },
-      "mostraBando": true,
-      "bandoId": "bandoChivasso_sabaudo",
+      "bandoId": null,
       "ripetibile": false,
-      "sequenzaMedia": {
-        "tipo": "immagini",
-        "immagini": [
-          "img_caduta_chivasso_01",
-          "img_caduta_chivasso_02",
-          "img_caduta_chivasso_03"
-        ],
-        "secondiPerImmagine": 4
-      }
+      "ricorrenzaAnnuale": true
     },
-    {
-      "id": "moncalvo_sotto_assedio",
-      "tipo": "storico",
-      "priorita": "alta",
-      "dataTrigger": "1435-01-18",
-      "titolo": "Moncalvo minacciata",
-      "messaggio": "Corridori sabaudi sono stati visti presso i boschi di Moncalvo. Il castellano Theodoro Paleologo ordina di serrare le porte.",
-      "luoghiInteressati": [
-        "moncalvo"
-      ],
+	{
+      "id": "inizio_autunno_1431",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1431-09-21",
+      "dataTriggerFine": null,
+      "titolo": "L'autunno scende sul Monferrato",
+      "messaggio": "Le foglie ingialliscono sulle colline del Monferrato. È tempo di raccolto, di vendemmia e di fare provviste per l'inverno che verrà.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
       "effetti": {
-        "cambioStatoLuogo": {
-          "luogo": "moncalvo",
-          "nuovoStato": "assediato"
-        },
-        "disattivaBando": "bandoMoncalvo_pace",
-        "attivaBando": "bandoMoncalvo_guerra",
-        "malusGuadagnoPercentuale": {
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
+        "bonusGuadagnoPercentuale": {
           "archetipi": [
-            "mercante",
-            "artigiano"
-          ],
-          "percentuale": 50,
-          "durataGiorni": 60
-        },
-        "sbloccoAzione": "arruolamento_milizia"
-      },
-      "mostraBando": true,
-      "bandoId": "bandoMoncalvo_guerra",
-      "ripetibile": false
-    },
-    {
-      "id": "blocco_po_visconteo",
-      "tipo": "storico",
-      "priorita": "media",
-      "dataTrigger": "1435-02-10",
-      "titolo": "I Visconti bloccano il Po",
-      "messaggio": "Galere ducali da Valenza impediscono il transito sul Po. I traffici fluviali di Casale e Pontestura sono interrotti.",
-      "luoghiInteressati": [
-        "casale",
-        "pontestura",
-        "valenza"
-      ],
-      "effetti": {
-        "malusGuadagnoPercentuale": {
-          "archetipi": [
-            "mercante",
-            "barcarolo"
-          ],
-          "percentuale": 70,
-          "durataGiorni": 90
-        },
-        "aumentoPrezzo": {
-          "merci": [
-            "sale",
-            "spezie",
-            "panni"
+            "contadino",
+            "contadina"
           ],
           "percentuale": 40
         }
       },
       "mostraBando": true,
-      "bandoId": "blocco_po_bando",
-      "ripetibile": false
+      "bandoId": null,
+      "ripetibile": false,
+      "ricorrenzaAnnuale": true
     },
     {
-      "id": "risposta_moncalvo",
-      "tipo": "storico",
-      "priorita": "media",
-      "dataTrigger": "1435-02-03",
-      "titolo": "Moncalvo rifiuta la resa",
-      "messaggio": "Il castellano di Moncalvo respinge l’intimazione sabauda: 'Le chiavi non si danno se non al Marchese'. Il morale paleologo risale.",
-      "luoghiInteressati": [
-        "moncalvo"
-      ],
+      "id": "inizio_inverno_1431",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1431-12-21",
+      "dataTriggerFine": null,
+      "titolo": "L'inverno stringe il Monferrato",
+      "messaggio": "Le prime nevi imbiancano le colline. I mercati si riducono, le strade sono difficili.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
       "effetti": {
-        "bonusReputazione": {
-          "fazione": "paleologi",
-          "valore": 10,
-          "luoghi": [
-            "casale",
-            "pontestura",
-            "vignale"
-          ]
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno",
+        "malusGuadagnoPercentuale": {
+          "archetipi": [
+            "contadino",
+            "contadina",
+            "mercante"
+          ],
+          "percentuale": 20
         },
-        "attivaBando": "bandoMoncalvo_risposta"
+        "speseStraordinarie": {
+          "importo": 2,
+          "nota": "Costo riscaldamento giornaliero per tutti"
+        }
       },
       "mostraBando": true,
-      "bandoId": "bandoMoncalvo_risposta",
-      "ripetibile": false
+      "bandoId": null,
+      "ripetibile": false,
+      "ricorrenzaAnnuale": true
+    },
+    {
+      "id": "inizio_primavera_1432",
+      "tipo": "stagionale",
+      "priorita": "bassa",
+      "dataTrigger": "1432-03-21",
+      "dataTriggerFine": null,
+      "titolo": "La primavera torna sul Monferrato",
+      "messaggio": "Le nevi si sciolgono, i fiori tornano sulle colline. Nuovi mercati si aprono, i viaggiatori riprendono le loro rotte.",
+      "luoghiInteressati": [],
+      "luoghiInteressatiTutti": true,
+      "effetti": {
+        "cambioStendardo": null,
+        "cambioTerreno": null,
+        "_nota_cambioTerreno": "Gestito da TerrenoStagionaleManager tramite scenario.stagioni.fasiTerreno"
+      },
+      "mostraBando": true,
+      "bandoId": null,
+      "ripetibile": false,
+      "ricorrenzaAnnuale": true
+    },
+    {
+      "id": "fiera_san_giovanni_1433",
+      "tipo": "ricorrente",
+      "priorita": "media",
+      "dataTrigger": "1433-06-24",
+      "dataTriggerFine": "1433-06-27",
+      "titolo": "Fiera di San Giovanni a Chivasso",
+      "messaggio": "Si apre la grande fiera di San Giovanni. Mercanti da ogni borgo del Monferrato convergono a Chivasso, ancora capitale del Marchesato. I prezzi salgono, le opportunità abbondano.",
+      "luoghiInteressati": [
+        "chivasso"
+      ],
+      "luoghiInteressatiTutti": false,
+      "effetti": {
+        "bonusGuadagnoPercentuale": {
+          "archetipi": [
+            "mercante",
+            "artigiano",
+            "tessitrice",
+            "ostessa"
+          ],
+          "percentuale": 50,
+          "durataGiorni": 4,
+          "note": "Guadagno aumentato del 50% per i giorni della fiera"
+        },
+        "sbloccoAzione": "compra_merce_fiera"
+      },
+      "mostraBando": true,
+      "bandoId": "fiera_san_giovanni_chivasso_bando",
+      "ripetibile": true
     }
   ]
 }
